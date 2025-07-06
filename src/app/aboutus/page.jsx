@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import PageHero from "../components/page-hero";
 
 
 export default function AboutUs() {
@@ -47,9 +48,14 @@ export default function AboutUs() {
   ]
 
   return (
-    <div className="max-w-5xl mx-auto p-4 wrapper">
+    <main className="min-h-screen wrapper-4">
+      <PageHero 
+        title="About Us"
+        subtitle="Built by the community, for the community—BSides SWFL is where curiosity meets collaboration, and cybersecurity feels personal."
+      />
+
+      {/* Main content */}
       <div className="items-center justify-center h-[100vh]">
-        <h1 className="text-4xl font-bold mt-20 text-center text-teal-700">About Us</h1>
         <ul className="list-none">
           <Accordion type="single" className="w-full mt-16 md:mt-[30%] lg:mt-36 xl:mt-36" collapsible>
             {AboutUsData.map((item, index) => (
@@ -61,6 +67,6 @@ export default function AboutUs() {
           </Accordion>
         </ul>
       </div>
-    </div>
+    </main>
   );
 }

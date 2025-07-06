@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <div className="relative wrapper py-16 md:py-4 rounded-xl">
+    <div className="relative wrapper-hero py-16 md:py-4 rounded-xl">
       <div className="absolute inset-0 overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-1/4 left-1/6 w-20 h-20 bg-purple-400 rounded-full opacity-20"></div>
