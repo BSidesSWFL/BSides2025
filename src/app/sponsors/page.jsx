@@ -1,6 +1,7 @@
 import React from 'react';
 import { Shield, Users, Zap, Award, Heart } from 'lucide-react';
 import Link from 'next/link';
+import PageHero from "../components/page-hero";
 
 const SponsorsPage = () => {
   const platinumSponsors = [
@@ -89,16 +90,14 @@ const SponsorsPage = () => {
   );
 
   return (
-    <div className="min-h-screen wrapper-4">
-      {/* Header */}
-      <div className="wrapper-2 md:wrapper-6 pt-16 md:pt-32 relative overflow-hidden">
+    <main className="min-h-screen wrapper-pages">
+      <PageHero 
+        title="Our Amazing Sponsors" 
+        subtitle="Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors. Join us in thanking these organizations that support our cybersecurity community." 
+      />
+      <div className="min-h-screen wrapper-pages">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl font-semibold mt-8 md:mt-32 lg:mt-8 xl:mt-16 mb-6 text-orange-200">Our Amazing Sponsors</h2>
-          <p className="text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed">
-            Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors.
-            Join us in thanking these organizations that support our cybersecurity community.
-          </p>
           <div className="mt-8 flex justify-center items-center gap-8 text-sm text-orange-200">
             <div className="flex items-center gap-2">
               <Users size={20} />
@@ -113,12 +112,6 @@ const SponsorsPage = () => {
               <span>7 Tracks</span>
             </div>
           </div>
-        </div>
-        {/* Decorative wave */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" className="w-full h-8 fill-amber-100">
-            <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,58.7C672,64,768,96,864,96C960,96,1056,64,1152,48C1248,32,1344,32,1392,32L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
-          </svg>
         </div>
       </div>
 
@@ -246,7 +239,7 @@ const SponsorsPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
