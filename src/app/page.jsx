@@ -24,7 +24,7 @@ export default function Home() {
         <Hero />
         <InfoCards />
       </main>
-      <CallForSpeakersModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      {/* <CallForSpeakersModal isOpen={isModalOpen} onClose={handleCloseModal} /> */}
     </>
   );
 }
