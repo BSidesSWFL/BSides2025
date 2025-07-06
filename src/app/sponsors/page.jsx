@@ -20,19 +20,9 @@ const SponsorsPage = () => {
     { name: "Your Name Here", logo: "🚨", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Swag Bag Royalty", logo: "🔬", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Become A Sponsor", logo: "⚡", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Name Here", logo: "🚨", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Swag Bag Royalty", logo: "🔬", website: "https://www.bsidesswfl.org/sponsor-form" }
   ];
 
   const bronzeSponsors = [
-    { name: "Become A Sponsor", logo: "🏢", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Let's Make This Official", logo: "🦠", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Buy Us Coffee", logo: "🔑", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Sticker Worthy?", logo: "📋", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Become A Sponsor", logo: "🏢", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://www.bsidesswfl.org/sponsor-form" },
@@ -42,10 +32,6 @@ const SponsorsPage = () => {
   ];
 
   const communitySponsors = [
-    { name: "Become A Community Sponsor", logo: "🏛️", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Logo Could Be Famous", logo: "🌐", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Let's Make This Official", logo: "👥", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Become A Community Sponsor", logo: "🏛️", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🌐", website: "https://www.bsidesswfl.org/sponsor-form" },
@@ -119,7 +105,6 @@ const SponsorsPage = () => {
           <div className="flex justify-center items-center gap-8 text-sm text-orange-200">
             <div className="flex items-center gap-2">
               <Users size={20} />
-              <span>300+ Participants</span>
               <span>300+ Participants</span>
             </div>
             <div className="flex items-center gap-2">
