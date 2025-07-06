@@ -62,7 +62,6 @@ const SponsorsPage = () => {
           rel="noopener noreferrer"
         >
           Fill Sponsor Form →
-          Fill Sponsor Form →
         </a>
       </div>
     </div>
