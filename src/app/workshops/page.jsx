@@ -1,14 +1,15 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import Link from 'next/link';
 import PageHero from '../components/page-hero';
+import PageHero from '../components/page-hero';
 
 export default function Workshops() {
 
   return (
     <main className="min-h-screen wrapper-pages">
-      <PageHero 
-        title="Lead a Workshop, Share What You Know" 
-        subtitle="Our workshops offer immersive, hands-on sessions that dig deep into practical skills across the cybersecurity spectrum. Whether you’re teaching red teaming, OSINT, or something uniquely your own, this is your space to inspire learning and lead with impact." 
+      <PageHero
+        title="Lead a Workshop, Share What You Know"
+        subtitle="Our workshops offer immersive, hands-on sessions that dig deep into practical skills across the cybersecurity spectrum. Whether you’re teaching red teaming, OSINT, or something uniquely your own, this is your space to inspire learning and lead with impact."
       />
 
       <div className="max-w-5xl mx-auto wrapper-pages p-4 md:mb-12 pt-4">

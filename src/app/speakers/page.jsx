@@ -6,9 +6,9 @@ export default function SpeakersPage() {
 
   return (
     <main className="min-h-screen wrapper-pages">
-      <PageHero 
-        title="Our Speakers" 
-        subtitle="Get ready to learn from a diverse lineup of experts, innovators, and passionate professionals sharing their knowledge across cybersecurity disciplines. Whether it's offensive, defensive, or everything in between, these speakers bring real-world experience and fresh perspectives to the BSides SWFL stage." 
+      <PageHero
+        title="Our Speakers"
+        subtitle="Get ready to learn from a diverse lineup of experts, innovators, and passionate professionals sharing their knowledge across cybersecurity disciplines. Whether it's offensive, defensive, or everything in between, these speakers bring real-world experience and fresh perspectives to the BSides SWFL stage."
       />
 
       {/* Call For Action Section */}
@@ -32,8 +32,8 @@ export default function SpeakersPage() {
 
       {/* Embedded SpeakerWall */}
       <div className="max-w-6xl mx-auto px-6 pb-16">
-        <script 
-          type="text/javascript" 
+        <script
+          type="text/javascript"
           src={`https://sessionize.com/api/v2/${process.env.NEXT_PUBLIC_SESSIONIZE_KEY}/view/SpeakerWall`}>
         </script>
       </div>
