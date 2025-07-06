@@ -5,14 +5,14 @@ import PageHero from "../components/page-hero";
 
 const SponsorsPage = () => {
   const platinumSponsors = [
-    { name: "Become A Sponsor", logo: "🛡️", website: "https://bsidesswfl.org" },
-    { name: "Your Name Here", logo: "🔐", website: "https://bsidesswfl.org" }
+    { name: "Become A Sponsor", logo: "🛡️", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Name Here", logo: "🔐", website: "https://www.bsidesswfl.org/sponsor-form" }
   ];
 
   const goldSponsors = [
-    { name: "Become A Sponsor", logo: "🎯", website: "https://bsidesswfl.org" },
-    { name: "Your Name Here", logo: "📊", website: "https://bsidesswfl.org" },
-    { name: "Your Logo Could Be Famous", logo: "☁️", website: "https://bsidesswfl.org" }
+    { name: "Become A Sponsor", logo: "🎯", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Name Here", logo: "📊", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Logo Could Be Famous", logo: "☁️", website: "https://www.bsidesswfl.org/sponsor-form" }
   ];
 
   const silverSponsors = [
@@ -40,10 +40,10 @@ const SponsorsPage = () => {
 
   // SponsorCard component
   const sizeClasses = {
-    large: "w-80 h-56 p-8",
-    medium: "w-64 h-48 p-6",
-    small: "w-48 h-40 p-4",
-    tiny: "w-40 h-32 p-2"
+    large: "w-full sm:w-80 h-56 p-8",
+    medium: "w-full sm:w-64 h-48 p-6",
+    small: "w-full sm:w-48 h-40 p-4",
+    tiny: "w-full sm:w-40 h-32 p-2"
   };
 
   const SponsorCard = ({ sponsor, size }) => (
@@ -95,10 +95,13 @@ const SponsorsPage = () => {
         title="Our Amazing Sponsors" 
         subtitle="Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors. Join us in thanking these organizations that support our cybersecurity community." 
       />
+
+      {/* Content Wrapper */}
       <div className="min-h-screen wrapper-pages">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div className="mt-8 flex justify-center items-center gap-8 text-sm text-orange-200">
+
+        {/* Unique Stats Section */}
+        <div className="container mx-auto px-6 text-center relative z-10 -mt-20">
+          <div className="flex justify-center items-center gap-8 text-sm text-orange-200">
             <div className="flex items-center gap-2">
               <Users size={20} />
               <span>300+ Participants</span>
@@ -109,134 +112,131 @@ const SponsorsPage = () => {
             </div>
             <div className="flex items-center gap-2">
               <Award size={20} />
-              <span>7 Tracks</span>
+              <span>5+ Tracks</span>
             </div>
           </div>
         </div>
-      </div>
+      
 
-      {/* Photo Collage */}
-
-      <div className="bg-transparent outline-0 py-12 md:py-24">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            <div className="col-span-1 row-span-2">
-              <img
-                src="https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
-                alt="Team meeting discussion"
-                className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-              />
-            </div>
-            <div className="col-span-1">
-              <img
-                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                alt="Cybersecurity coding"
-                className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-              />
-            </div>
-            <div className="col-span-1">
-              <img
-                src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                alt="Conference presentation"
-                className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-              />
-            </div>
-            <div className="col-span-1 row-span-2 hidden lg:block">
-              <img
-                src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
-                alt="Technology workspace"
-                className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-              />
-            </div>
-            <div className="col-span-1">
-              <img
-                src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                alt="Network security monitoring"
-                className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-              />
-            </div>
-            <div className="col-span-1">
-              <img
-                src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                alt="Team collaboration"
-                className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-              />
+        {/* Photo Collage */}
+        <div className="bg-transparent outline-0 py-12 md:py-24">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+              <div className="col-span-1 row-span-2">
+                <img
+                  src="https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+                  alt="Team meeting discussion"
+                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+                />
+              </div>
+              <div className="col-span-1">
+                <img
+                  src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                  alt="Cybersecurity coding"
+                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+                />
+              </div>
+              <div className="col-span-1">
+                <img
+                  src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                  alt="Conference presentation"
+                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+                />
+              </div>
+              <div className="col-span-1 row-span-2 hidden lg:block">
+                <img
+                  src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
+                  alt="Technology workspace"
+                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+                />
+              </div>
+              <div className="col-span-1">
+                <img
+                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                  alt="Network security monitoring"
+                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+                />
+              </div>
+              <div className="col-span-1">
+                <img
+                  src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                  alt="Team collaboration"
+                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Sponsors Section */}
-      <div className="container mx-auto items-center justify-center text-center px-6 py-16">
-        <SponsorTier
-          title="Platinum Sponsors"
-          sponsors={platinumSponsors}
-          tierColor="bg-gradient-to-r from-slate-500 to-gray-600"
-          icon={Award}
-          cardSize="large"
-          description="Our premier partners who provide exceptional support for the BSides SWFL community"
-        />
-
-        <SponsorTier
-          title="Gold Sponsors"
-          sponsors={goldSponsors}
-          tierColor="bg-gradient-to-r from-amber-500 to-orange-600"
-          icon={Award}
-          cardSize="medium"
-          description="Strategic partners committed to advancing cybersecurity education in Southwest Florida"
-        />
-
-        <SponsorTier
-          title="Silver Sponsors"
-          sponsors={silverSponsors}
-          tierColor="bg-gradient-to-r from-cyan-500 to-teal-600"
-          icon={Shield}
-          cardSize="small"
-          description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
-        />
-
-        <SponsorTier
-          title="Bronze Sponsors"
-          sponsors={bronzeSponsors}
-          tierColor="bg-gradient-to-r from-orange-600 to-red-700"
-          icon={Zap}
-          cardSize="tiny"
-          description="Essential contributors to our mission of building a stronger SWFL security community"
-        />
-
-        <SponsorTier
-          title="Community Sponsors"
-          sponsors={communitySponsors}
-          tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
-          icon={Heart}
-          cardSize="small"
-          description="Local organizations and groups that champion cybersecurity education in Southwest Florida"
-        />
-      </div>
-
-      {/* Call to Action */}
-      <div className="wrapper-2 md:wrapper-6 text-white pt-16 md:pt-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-6">Interested in Sponsoring?</h2>
-          <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto">
+        {/* Call to Action */}
+        <div className="max-w-5xl mx-auto px-6 py-16 text-slate-800 text-center -mt-20 -mb-24">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Interested in Sponsoring?</h2>
+          <p className="text-lg text-slate-700 mb-4">
             Join our community of security leaders and help support Southwest Florida's premier cybersecurity conference.
           </p>
+
+          {/* Sponsor Buttons */}
           <div className="flex flex-col mb-16 sm:flex-row gap-4 justify-center">
-
             <Link href="/sponsor-form" className='w-full sm:w-auto'>
-              <button className="bg-gradient-to-r from-cyan-500 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg cursor-pointer hover:bg-gradient-to-bl hover:from-cyan-600 hover:to-teal-700">
-                <p className='inline-block'>Sign-Up Here</p> <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
+              <button className="bg-gradient-to-r from-cyan-500 to-teal-600 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-colors duration-200 w-full md:w-auto">
+                Sponsorship Package
               </button>
             </Link>
 
             <Link href="/sponsor-form" className='w-full sm:w-auto'>
-              <button className="bg-gradient-to-r from-cyan-500 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg cursor-pointer hover:bg-gradient-to-bl hover:from-cyan-600 hover:to-teal-700">
-                <p className='inline-block'>Download Sponsorship Package</p> <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
+              <button className="bg-gradient-to-r from-teal-600 to-cyan-500 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-colors duration-200 w-full md:w-auto">
+                Sponsor Us Today!
               </button>
             </Link>
-
           </div>
+        </div>
+
+        {/* Sponsors Section */}
+        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-30">
+          <SponsorTier
+            title="Platinum Sponsors"
+            sponsors={platinumSponsors}
+            tierColor="bg-gradient-to-r from-slate-500 to-gray-600"
+            icon={Award}
+            cardSize="large"
+            description="Our premier partners who provide exceptional support for the BSides SWFL community"
+          />
+
+          <SponsorTier
+            title="Gold Sponsors"
+            sponsors={goldSponsors}
+            tierColor="bg-gradient-to-r from-amber-500 to-orange-600"
+            icon={Award}
+            cardSize="medium"
+            description="Strategic partners committed to advancing cybersecurity education in Southwest Florida"
+          />
+
+          <SponsorTier
+            title="Silver Sponsors"
+            sponsors={silverSponsors}
+            tierColor="bg-gradient-to-r from-cyan-500 to-teal-600"
+            icon={Shield}
+            cardSize="small"
+            description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
+          />
+
+          <SponsorTier
+            title="Bronze Sponsors"
+            sponsors={bronzeSponsors}
+            tierColor="bg-gradient-to-r from-orange-600 to-red-700"
+            icon={Zap}
+            cardSize="tiny"
+            description="Essential contributors to our mission of building a stronger SWFL security community"
+          />
+
+          <SponsorTier
+            title="Community Sponsors"
+            sponsors={communitySponsors}
+            tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
+            icon={Heart}
+            cardSize="small"
+            description="Local organizations and groups that champion cybersecurity education in Southwest Florida"
+          />
         </div>
       </div>
     </main>
