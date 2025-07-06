@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Users, Zap, Award, Heart } from 'lucide-react';
+import Link from 'next/link';
 
 const SponsorsPage = () => {
   const platinumSponsors = [
@@ -14,26 +15,26 @@ const SponsorsPage = () => {
   ];
 
   const silverSponsors = [
-    { name: "Become A Sponsor", logo: "⚡", website: "https://bsidesswfl.org" },
-    { name: "Your Name Here", logo: "🚨", website: "https://bsidesswfl.org" },
-    { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://bsidesswfl.org" },
-    { name: "Swag Bag Royalty", logo: "🔬", website: "https://bsidesswfl.org" }
+    { name: "Become A Sponsor", logo: "⚡", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Name Here", logo: "🚨", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Swag Bag Royalty", logo: "🔬", website: "https://www.bsidesswfl.org/sponsor-form" }
   ];
 
   const bronzeSponsors = [
-    { name: "Become A Sponsor", logo: "🏢", website: "https://bsidesswfl.org" },
-    { name: "Your Name Here", logo: "🎓", website: "https://bsidesswfl.org" },
-    { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://bsidesswfl.org" },
-    { name: "Let's Make This Official", logo: "🦠", website: "https://bsidesswfl.org" },
-    { name: "Buy Us Coffee", logo: "🔑", website: "https://bsidesswfl.org" },
-    { name: "Sticker Worthy?", logo: "📋", website: "https://bsidesswfl.org" }
+    { name: "Become A Sponsor", logo: "🏢", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Let's Make This Official", logo: "🦠", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Buy Us Coffee", logo: "🔑", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Sticker Worthy?", logo: "📋", website: "https://www.bsidesswfl.org/sponsor-form" }
   ];
 
   const communitySponsors = [
-    { name: "Become A Community Sponsor", logo: "🏛️", website: "https://bsidesswfl.org" },
-    { name: "Your Name Here", logo: "🎓", website: "https://bsidesswfl.org" },
-    { name: "Your Logo Could Be Famous", logo: "🌐", website: "https://bsidesswfl.org" },
-    { name: "Let's Make This Official", logo: "👥", website: "https://bsidesswfl.org" }
+    { name: "Become A Community Sponsor", logo: "🏛️", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Your Logo Could Be Famous", logo: "🌐", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Let's Make This Official", logo: "👥", website: "https://www.bsidesswfl.org/sponsor-form" }
   ];
 
   // SponsorCard component
@@ -59,7 +60,7 @@ const SponsorsPage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit Website →
+          Fill Sponsor Form →
         </a>
       </div>
     </div>
@@ -101,7 +102,7 @@ const SponsorsPage = () => {
           <div className="mt-8 flex justify-center items-center gap-8 text-sm text-orange-200">
             <div className="flex items-center gap-2">
               <Users size={20} />
-              <span>500+ Participants</span>
+              <span>300+ Participants</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap size={20} />
@@ -109,7 +110,7 @@ const SponsorsPage = () => {
             </div>
             <div className="flex items-center gap-2">
               <Award size={20} />
-              <span>5 Tracks</span>
+              <span>7 Tracks</span>
             </div>
           </div>
         </div>
@@ -229,9 +230,19 @@ const SponsorsPage = () => {
             Join our community of security leaders and help support Southwest Florida's premier cybersecurity conference.
           </p>
           <div className="flex flex-col mb-16 sm:flex-row gap-4 justify-center">
-            <button className="bg-gradient-to-r from-cyan-500 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg">
-              Download Sponsorship Package
-            </button>
+
+            <Link href="/sponsor-form" className='w-full sm:w-auto'>
+              <button className="bg-gradient-to-r from-cyan-500 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg cursor-pointer hover:bg-gradient-to-bl hover:from-cyan-600 hover:to-teal-700">
+                <p className='inline-block'>Sign-Up Here</p> <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
+              </button>
+            </Link>
+
+            <Link href="/sponsor-form" className='w-full sm:w-auto'>
+              <button className="bg-gradient-to-r from-cyan-500 to-teal-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg cursor-pointer hover:bg-gradient-to-bl hover:from-cyan-600 hover:to-teal-700">
+                <p className='inline-block'>Download Sponsorship Package</p> <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
+              </button>
+            </Link>
+
           </div>
         </div>
       </div>
