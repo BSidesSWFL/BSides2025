@@ -4,20 +4,20 @@ import Link from "next/link"
 
 export default function InfoCards() {
   return (
-    <div className="container mx-auto px-4 py-12 wrapper-5 w-auto mb-12 lg:mb-20">
+    <div className="container mx-auto px-4 py-12 wrapper-5 w-auto mb-12 lg:mb-20 items-center justify-center text-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Sponsors Card */}
         <Card className="mb-8 opacity-77">
           <CardHeader>
-            <CardTitle className="text-2xl"><span className="text-purple-800">📲</span> <span className="text-orange-200">C</span>all For Sponsors</CardTitle>
+            <CardTitle className="text-2xl"><span className="text-purple-800">📲</span> <span className="text">Call For Sponsors</span></CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700 text-justify">
+            <p className="text-gray-700 text-center">
               BSides SWFL is organized by volunteers and relies on funding from industry sponsors and
               donations.
             </p>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex justify-center">
             <Link href="/sponsors" className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">
               <Button className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">2025 Sponsor Kit</Button>
             </Link>
@@ -27,14 +27,14 @@ export default function InfoCards() {
         {/* Tickets Card */}
         {/* <Card className="mb-8 opacity-77">
           <CardHeader>
-            <CardTitle className="text-2xl"><span className="text-purple-800">🎟️</span> <span className="text-purple-700">T</span>ickets On Sale</CardTitle>
+            <CardTitle className="text-2xl"><span className="text-purple-800">🎟️</span> <span className="text">Tickets On Sale</span></CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700">
+            <p className="text-gray-700 text-center">
               Early bird pricing is available until September 15th. Secure your spot today!
             </p>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex justify-center">
             <Link href="/tickets" className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">
               <Button className="bg-purple-800 hover:bg-purple-500 text-white">Buy Now!</Button>
             </Link>
@@ -44,12 +44,12 @@ export default function InfoCards() {
         {/* Volunteer Card */}
         <Card className="mb-8 opacity-77">
           <CardHeader>
-            <CardTitle className="text-2xl"><span className="text-purple-800">🙌</span> <span className="text-teal-700">W</span>e Need Your Help!</CardTitle>
+            <CardTitle className="text-2xl"><span className="text-purple-800">🙌</span> <span className="text">We Need Your Help!</span></CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-700">Come join the fun and help us make 2025 the best BSides SWFL convention ever. Sign up to be a volunteer today!</p>
+            <p className="text-gray-700 text-center">Come join the fun and help us make 2025 the best BSides SWFL convention ever. Sign up to be a volunteer today!</p>
           </CardContent>
-          <CardFooter>
+          <CardFooter className="flex justify-center">
             <Link href="/volunteer" className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">
               <Button className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">Volunteer Information</Button>
             </Link>
