@@ -19,7 +19,7 @@ const SponsorsPage = () => {
     { name: "Become A Sponsor", logo: "⚡", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Name Here", logo: "🚨", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Swag Bag Royalty", logo: "🔬", website: "https://www.bsidesswfl.org/sponsor-form" }
+    { name: "Swag Bag Royalty", logo: "🔬", website: "https://www.bsidesswfl.org/sponsor-form" },
   ];
 
   const bronzeSponsors = [
@@ -91,9 +91,9 @@ const SponsorsPage = () => {
 
   return (
     <main className="min-h-screen wrapper-pages">
-      <PageHero 
-        title="Our Amazing Sponsors" 
-        subtitle="Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors. Join us in thanking these organizations that support our cybersecurity community." 
+      <PageHero
+        title="Our Amazing Sponsors"
+        subtitle="Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors. Join us in thanking these organizations that support our cybersecurity community."
       />
 
       {/* Content Wrapper */}
@@ -116,7 +116,7 @@ const SponsorsPage = () => {
             </div>
           </div>
         </div>
-      
+
 
         {/* Photo Collage */}
         <div className="bg-transparent outline-0 py-12 md:py-24">
