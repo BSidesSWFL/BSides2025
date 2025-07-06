@@ -12,13 +12,18 @@ export default function Villages() {
         subtitle="Got an idea for an interactive space where people can get hands-on, ask questions, and dive deep into something cool? We’re looking for village proposals for BSides SWFL 2025—spaces that run all day Saturday and spark curiosity through experience. Whether it’s lockpicking, RFID, career support, social engineering, or engaging kids and seniors, villages are where our attendees explore, experiment, and connect. If you’ve got the vision, we’ll help you make it happen." 
       />
 
-      <div className="text-center mt-12">
+      <div className="max-w-5xl mx-auto wrapper-pages p-4 md:mb-12 pt-4">
+        <div className="hs-form-frame mt-6 mb-12" data-region="na2" data-form-id="fb4869ea-c35c-4d70-9ddb-7508f9d6cf1f" data-portal-id="242985282"></div>
+      </div>
+
+      {/* Call To Action Button - Hidden until sessions are approved */}
+      {/* <div className="text-center mt-12">
         <Link href='/villages-form'>
           <button className="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-700 transition-colors duration-200 w-full md:w-auto">
             Reach Out Today! <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
           </button>
         </Link>
-      </div>
+      </div> */}
     </main>
   )
 }
