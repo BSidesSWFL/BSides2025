@@ -48,7 +48,7 @@ export default function AboutUs() {
   ]
 
   return (
-    <main className="min-h-screen wrapper-4">
+    <main className="min-h-screen wrapper-pages">
       <PageHero 
         title="About Us"
         subtitle="Built by the community, for the community—BSides SWFL is where curiosity meets collaboration, and cybersecurity feels personal."

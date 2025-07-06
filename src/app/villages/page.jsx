@@ -9,7 +9,7 @@ export default function Villages() {
     <main className="min-h-screen wrapper-pages">
       <PageHero 
         title="Bring a Village to Life at BSides SWFL" 
-        subtitle="Got an idea for an interactive space where people can get hands-on, ask questions, and dive deep into something cool? We’re looking for village proposals for BSides SWFL 2025—spaces that run all day Saturday and spark curiosity through experience. Whether it’s lockpicking, RFID, career support, social engineering, or engaging kids and seniors, villages are where our attendees explore, experiment, and connect. If you’ve got the vision, we’ll help you make it happen." 
+        subtitle="Villages are all-day interactive spaces where attendees can get hands-on, ask questions, and explore niche areas of security. Whether it's lockpicking, social engineering, or career building, villages turn curiosity into connection through real-world experience." 
       />
 
       <div className="max-w-5xl mx-auto wrapper-pages p-4 md:mb-12 pt-4">
