@@ -10,7 +10,7 @@ const PageHero = ({ title, subtitle }) => {
       {/* Content */}
       <div className="container mx-auto px-6 text-center absolute top-[10%] md:top-[25%] left-1/2 transform -translate-x-1/2 z-10">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-4 text-orange-100">{title}</h2>
-        <p className="text-base sm:text-lg md:text-xl text-cyan-100 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg my-auto md:text-xl text-cyan-100 leading-relaxed max-w-3xl mx-auto">
           {subtitle}
         </p>
       </div>
