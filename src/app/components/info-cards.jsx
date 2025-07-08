@@ -9,7 +9,7 @@ export default function InfoCards() {
         {/* Sponsors Card */}
         <Card className="mb-8 opacity-77">
           <CardHeader>
-            <CardTitle className="text-2xl"><span className="text-purple-800">📲</span> <span className="text">Call For Sponsors</span></CardTitle>
+            <CardTitle className="text-2xl"><span className="text-purple-800">📲</span> <span className="text-gray-700">Call For Sponsors</span></CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-700 text-center">
