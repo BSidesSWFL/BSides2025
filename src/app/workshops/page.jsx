@@ -11,18 +11,25 @@ export default function Workshops() {
         subtitle="Our workshops offer immersive, hands-on sessions that dig deep into practical skills across the cybersecurity spectrum. Whether you’re teaching red teaming, OSINT, or something uniquely your own, this is your space to inspire learning and lead with impact."
       />
 
-      <div className="max-w-5xl mx-auto wrapper-pages p-4 md:mb-12 pt-4">
-        <div className="hs-form-frame mt-6 mb-12" data-region="na2" data-form-id="6fc72569-d746-41a3-a5a0-3e8b930742d2" data-portal-id="242985282"></div>
+      <div className="max-w-5xl mx-auto px-6 py-16 text-slate-800 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Call for Workshops Now Open</h2>
+        <p className="text-lg text-slate-700 mb-4">
+          Are you passionate about teaching practical cybersecurity skills? We’re looking for instructors to lead 3–4 hour hands-on workshops at BSides SWFL on Friday, November 14th.
+        </p>
+        <p className="text-lg text-slate-700 mb-4">
+          Whether you're into red teaming, OSINT, reverse engineering, hardware hacking, or something entirely original — we want sessions that challenge, engage, and inspire.
+        </p>
+        <p className="text-lg text-slate-700 mb-4">
+          Workshops are reviewed anonymously and selected based on clarity, structure, and impact. All accepted instructors receive a complimentary conference pass.
+        </p>
       </div>
 
-      {/* Call To Action Button - Hidden until sessions are approved */}
-      {/* <div className="text-center mt-12">
-        <a href='/workshops-form'>
-          <button className="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-700 transition-colors duration-200 w-full md:w-auto">
-            Reach Out Today! <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
+      <div className="text-center -mt-10 pb-30">
+        <a href='https://sessionize.com/bsidesswfl2025/'>
+          <button className="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-700 transition-colors duration-200 w-[90%] md:w-auto"> Reach Out Today! <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
           </button>
         </a>
-      </div> */}
+      </div>
     </main>
   )
 }
