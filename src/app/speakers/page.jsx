@@ -22,7 +22,7 @@ export default function SpeakersPage() {
         </p>
       </div>
 
-      <div className="text-center -mt-10 pb-30">
+      <div className="text-center -mt-10 pb-24 md:pb-30">
         <a href='https://sessionize.com/bsidesswfl2025/'>
           <button className="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-700 transition-colors duration-200 w-[90%] md:w-auto">
             Reach Out Today! <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
