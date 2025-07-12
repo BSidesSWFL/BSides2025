@@ -3,69 +3,69 @@ import { Shield, Users, Zap, Award, Heart } from 'lucide-react';
 
 const SponsorsPage = () => {
   const platinumSponsors = [
-    { name: "CyberDefense Corp", logo: "🛡️", website: "https://cyberdefense.com" },
-    { name: "SecureNet Solutions", logo: "🔐", website: "https://securenet.com" }
+    { name: "Become A Sponsor", logo: "🛡️", website: "https://bsidesswfl.org" },
+    { name: "Your Name Here", logo: "🔐", website: "https://bsidesswfl.org" }
   ];
 
   const goldSponsors = [
-    { name: "ThreatHunter Pro", logo: "🎯", website: "https://threathunter.com" },
-    { name: "InfoSec Analytics", logo: "📊", website: "https://infosecanalytics.com" },
-    { name: "CloudGuard Systems", logo: "☁️", website: "https://cloudguard.com" }
+    { name: "Become A Sponsor", logo: "🎯", website: "https://bsidesswfl.org" },
+    { name: "Your Name Here", logo: "📊", website: "https://bsidesswfl.org" },
+    { name: "Your Logo Could Be Famous", logo: "☁️", website: "https://bsidesswfl.org" }
   ];
 
   const silverSponsors = [
-    { name: "Penetration Testing LLC", logo: "⚡", website: "https://pentest.com" },
-    { name: "Incident Response Team", logo: "🚨", website: "https://incidentresponse.com" },
-    { name: "Vulnerability Scanners Inc", logo: "🔍", website: "https://vulnscan.com" },
-    { name: "Digital Forensics Lab", logo: "🔬", website: "https://digitalforensics.com" }
+    { name: "Become A Sponsor", logo: "⚡", website: "https://bsidesswfl.org" },
+    { name: "Your Name Here", logo: "🚨", website: "https://bsidesswfl.org" },
+    { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://bsidesswfl.org" },
+    { name: "Swag Bag Royalty", logo: "🔬", website: "https://bsidesswfl.org" }
   ];
 
   const bronzeSponsors = [
-    { name: "Local Security Firm", logo: "🏢", website: "https://localsec.com" },
-    { name: "Cyber Training Academy", logo: "🎓", website: "https://cybertraining.com" },
-    { name: "Network Security Tools", logo: "🔧", website: "https://netsectools.com" },
-    { name: "Malware Analysis Group", logo: "🦠", website: "https://malwareanalysis.com" },
-    { name: "Encryption Specialists", logo: "🔑", website: "https://encryption.com" },
-    { name: "Compliance Consultants", logo: "📋", website: "https://compliance.com" }
+    { name: "Become A Sponsor", logo: "🏢", website: "https://bsidesswfl.org" },
+    { name: "Your Name Here", logo: "🎓", website: "https://bsidesswfl.org" },
+    { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://bsidesswfl.org" },
+    { name: "Let's Make This Official", logo: "🦠", website: "https://bsidesswfl.org" },
+    { name: "Buy Us Coffee", logo: "🔑", website: "https://bsidesswfl.org" },
+    { name: "Sticker Worthy?", logo: "📋", website: "https://bsidesswfl.org" }
   ];
 
   const communitySponsors = [
-    { name: "SWFL (ISC)² Chapter", logo: "🏛️", website: "https://swflisc2.org" },
-    { name: "FGCU Cybersecurity Program", logo: "🎓", website: "https://fgcu.edu/cyber" },
-    { name: "Naples OWASP Chapter", logo: "🌐", website: "https://owasp.org/naples" },
-    { name: "Fort Myers Tech Meetup", logo: "👥", website: "https://meetup.com/ftmyerstech" }
+    { name: "Become A Community Sponsor", logo: "🏛️", website: "https://bsidesswfl.org" },
+    { name: "Your Name Here", logo: "🎓", website: "https://bsidesswfl.org" },
+    { name: "Your Logo Could Be Famous", logo: "🌐", website: "https://bsidesswfl.org" },
+    { name: "Let's Make This Official", logo: "👥", website: "https://bsidesswfl.org" }
   ];
 
-  const SponsorCard = ({ sponsor, size = "medium" }) => {
-    const sizeClasses = {
-      large: "p-8 text-6xl min-h-48",
-      medium: "p-6 text-4xl min-h-36",
-      small: "p-4 text-3xl min-h-28",
-      tiny: "p-3 text-2xl min-h-20"
-    };
-
-    return (
-      <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-orange-100 flex flex-col items-center justify-center text-center group ${sizeClasses[size]}`}>
-        <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
-          {sponsor.logo}
-        </div>
-        <h3 className={`font-bold text-teal-800 ${size === 'large' ? 'text-xl' : size === 'medium' ? 'text-lg' : size === 'small' ? 'text-base' : 'text-sm'}`}>
-          {sponsor.name}
-        </h3>
-        <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <a
-            href={sponsor.website}
-            className="text-orange-600 hover:text-orange-800 text-sm font-medium"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit Website →
-          </a>
-        </div>
-      </div>
-    );
+  // SponsorCard component
+  const sizeClasses = {
+    large: "w-80 h-56 p-8",
+    medium: "w-64 h-48 p-6",
+    small: "w-48 h-40 p-4",
+    tiny: "w-40 h-32 p-2"
   };
 
+  const SponsorCard = ({ sponsor, size }) => (
+    <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl mx-auto transition-all duration-300 transform hover:-translate-y-1 border border-orange-100 flex flex-col items-center justify-center text-center group ${sizeClasses[size]}`}>
+      <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
+        {sponsor.logo}
+      </div>
+      <h3 className={`font-bold text-teal-800 ${size === 'large' ? 'text-xl' : size === 'medium' ? 'text-lg' : size === 'small' ? 'text-base' : 'text-sm'}`}>
+        {sponsor.name}
+      </h3>
+      <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <a
+          href={sponsor.website}
+          className="text-orange-600 hover:text-orange-800 text-sm font-medium"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Website →
+        </a>
+      </div>
+    </div>
+  );
+
+  // SponsorTier component
   const SponsorTier = ({ title, sponsors, tierColor, icon: Icon, cardSize, description }) => (
     <div className="mb-16">
       <div className="text-center mb-8">
@@ -87,15 +87,13 @@ const SponsorsPage = () => {
     </div>
   );
 
-
-
   return (
     <div className="min-h-screen wrapper-4">
       {/* Header */}
       <div className="wrapper-2 md:wrapper-6 pt-16 md:pt-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-3xl font-semibold mb-6 text-orange-200">Our Amazing Sponsors</h2>
+          <h2 className="text-3xl font-semibold mt-8 md:mt-32 lg:mt-8 xl:mt-16 mb-6 text-orange-200">Our Amazing Sponsors</h2>
           <p className="text-xl text-cyan-100 max-w-3xl mx-auto leading-relaxed">
             Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors.
             Join us in thanking these organizations that support our cybersecurity community.
@@ -175,7 +173,7 @@ const SponsorsPage = () => {
       </div>
 
       {/* Sponsors Section */}
-      <div className="container mx-auto px-6 py-16">
+      <div className="container mx-auto items-center justify-center text-center px-6 py-16">
         <SponsorTier
           title="Platinum Sponsors"
           sponsors={platinumSponsors}

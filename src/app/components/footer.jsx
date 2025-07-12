@@ -1,39 +1,66 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Linkedin, NotebookPen, Contact2 } from "lucide-react"
-import { SiX, SiYoutube, SiDiscord, SiFacebook, SiFormstack } from '@icons-pack/react-simple-icons'
+import { Linkedin, NotebookPen } from "lucide-react"
+import { SiX, SiYoutube, SiDiscord, SiFacebook, SiBluesky } from "@icons-pack/react-simple-icons"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-6 h-[14vh] md:h-[13.5vh] lg:h-[15vh] fixed bottom-0 left-0 right-0 z-50">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-center gap-6 mb-6">
-          <Link href="https://x.com/BSides_SWFL" className="hover:text-gray-300" aria-label="Twitter">
-            <SiX size={20} />
-          </Link>
-          <Link href="https://www.facebook.com/people/BSides-SWFL/61566492254339/" className="hover:text-gray-300" aria-label="Facebook">
-            <SiFacebook size={20} />
-          </Link>
-          <Link href="https://discord.gg/yHfHPZ3JRb" className="hover:text-gray-300" aria-label="Discord">
-            <SiDiscord size={20} />
-          </Link>
-          <Link href="https://www.youtube.com/@BSidesSWFL" className="hover:text-gray-300" aria-label="Instagram">
-            <SiYoutube size={20} />
-          </Link>
-          <Link href="https://www.linkedin.com/company/bsides-swfl/" className="hover:text-gray-300" aria-label="LinkedIn">
-            <Linkedin size={20} />
-          </Link>
-          <Link href="/contactus" className="hover:text-gray-300" aria-label="Contact Us">
-            <NotebookPen size={20} />
-          </Link>
+    <footer className="fixed bottom-0 left-0 right-0 w-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-t border-purple-500/20 shadow-2xl opacity-97 mt-auto md:h-[14.5vh] lg:h-[16vh]">
+      <div className="container mx-auto px-4 lg:px-6 py-2">
+        {/* Social Media Links */}
+        <div className="flex flex-wrap justify-center gap-1 md:gap-2 lg:gap-4">
+          <SocialLink href="https://x.com/BSides_SWFL" icon={SiX} label="Twitter" />
+          <SocialLink
+            href="https://www.facebook.com/people/BSides-SWFL/61566492254339/"
+            icon={SiFacebook}
+            label="Facebook"
+          />
+          <SocialLink href="https://discord.gg/yHfHPZ3JRb" icon={SiDiscord} label="Discord" />
+          <SocialLink href="https://www.youtube.com/@BSidesSWFL" icon={SiYoutube} label="YouTube" />
+          <SocialLink href="https://bsky.app/profile/bsidesswfl.bsky.social" icon={SiBluesky} label="BlueSky" />
+          <SocialLink href="https://www.linkedin.com/company/bsides-swfl/" icon={Linkedin} label="LinkedIn" />
+          <SocialLink href="/contactus" icon={NotebookPen} label="Contact Us" />
         </div>
-        <div className="text-center text-sm">
-          <p>© 2025 BSides SWFL. All rights reserved.</p>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-2"></div>
+
+        {/* Footer Content */}
+        <div className="space-y-2">
+          {/* Copyright */}
+          <div className="text-center">
+            <p className="text-white/70 text-sm font-medium">© 2025 BSides SWFL. All rights reserved.</p>
+          </div>
+
+          {/* Powered By */}
+          <div className="text-center">
+            <p className="text-white/60 text-sm flex items-center justify-center gap-2">
+              Powered by <a href="https://github.com/bsides-swfl/bsides-swfl.github.io" className="text-white/70 hover:text-white transition-all duration-200">
+                <span className="sr-only">BSides SWFL</span>
+                <Image src="/bsideslogo.ico" width={40} height={40} alt="BSides Logo" className="object-contain" />
+              </a>
+            </p>
+          </div>
         </div>
-        <div className="text-center text-sm">
-          <p>Powered by <a href="https://github.com/bsides-swfl/bsides-swfl.github.io" className="hover:text-gray-300" target="_blank" rel="noreferrer">BSides <Image src="/bsideslogo.ico" className="inline-block items-center" width={25} height={25} alt="BSides"></Image></a></p>
+
+        {/* Bottom Accent */}
+        <div className="mt-2 flex justify-center">
+          <div className="w-24 h-1 bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-400 rounded-full opacity-60"></div>
         </div>
       </div>
     </footer>
   )
 }
+
+// Social Media Link Component
+const SocialLink = ({ href, icon: Icon, label }) => (
+  <Link
+    href={href}
+    className="group p-3 text-white/80 hover:text-white transition-all duration-300 hover:scale-110 hover:bg-white/10 rounded-xl backdrop-blur-sm border border-transparent hover:border-white/20 hover:shadow-lg"
+    aria-label={label}
+    target={href.startsWith("http") ? "_blank" : undefined}
+    rel={href.startsWith("http") ? "noreferrer" : undefined}
+  >
+    <Icon size={20} className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+  </Link>
+)
