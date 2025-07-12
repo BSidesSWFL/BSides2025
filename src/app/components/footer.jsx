@@ -38,7 +38,10 @@ export default function Footer() {
               Powered by <a href="https://github.com/bsides-swfl/bsides-swfl.github.io" className="text-white/70 hover:text-white transition-all duration-200">
                 <span className="sr-only">BSides SWFL</span>
                 <Image src="/bsideslogo.ico" width={40} height={40} alt="BSides Logo" className="object-contain" />
-              </a>
+              </a>     |
+              <Link href="https://docs.google.com/document/d/1YChfNA9aJXRUQudrAq5ffu5QlHcwJtc2fsAr34wCKiw/edit?tab=t.0" className="text-white/60 text-xs no-underline hover:text-white transition-all duration-200">
+                Privacy Policy
+              </Link>
             </p>
           </div>
         </div>

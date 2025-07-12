@@ -1,72 +1,62 @@
-"use client";
+"use client"
 
 import { useState } from "react"
 import Link from "next/link"
-import { Search, Menu, X } from "lucide-react"
+import Image from "next/image"
+import { Search, Menu, X, ScrollText, Calendar, User2, Users, Computer, Handshake, Tickets, Award } from "lucide-react"
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prevIsOpen) => !prevIsOpen);
-  };
+    setIsMobileMenuOpen((prevIsOpen) => !prevIsOpen)
+  }
 
   return (
-    <nav className="bg-black light:bg-white shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-30">
-          <Link href="/" className="flex items-center">
-            <div className="w-40 h-10 rounded-full bg-purple-700 flex items-center justify-center mr-3 opacity-80">
-              <img src="bsideslogo.png" alt="bsides swfl logo" />
+    <nav className="bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-b border-purple-500/20 shadow-2xl fixed w-full top-0 z-50">
+      <div className="container mx-auto px-4 lg:px-6">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center group">
+            <div className="relative w-48 h-12 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg border border-white/20 transition-all duration-300 group-hover:scale-105 group-hover:shadow-xl group-hover:bg-white">
+              <Image
+                src="/bsideslogo.png"
+                alt="BSides SWFL Logo"
+                width={180}
+                height={40}
+                className="object-contain"
+                priority
+              />
             </div>
           </Link>
-
-          <div className="hidden md:flex items-center space-x-6">
-            <Link href="/aboutus" className="light:text-black text-white hover:text-purple-700">
-              About Us
+          <div className="flex flex-col mb-2 pt-2 md:pt-0 sm:flex-row gap-2 justify-center md:hidden">
+            <Link
+              href="https://lu.ma/btwze03o"
+              className="group flex items-center px-4 py-2.5 text-white/90 hover:text-white font-medium transition-all duration-200 hover:bg-white/10 rounded-xl backdrop-blur-sm border border-transparent hover:border-white/20 hover:scale-105"
+            >
+              <Image src="/kindpng_278375.png" alt="Kindpng" width={20} height={20} className="mr-2 opacity-80 group-hover:opacity-100 transition-opacity duration-200" />
+              <span className="bg-gradient-to-r from-orange-200 to-yellow-200 bg-clip-text text-transparent group-hover:from-orange-100 group-hover:to-yellow-100 transition-all duration-200">
+                Tickets
+              </span>
             </Link>
-
-            <Link href="/schedule" className="light:text-black text-white hover:text-purple-700">
-              Schedule
-            </Link>
-
-            <Link href="/speakers" className="light:text-black text-white hover:text-purple-700">
-              Speakers
-            </Link>
-
-            <Link href="/events" className="light:text-black text-white hover:text-purple-700">
-              Events
-            </Link>
-
-            <Link href="/workshops" className="light:text-black hidden text-white hover:text-purple-700">
-              Workshops
-            </Link>
-
-            <Link href="/sponsors" className="light:text-black text-white hover:text-purple-700">
-              Sponsors
-            </Link>
-
-            <Link href="/volunteer" className="light:text-black text-white hover:text-purple-700">
-              Volunteer
-            </Link>
-
-            <Link href="/tickets" className="light:text-black text-white hidden hover:text-purple-700">
-              Tickets
-            </Link>
-
-            <button aria-label="Search" className="light:text-black text-white hover:text-purple-700">
-              <Search size={20} />
-            </button>
           </div>
 
-          <div className="flex md:hidden items-center">
-            <button aria-label="Search" className="text-gray-700 mr-4">
-              <Search size={20} />
-            </button>
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-1">
+            <NavLink href="/aboutus" icon={ScrollText} label="About Us" />
+            <NavLink href="/volunteer" icon={Handshake} label="Volunteer" />
+            <NavLink href="/sponsors" icon={Award} label="Sponsors" />
+            <NavLink href="/speakers" icon={User2} label="Speakers" />
+            <NavLink href="/workshops" icon={Computer} label="Workshops" />
+            <NavLink href="/villages" icon={Users} label="Villages" />
+            <NavLink href="/schedule" icon={Calendar} label="Schedule" />
+          </div>
 
+          {/* Mobile Menu Controls */}
+          <div className="flex lg:hidden items-center space-x-3">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-700"
+              className="p-2 text-white hover:bg-white/10 rounded-lg transition-all duration-200"
               aria-label={isMobileMenuOpen ? "Close Menu" : "Open Menu"}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -75,45 +65,49 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white py-4 px-4 shadow-md">
-          <div className="flex flex-col space-y-4">
-            <Link href="/aboutus" className="text-gray-700 hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              About Us
-            </Link>
-
-            <Link href="/schedule" className="text-gray-700 hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              Schedule
-            </Link>
-
-            <Link href="/speakers" className="text-gray-700 hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              Speakers
-            </Link>
-
-            <Link href="/events" className="text-gray-700 hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              Events
-            </Link>
-
-            <Link href="/workshops" className="text-gray-700 hidden hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              Workshops
-            </Link>
-
-            <Link href="/sponsors" className="text-gray-700 hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              Sponsors
-            </Link>
-
-            <Link href="/volunteer" className="text-gray-700 hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              Volunteer
-            </Link>
-
-            <Link href="/tickets" className="text-gray-700  hidden hover:text-purple-700 py-2" onClick={toggleMobileMenu}>
-              Tickets
-            </Link>
+        <div className="lg:hidden bg-gradient-to-b from-purple-900/95 to-pink-900/95 backdrop-blur-xl border-t border-purple-500/20">
+          <div className="container mx-auto px-4 py-6 space-y-2">
+            <MobileNavLink href="/aboutus" icon={ScrollText} label="About Us" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/volunteer" icon={Handshake} label="Volunteer" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/sponsors" icon={Award} label="Sponsors" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/speakers" icon={User2} label="Speakers" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/workshops" icon={Computer} label="Workshops" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/villages" icon={Users} label="Villages" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/schedule" icon={Calendar} label="Schedule" onClick={toggleMobileMenu} />
           </div>
         </div>
       )}
     </nav>
-  );
-};
+  )
+}
+
+// Desktop Navigation Link Component
+const NavLink = ({ href, icon: Icon, label }) => (
+  <Link
+    href={href}
+    className="group flex items-center px-4 py-2 text-white/90 hover:text-white font-medium transition-all duration-200 hover:bg-white/10 rounded-xl backdrop-blur-sm border border-transparent hover:border-white/20 hover:scale-105"
+  >
+    <Icon size={18} className="mr-2 opacity-80 group-hover:opacity-100 transition-opacity duration-200" />
+    <span className="bg-gradient-to-r from-orange-200 to-yellow-200 bg-clip-text text-transparent group-hover:from-orange-100 group-hover:to-yellow-100 transition-all duration-200">
+      {label}
+    </span>
+  </Link>
+)
+
+// Mobile Navigation Link Component
+const MobileNavLink = ({ href, icon: Icon, label, onClick }) => (
+  <Link
+    href={href}
+    onClick={onClick}
+    className="group flex items-center px-4 py-3 text-white/90 hover:text-white font-medium transition-all duration-200 hover:bg-white/10 rounded-xl backdrop-blur-sm border border-transparent hover:border-white/20"
+  >
+    <Icon size={20} className="mr-3 opacity-80 group-hover:opacity-100 transition-opacity duration-200" />
+    <span className="bg-gradient-to-r from-orange-200 to-yellow-200 bg-clip-text text-transparent group-hover:from-orange-100 group-hover:to-yellow-100 transition-all duration-200">
+      {label}
+    </span>
+  </Link>
+)
 
 export default Navbar

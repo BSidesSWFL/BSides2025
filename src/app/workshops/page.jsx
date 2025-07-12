@@ -1,16 +1,35 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
+import Link from 'next/link';
+import PageHero from '../components/page-hero';
 
-const Workshops = () => {
+export default function Workshops() {
+
   return (
-    <>
-      <main className="max-w-5xl mx-auto  my-6 p-4">
-        <h1 className="text-4xl font-bold mb-8 text-teal-700 text-center">Workshops</h1>
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <script type="text/javascript" src={`https://sessionize.com/api/v2/${process.env.NEXT_PUBLIC_SESSIONIZE_KEY}/view/Sessions`}></script>
-        </section>
-      </main>
-    </>
+    <main className="min-h-screen wrapper-pages">
+      <PageHero
+        title="Lead a Workshop, Share What You Know"
+        subtitle="Our workshops offer immersive, hands-on sessions that dig deep into practical skills across the cybersecurity spectrum. Whether you’re teaching red teaming, OSINT, or something uniquely your own, this is your space to inspire learning and lead with impact."
+      />
+
+      <div className="max-w-5xl mx-auto px-6 py-16 text-slate-800 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4">Call for Workshops Now Open</h2>
+        <p className="text-lg text-slate-700 mb-4">
+          Are you passionate about teaching practical cybersecurity skills? We’re looking for instructors to lead 3–4 hour hands-on workshops at BSides SWFL on Friday, November 14th.
+        </p>
+        <p className="text-lg text-slate-700 mb-4">
+          Whether you're into red teaming, OSINT, reverse engineering, hardware hacking, or something entirely original — we want sessions that challenge, engage, and inspire.
+        </p>
+        <p className="text-lg text-slate-700 mb-4">
+          Workshops are reviewed anonymously and selected based on clarity, structure, and impact. All accepted instructors receive a complimentary conference pass.
+        </p>
+      </div>
+
+      <div className="text-center -mt-10 pb-40 md:pb-50">
+        <a href='https://sessionize.com/bsidesswfl2025/'>
+          <button className="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-700 transition-colors duration-200 w-[90%] md:w-auto"> Reach Out Today! <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
+          </button>
+        </a>
+      </div>
+    </main>
   )
 }
-
-export default Workshops
