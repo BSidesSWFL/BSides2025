@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Search, Menu, X, ScrollText, Calendar, User2, Users, Computer, Handshake, Award } from "lucide-react"
+import { Search, Menu, X, ScrollText, Calendar, User2, Users, Computer, Handshake, Tickets, Award } from "lucide-react"
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -29,6 +29,17 @@ const Navbar = () => {
               />
             </div>
           </Link>
+          <div className="flex flex-col mb-2 pt-2 md:pt-0 sm:flex-row gap-2 justify-center md:hidden">
+            <Link
+              href="https://lu.ma/btwze03o"
+              className="group flex items-center px-4 py-2.5 text-white/90 hover:text-white font-medium transition-all duration-200 hover:bg-white/10 rounded-xl backdrop-blur-sm border border-transparent hover:border-white/20 hover:scale-105"
+            >
+              <Image src="/kindpng_278375.png" alt="Kindpng" width={20} height={20} className="mr-2 opacity-80 group-hover:opacity-100 transition-opacity duration-200" />
+              <span className="bg-gradient-to-r from-orange-200 to-yellow-200 bg-clip-text text-transparent group-hover:from-orange-100 group-hover:to-yellow-100 transition-all duration-200">
+                Tickets
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">

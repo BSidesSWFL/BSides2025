@@ -12,7 +12,7 @@ export default function Volunteer() {
         />
         
         <div className="max-w-5xl mx-auto wrapper-pages p-4 md:mb-12 pt-4">
-          <div className="hs-form-frame mt-6 mb-12" data-region="na2" data-form-id="85ba1c51-8082-4134-bd2f-0e6f2f738603" data-portal-id="242985282"></div>
+          <div className="hs-form-frame mt-6 mb-14" data-region="na2" data-form-id="85ba1c51-8082-4134-bd2f-0e6f2f738603" data-portal-id="242985282"></div>
         </div>
       </main>
     </>

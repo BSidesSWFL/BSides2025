@@ -49,13 +49,13 @@ export default function AboutUs() {
 
   return (
     <main className="min-h-screen wrapper-pages">
-      <PageHero 
+      <PageHero
         title="About Us"
         subtitle="BSides SWFL is a community-built cybersecurity event where professionals, students, and enthusiasts come together to share ideas, gain hands-on experience, and grow the local infosec community. We celebrate curiosity, support newcomers, and provide a space where everyone can contribute."
       />
 
       {/* Main content */}
-      <div className="max-w-5xl mx-auto px-6 py-16 text-center text-slate-800 pb-30">
+      <div className="max-w-5xl mx-auto px-6 py-16 text-center text-slate-800 pb-40 md:pb-30">
         <Accordion type="single" className="w-full" collapsible>
           {AboutUsData.map((item, index) => (
             <AccordionItem key={item.id} value={`item-${index + 1}`} className="mb-4">
