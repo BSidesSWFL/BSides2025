@@ -49,7 +49,7 @@ export default function AboutUs() {
 
   return (
     <main className="min-h-screen wrapper-pages">
-      <PageHero 
+      <PageHero
         title="About Us"
         subtitle="BSides SWFL is a community-built cybersecurity event where professionals, students, and enthusiasts come together to share ideas, gain hands-on experience, and grow the local infosec community. We celebrate curiosity, support newcomers, and provide a space where everyone can contribute."
       />

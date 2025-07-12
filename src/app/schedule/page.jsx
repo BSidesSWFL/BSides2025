@@ -5,11 +5,11 @@ export default function SchedulePage() {
 
   return (
     <main className="min-h-screen wrapper-pages">
-      
+
       {/* Hero Section */}
-      <PageHero 
-        title="Theme: Hack the Hurricane, Defend the Coast" 
-        subtitle="This year’s theme—Hack the Hurricane, Defend the Coast—challenges us to stress-test our systems and build resilience in the face of chaos. From red team tactics to blue team defense, this is your call to act, adapt, and secure what matters most." 
+      <PageHero
+        title="Theme: Hack the Hurricane, Defend the Coast"
+        subtitle="This year’s theme—Hack the Hurricane, Defend the Coast—challenges us to stress-test our systems and build resilience in the face of chaos. From red team tactics to blue team defense, this is your call to act, adapt, and secure what matters most."
       />
 
       {/* Schedule Overview */}
@@ -42,11 +42,11 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16">
-        <script 
-          type="text/javascript" 
+        <script
+          type="text/javascript"
           src={`https://sessionize.com/api/v2/${process.env.NEXT_PUBLIC_SESSIONIZE_KEY}/view/GridSmart`}>
         </script>
-      </div>    
+      </div>
     </main>
   );
 }
