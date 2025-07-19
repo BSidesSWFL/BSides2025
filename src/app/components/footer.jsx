@@ -64,6 +64,6 @@ const SocialLink = ({ href, icon: Icon, label }) => (
     target={href.startsWith("http") ? "_blank" : undefined}
     rel={href.startsWith("http") ? "noreferrer" : undefined}
   >
-    <Icon size={20} className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+    <Icon size={20} className="opacity-80 group-hover:opacity-100 transition-opacity duration-200" />
   </Link>
 )
