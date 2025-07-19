@@ -177,9 +177,9 @@ const SponsorsPage = () => {
 
           {/* Sponsor Buttons */}
           <div className="flex flex-col mb-16 sm:flex-row gap-4 justify-center">
-            <Link href="/sponsor-form" className='w-full sm:w-auto'>
+            <Link href="/BSides-SWFL-Sponsorship-Packet-2025.pdf" target="_blank" rel="noopener noreferrer" className='w-full sm:w-auto'>
               <button className="bg-gradient-to-r from-cyan-500 to-teal-600 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-colors duration-200 w-full md:w-auto">
-                Sponsorship Package
+                Download Sponsorship Package
               </button>
             </Link>
 
