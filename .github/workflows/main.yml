@@ -1,0 +1,36 @@
+name: Deploy From Staging
+
+# This section defines when the workflow will run.
+on:
+  # Trigger the workflow on push events.
+  push:
+    # Only run for pushes to the "staging" branch.
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out  repository code.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js environment based on project's version file.
+      - name: Setup Node.js from .nvmrc
+        uses: actions/setup-node@v4
+        with:
+          # Reads the Node.js version from the .nvmrc file.
+          node-version-file: 'package.json'
+          cache: 'npm'
+
+      # Step 3: Install dependencies.
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 4: Run the deployment script.
+      - name: Deploy to Staging
+        run: npm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_DEPLOY_KEY }}

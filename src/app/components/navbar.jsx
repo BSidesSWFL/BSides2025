@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-6 space-y-2">
             <MobileNavLink href="/aboutus" icon={ScrollText} label="About Us" onClick={toggleMobileMenu} />
             <MobileNavLink href="/volunteer" icon={Handshake} label="Volunteer" onClick={toggleMobileMenu} />
-            <MobileNavLink href="https://lu.ma/btwze03o" className="hidden md:block" icon={Tickets} label="Tickets" onClick={toggleMobileMenu} />
+            <MobileNavLink href="https://lu.ma/btwze03o" icon={Tickets} label="Tickets" onClick={toggleMobileMenu} />
             <MobileNavLink href="/sponsors" icon={Award} label="Sponsors" onClick={toggleMobileMenu} />
             <MobileNavLink href="/speakers" icon={User2} label="Speakers" onClick={toggleMobileMenu} />
             <MobileNavLink href="/workshops" icon={Computer} label="Workshops" onClick={toggleMobileMenu} />
