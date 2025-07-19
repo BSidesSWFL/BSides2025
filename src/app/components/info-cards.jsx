@@ -18,7 +18,7 @@ export default function InfoCards() {
             </p>
           </CardContent>
           <CardFooter className="flex justify-center">
-            <Link href="/BSides-SWFL-Sponsorship-Packet-2025.pdf" target="_blank" rel="noopener noreferrer" className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">
+            <Link href="/BSides SWFL Sponsorship Packet 2025.pdf" target="_blank" rel="noopener noreferrer" className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">
               <Button className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">2025 Sponsor Kit</Button>
             </Link>
           </CardFooter>
