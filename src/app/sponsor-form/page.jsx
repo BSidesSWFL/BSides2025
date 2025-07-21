@@ -15,7 +15,7 @@ export default function SponsorForm() {
         window.hbspt.forms.create({
           region: "na2",
           portalId: "242985282",
-          formId: "2lY7nq2lKRnaQ2KeKNUJKdw40o0n6",
+          formId: "958ee7ab-694a-4676-90d8-a78a35424a77",
           target: "#hubspot-sponsor-form"
         });
       }
