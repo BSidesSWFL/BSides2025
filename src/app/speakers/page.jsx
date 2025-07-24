@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
+import FeaturedSpeakers from "../components/featured-speakers";
 
 export default function SpeakersPage() {
   // Sample speakers data
@@ -10,6 +11,8 @@ export default function SpeakersPage() {
         title="Our Speakers"
         subtitle="Get ready to learn from a diverse lineup of experts, innovators, and passionate professionals sharing their knowledge across cybersecurity disciplines. Whether it's offensive, defensive, or everything in between, these speakers bring real-world experience and fresh perspectives to the BSides SWFL stage."
       />
+
+      <FeaturedSpeakers />
 
       {/* Call For Action Section */}
       <div className="max-w-5xl mx-auto px-6 py-16 text-slate-800 text-center">
