@@ -5,18 +5,7 @@ import { Tickets } from 'lucide-react'
 export default function Hero() {
   return (
     <div className="relative wrapper-hero py-16 md:py-4 rounded-xl">
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-1/4 left-1/6 w-20 h-20 bg-purple-400 rounded-full opacity-20"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-pink-300 rounded-full opacity-20"></div>
-        <div className="absolute top-1/2 right-1/6 w-16 h-16 bg-yellow-300 rounded-full opacity-20"></div>
-
-        {/* Sparkles */}
-        <div className="absolute top-1/6 left-1/3 w-2 h-2 bg-white rounded-full opacity-70"></div>
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full opacity-70"></div>
-        <div className="absolute bottom-1/4 left-1/2 w-2 h-2 bg-white rounded-full opacity-70"></div>
-      </div>
-
+      {/* Removed decorative background elements as per new design */}
       <div className="container flex flex-col md:flex-row items-center mx-auto px-4 relative overflow-hidden">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl lg:mt-8 md:mt-4 font-bold text-orange-200">BSides SWFL 2025</h1>
