@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../../../components/ui/accordion";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../../components/ui/accordion";
 
 const speakers = [
   {
