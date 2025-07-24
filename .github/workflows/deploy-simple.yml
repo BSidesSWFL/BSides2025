@@ -12,14 +12,13 @@ jobs:
     
     steps:
       - name: Checkout code
-        run: |
-          git clone https://github.com/${{ github.repository }}.git .
-          git checkout ${{ github.sha }}
+        uses: actions/checkout@v4
         
       - name: Setup Node.js
-        run: |
-          curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-          sudo apt-get install -y nodejs
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
           
       - name: Install dependencies
         run: npm ci
