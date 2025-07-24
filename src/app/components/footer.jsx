@@ -5,7 +5,7 @@ import { SiX, SiYoutube, SiDiscord, SiFacebook, SiBluesky } from "@icons-pack/re
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 w-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-t border-purple-500/20 shadow-2xl opacity-97 mt-auto md:h-[14.5vh] lg:h-[16vh]">
+    <footer className="fixed bottom-0 left-0 right-0 w-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-b border-t border-purple-500/20 shadow-2xl opacity-97 mt-auto md:h-[14.5vh] lg:h-[16vh]">
       <div className="container mx-auto px-4 lg:px-6 py-2">
         {/* Social Media Links */}
         <div className="flex flex-wrap justify-center gap-1 md:gap-2 lg:gap-4">
@@ -59,11 +59,11 @@ export default function Footer() {
 const SocialLink = ({ href, icon: Icon, label }) => (
   <Link
     href={href}
-    className="group p-3 text-white/80 hover:text-white transition-all duration-300 hover:scale-110 hover:bg-white/10 rounded-xl backdrop-blur-sm border border-transparent hover:border-white/20 hover:shadow-lg"
+    className="group flex items-center px-2 py-2 mb-2 text-white/90 hover:text-white font-medium transition-all duration-200 hover:bg-white/10 rounded-xl backdrop-blur-sm bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 hover:border-white/20 hover:scale-105"
     aria-label={label}
     target={href.startsWith("http") ? "_blank" : undefined}
     rel={href.startsWith("http") ? "noreferrer" : undefined}
   >
-    <Icon size={20} className="transition-all duration-300 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+    <Icon size={20} className="opacity-80 group-hover:opacity-100 transition-opacity duration-200 " />
   </Link>
 )
