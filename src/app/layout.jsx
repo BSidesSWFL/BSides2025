@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
         <script src="https://animatedicons.co/scripts/embed-animated-icons.js"></script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-purple-800 via-purple-400 to-blue-500 h-auto lg:h-[100vh] overflow-x-hidden`}>
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-purple-800 via-purple-400 to-blue-500 h-auto overflow-x-hidden`}>
         <video
           autoPlay
           loop
