@@ -40,7 +40,7 @@ export default function Hero() {
           </div>
           <div className="flex flex-col mb-2 pt-8 md:pt-0 md:mb-8 sm:flex-row gap-2 justify-center">
             <Link href="https://lu.ma/btwze03o" className='w-full sm:w-auto'>
-              <button className="bg-gradient-to-r from-cyan-500 to-teal-600 hover:bg-gradient-to-r hover:from-cyan-600 hover:to-teal-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-colors duration-200 w-full md:w-[725px] lg:w-[925px] ">
+              <button className="bg-gradient-to-r from-cyan-500 to-teal-600 hover:bg-gradient-to-r hover:from-cyan-600 hover:to-teal-700 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-colors duration-200 w-full md:w-[725px] lg:w-[925px]">
                 <Image src="/kindpng_278375.png" alt="Ticket Icon" width={20} height={20} priority className="mr-2 pb-1 inline-block" />
                 Get Your Tickets Now!
                 <Image src="/kindpng_278375.png" alt="Ticket Icon" width={20} height={20} priority className="ml-2 pb-1 inline-block" />
