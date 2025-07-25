@@ -27,8 +27,6 @@ const speakers = [
 export default function SpeakersSection() {
   return (
     <section className="my-12">
-      {/* Debug: Render a plain image at the top */}
-      <img src="/Jim-Routh.png" width="140" height="140" alt="Debug Jim Routh" />
       <h2 className="text-3xl font-bold text-center mb-8 text-orange-900">Featured Speakers</h2>
       <div className="flex flex-wrap justify-center gap-8">
         {speakers.map((speaker, idx) => (
