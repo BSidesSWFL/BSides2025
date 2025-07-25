@@ -21,7 +21,7 @@ export default function Hero() {
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl lg:mt-8 md:mt-4 font-bold text-orange-200">BSides SWFL 2025</h1>
           <p className="text-xl md:text-2xl text-cyan-100 lg:mt-4 mt-4">November 14th & 15th, 2025</p>
-          <p className="text-md md:text-lg mt-8 lg:mt-8 text-cyan-100 share-tech-regular ">
+          <p className="text-md md:text-lg mt-8 lg:mt-8 text-cyan-100 share-tech-regular mb-10">
             A major cybersecurity event is coming to Southwest Florida on November 14th and 15th at Florida SouthWestern State College. The first-ever BSides SWFL conference will focus on real-world cybersecurity challenges and solutions. Industry experts and students will connect to explore the evolving threats and innovations shaping today’s cyber landscape.
           </p>
 
