@@ -37,7 +37,6 @@ export default function SpeakersSection() {
                 alt={speaker.name}
                 width={140}
                 height={140}
-                className="rounded-full object-cover border-4 border-orange-200 shadow-md mb-4"
                 loading="lazy"
               />
               <CardTitle className="text-lg text-orange-800 text-center mb-2">{speaker.name}</CardTitle>
