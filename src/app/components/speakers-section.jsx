@@ -30,25 +30,26 @@ const speakers = [
 
 export default function SpeakersSection() {
   return (
-    <section className="my-12">
-      <h2 className="text-3xl font-bold text-center mb-8 text-orange-900">Featured Speakers</h2>
-      <div className="flex flex-wrap justify-center gap-8">
+    <section className="my-10">
+      <h2 className="text-3xl font-bold text-center mb-6 text-orange-900">Featured Speakers</h2>
+      <div className="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-6">
         {speakers.map((speaker, idx) => (
-          <Card key={idx} className="w-80 flex flex-col items-center p-4 bg-white/90 shadow-lg">
+          <Card key={idx} className="w-80 flex flex-col items-center p-3 md:p-4 bg-white/90 shadow-lg">
             <img
               src={speaker.photo}
               alt={speaker.name}
               width={140}
               height={140}
               loading="lazy"
+              className="mb-2"
             />
-            <CardTitle className="text-lg text-orange-800 text-center mb-1">{speaker.name}</CardTitle>
-            <div className="text-sm text-slate-700 text-center mb-2 font-semibold">{speaker.title}</div>
-            <CardContent className="w-full px-0">
+            <CardTitle className="text-lg text-orange-800 text-center mb-0.5">{speaker.name}</CardTitle>
+            <div className="text-sm text-slate-700 text-center mb-1 font-semibold">{speaker.title}</div>
+            <CardContent className="w-full px-0 pt-1 pb-2">
               <Accordion type="single" collapsible>
                 <AccordionItem value="bio">
-                  <AccordionTrigger className="text-base font-semibold text-purple-800">Bio</AccordionTrigger>
-                  <AccordionContent className="text-slate-700 text-sm font-normal bg-orange-50 rounded-b-xl px-4 py-2">
+                  <AccordionTrigger className="text-base font-semibold text-purple-800 py-1">Bio</AccordionTrigger>
+                  <AccordionContent className="text-slate-700 text-sm font-normal bg-orange-50 rounded-b-xl px-3 py-1">
                     {speaker.bio}
                   </AccordionContent>
                 </AccordionItem>
