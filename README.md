@@ -1,7 +1,7 @@
 [![Next](https://img.shields.io/badge/NextJS-v15.2.0-blue.svg?logo=next.js)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-v19-teal.svg?logo=react)](https://react.dev)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-v4-lightblue.svg?logo=tailwindcss)](https://nextjs.org)
-[![@Opennextjs/Cloudflare](https://img.shields.io/badge/OpenNextJS%20Cloudflare-v1.2.1-orange.svg?logo=cloudflare)](https://www.cloudflare.com/)
+[![@Opennextjs/Cloudflare](https://img.shields.io/badge/OpenNextJS%20Cloudflare-v1.3.0-orange.svg?logo=cloudflare)](https://www.cloudflare.com/)
 
 ---
 
