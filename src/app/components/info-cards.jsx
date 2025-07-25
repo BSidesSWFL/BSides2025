@@ -4,10 +4,10 @@ import Link from "next/link"
 
 export default function InfoCards() {
   return (
-    <div className="container mx-auto px-4 py-12 wrapper-5 w-auto mb-12 lg:mb-20 items-center justify-center text-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="container mx-auto px-4 py-6 wrapper-5 w-auto mb-6 lg:mb-10 items-center justify-center text-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         {/* Sponsors Card */}
-        <Card className="mb-8 opacity-77">
+        <Card className="mb-4 opacity-77">
           <CardHeader>
             <CardTitle className="text-2xl"><span className="text-purple-800">📲</span> <span className="text-gray-700">Call For Sponsors</span></CardTitle>
           </CardHeader>
@@ -24,25 +24,8 @@ export default function InfoCards() {
           </CardFooter>
         </Card>
 
-        {/* Tickets Card */}
-        {/* <Card className="mb-8 opacity-77">
-          <CardHeader>
-            <CardTitle className="text-2xl"><span className="text-purple-800">🎟️</span> <span className="text">Tickets On Sale</span></CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700 text-center">
-              Early bird pricing is available until September 15th. Secure your spot today!
-            </p>
-          </CardContent>
-          <CardFooter className="flex justify-center">
-            <Link href="/tickets" className="bg-purple-800 rounded-md hover:bg-purple-500 text-white">
-              <Button className="bg-purple-800 hover:bg-purple-500 text-white">Buy Now!</Button>
-            </Link>
-          </CardFooter>
-        </Card> */}
-
         {/* Volunteer Card */}
-        <Card className="mb-8 opacity-77">
+        <Card className="mb-4 opacity-77">
           <CardHeader>
             <CardTitle className="text-2xl"><span className="text-purple-800">🙌</span> <span className="text">We Need Your Help!</span></CardTitle>
           </CardHeader>
