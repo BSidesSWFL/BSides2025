@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Card, CardHeader, CardTitle, CardContent } from "../ui/card";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../../components/ui/accordion";
 
@@ -33,12 +32,13 @@ export default function SpeakersSection() {
         {speakers.map((speaker, idx) => (
           <Card key={idx} className="w-80 flex flex-col items-center p-4 bg-white/90 shadow-lg">
             <CardHeader className="flex flex-col items-center">
-              <Image
+              <img
                 src={speaker.photo}
                 alt={speaker.name}
                 width={140}
                 height={140}
                 className="rounded-full object-cover border-4 border-orange-200 shadow-md mb-4"
+                loading="lazy"
               />
               <CardTitle className="text-lg text-orange-800 text-center mb-2">{speaker.name}</CardTitle>
             </CardHeader>
