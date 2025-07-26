@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           autoPlay
           loop
           muted
-          className="fixed hidden sm:block -z-10 min-w-full h-auto cover max-w-[1200px] md:max-w-[100vw] md:h-[870px] lg:h-[1080px] xl:h-[870px] 2xl:h-[1080px] opacity-45"
+          className="fixed hidden md:block -z-10 min-w-full h-auto cover max-w-[1200px] md:max-w-[100vw] md:h-[870px] lg:h-[1080px] xl:h-[870px] 2xl:h-[1080px] opacity-45"
         >
           <source src="/video.mp4" type="video/mp4" />
         </video>
