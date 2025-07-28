@@ -31,10 +31,12 @@ jobs:
             npm install
           fi
           
-      - name: Fix @ast-grep/napi issue
+      - name: Fix all native dependencies
         run: |
           rm -rf node_modules/@ast-grep
-          npm install @ast-grep/napi --force
+          rm -rf node_modules/lightningcss
+          rm -rf node_modules/@tailwindcss
+          npm install @ast-grep/napi lightningcss @tailwindcss/oxide --force
         
       - name: Build and deploy to Cloudflare Workers
         run: npm run deploy
