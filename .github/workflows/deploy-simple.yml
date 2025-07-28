@@ -30,6 +30,9 @@ jobs:
           else
             npm install
           fi
+          
+      - name: Rebuild native dependencies
+        run: npm rebuild
         
       - name: Build and deploy to Cloudflare Workers
         run: npm run deploy
