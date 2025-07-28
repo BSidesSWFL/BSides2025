@@ -33,8 +33,8 @@ jobs:
           
       - name: Fix native dependencies
         run: |
-          npm uninstall @ast-grep/napi
-          npm install @ast-grep/napi
+          npm uninstall @ast-grep/napi lightningcss
+          npm install @ast-grep/napi lightningcss
         
       - name: Build and deploy to Cloudflare Workers
         run: npm run deploy
