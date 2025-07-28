@@ -31,8 +31,10 @@ jobs:
             npm install
           fi
           
-      - name: Rebuild native dependencies
-        run: npm rebuild
+      - name: Fix native dependencies
+        run: |
+          npm uninstall @ast-grep/napi
+          npm install @ast-grep/napi
         
       - name: Build and deploy to Cloudflare Workers
         run: npm run deploy
