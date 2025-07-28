@@ -31,10 +31,8 @@ jobs:
             npm install
           fi
           
-      - name: Fix native dependencies
-        run: |
-          npm uninstall @ast-grep/napi lightningcss @tailwindcss/oxide
-          npm install @ast-grep/napi lightningcss @tailwindcss/oxide
+      - name: Rebuild all native dependencies
+        run: npm rebuild --update-binary
         
       - name: Build and deploy to Cloudflare Workers
         run: npm run deploy
