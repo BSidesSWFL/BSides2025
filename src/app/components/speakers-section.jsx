@@ -34,21 +34,21 @@ export default function SpeakersSection() {
       <h2 className="text-3xl font-bold text-center mb-6 text-orange-900">Featured Speakers</h2>
       <div className="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-6">
         {speakers.map((speaker, idx) => (
-          <Card key={idx} className="w-80 flex flex-col items-center p-3 md:p-4 bg-white/90 shadow-lg">
+          <Card key={idx} className="w-80 flex flex-col items-center p-6 bg-white/90 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-in-out">
             <img
               src={speaker.photo}
               alt={speaker.name}
-              width={140}
-              height={140}
+              width={150}
+              height={150}
               loading="lazy"
-              className="mb-2"
+              className="mb-2 w-32 h-32 object-cover"
             />
             <CardTitle className="text-lg text-orange-800 text-center mb-0.5">{speaker.name}</CardTitle>
             <div className="text-sm text-slate-700 text-center mb-1 font-semibold">{speaker.title}</div>
             <CardContent className="w-full px-0 pt-1 pb-2">
               <Accordion type="single" collapsible>
                 <AccordionItem value="bio">
-                  <AccordionTrigger className="text-base font-semibold text-purple-800 py-1">Bio</AccordionTrigger>
+                  <AccordionTrigger className="text-base font-semibold text-purple-800 py-1 hover:no-underline hover:cursor-pointer">Bio</AccordionTrigger>
                   <AccordionContent className="text-slate-700 text-sm font-normal bg-orange-50 rounded-b-xl px-3 py-1">
                     {speaker.bio}
                   </AccordionContent>
