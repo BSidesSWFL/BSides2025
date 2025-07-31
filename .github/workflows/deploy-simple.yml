@@ -20,8 +20,23 @@ jobs:
           node-version: '22'
           cache: 'npm'
           
+      - name: Clear npm cache
+        run: npm cache clean --force
+        
       - name: Install dependencies
-        run: npm ci
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+          
+      - name: Fix all native dependencies
+        run: |
+          rm -rf node_modules/@ast-grep
+          rm -rf node_modules/lightningcss
+          rm -rf node_modules/@tailwindcss
+          npm install @ast-grep/napi lightningcss @tailwindcss/oxide --force
         
       - name: Build and deploy to Cloudflare Workers
         run: npm run deploy
