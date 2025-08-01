@@ -196,8 +196,8 @@ html {
 
 .wrapper-hero {
   height: auto;
-  min-height: 45vh;
-  margin-top: 80px;
+  min-height: 35vh;
+  margin-top: 5px;
   align-items: center;
   background: 
     linear-gradient(

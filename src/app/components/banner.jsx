@@ -1,0 +1,9 @@
+
+
+export default function Banner() {
+  return (
+    <div className="mt-25 w-full border-t-4 border-b-4 border-t-white border-b-white h-26 bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 py-1 text-center shadow-md z-60">
+      <h1 className="text-4xl font-bold text-white text-center md:pt-5">November 14th & 15th, 2025</h1>
+    </div>
+  );
+}
