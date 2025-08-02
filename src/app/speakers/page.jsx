@@ -15,7 +15,7 @@ export default function SpeakersPage() {
       <SpeakersSection />
 
       {/* Call For Action Section */}
-      <div className="max-w-5xl mx-auto px-6 py-8 text-slate-800 text-center">
+      <div className="max-w-5xl mx-auto px-6 py-4 mb-12 text-slate-800 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-2">Call for Speakers Now Open</h2>
         <p className="text-lg text-slate-700 mb-2">
           Have a talk, workshop, or idea that belongs on the BSides SWFL stage? We’re now accepting proposals from speakers of all backgrounds and experience levels.
@@ -25,7 +25,7 @@ export default function SpeakersPage() {
         </p>
       </div>
 
-      <div className="text-center -mt-8 pb-16 md:pb-20">
+      <div className="text-center -mt-8 pb-24 md:pb-20">
         <a href='https://sessionize.com/bsidesswfl2025/'>
           <button className="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-700 transition-colors duration-200 w-[90%] md:w-auto">
             Reach Out Today! <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
@@ -34,7 +34,7 @@ export default function SpeakersPage() {
       </div>
 
       {/* Embedded SpeakerWall */}
-      <div className="max-w-6xl mx-auto px-6 pb-10">
+      <div className="max-w-6xl mx-auto px-6 pb-24">
         <script
           type="text/javascript"
           src={`https://sessionize.com/api/v2/${process.env.NEXT_PUBLIC_SESSIONIZE_KEY}/view/SpeakerWall`}>

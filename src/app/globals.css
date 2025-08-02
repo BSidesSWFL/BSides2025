@@ -158,8 +158,21 @@ html {
 
 .wrapper-hero {
   height: auto;
-  min-height: 45vh;
-  margin-top: 80px;
+  min-height: 35vh;
+  margin-top: 5px;
+  align-items: center;
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') no-repeat center center/cover;
+}
+
+.wrapper-pagehero {
+  margin-top: 25px;
   align-items: center;
   background: 
     linear-gradient(
