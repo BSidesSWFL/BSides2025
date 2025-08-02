@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Powered By */}
           <div className="text-center">
             <p className="text-white/60 text-sm flex items-center justify-center gap-2">
-              Powered by <a href="https://github.com/bsides-swfl/bsides-swfl.github.io" className="text-white/70 hover:text-white transition-all duration-200">
+              Powered by <a href="https://bsidesswfl.org/" className="text-white/70 hover:text-white transition-all duration-200">
                 <span className="sr-only">BSides SWFL</span>
                 <Image src="/bsideslogo.ico" width={30} height={20} alt="BSides Logo" className="object-contain" />
               </a>     |

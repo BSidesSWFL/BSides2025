@@ -13,8 +13,7 @@ export default function SchedulePage() {
       />
 
       {/* Schedule Overview */}
-      <div className="max-w-5xl mx-auto mt-12 px-6 py-16 md:py-12 lg:pb-48
- text-slate-800 text-center">
+      <div className="max-w-5xl mx-auto mt-12 px-6 py-16 md:py-12 lg:pb-48 text-slate-800 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">Two Days of Community and Cybersecurity</h2>
         <p className="text-lg mb-8">
           BSides SWFL 2025 spans two full days of learning, sharing, and hands-on exploration.
