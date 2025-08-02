@@ -5,10 +5,10 @@ import { SiX, SiYoutube, SiDiscord, SiFacebook, SiBluesky } from "@icons-pack/re
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-b border-t border-purple-500/20 shadow-2xl opacity-97 mt-auto md:h-[14.5vh] lg:h-[16vh]">
+    <footer className="fixed bottom-0 left-0 right-0 w-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-b border-t border-purple-500/20 shadow-2xl opacity-97 mt-12 md:h-[14.5vh] lg:h-[20vh] xl:h-[21vh] 2xl:h-[17vh]">
       <div className="container mx-auto px-4 lg:px-6 py-2">
         {/* Social Media Links */}
-        <div className="flex flex-wrap justify-center gap-1 md:gap-2 lg:gap-4">
+        <div className="flex flex-wrap justify-center gap-1 md:gap-2 lg:gap-4 mt-3">
           <SocialLink href="https://x.com/BSides_SWFL" icon={SiX} label="Twitter" />
           <SocialLink
             href="https://www.facebook.com/people/BSides-SWFL/61566492254339/"
@@ -37,7 +37,7 @@ export default function Footer() {
             <p className="text-white/60 text-sm flex items-center justify-center gap-2">
               Powered by <a href="https://bsidesswfl.org/" className="text-white/70 hover:text-white transition-all duration-200">
                 <span className="sr-only">BSides SWFL</span>
-                <Image src="/bsideslogo.ico" width={40} height={40} alt="BSides Logo" className="object-contain" />
+                <Image src="/bsideslogo.ico" width={30} height={20} alt="BSides Logo" className="object-contain" />
               </a>     |
               <Link href="https://docs.google.com/document/d/1YChfNA9aJXRUQudrAq5ffu5QlHcwJtc2fsAr34wCKiw/edit?tab=t.0" className="text-white/60 text-xs no-underline hover:text-white transition-all duration-200">
                 Privacy Policy
