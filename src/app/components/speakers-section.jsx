@@ -41,7 +41,7 @@ export default function SpeakersSection() {
               width={150}
               height={150}
               loading="lazy"
-              className="mb-2 w-32 h-32 object-cover"
+              className="mb-2 w-32 h-32 object-cover rounded-sm"
             />
             <CardTitle className="text-lg text-orange-800 text-center mb-0.5">{speaker.name}</CardTitle>
             <div className="text-sm text-slate-700 text-center mb-1 font-semibold">{speaker.title}</div>
