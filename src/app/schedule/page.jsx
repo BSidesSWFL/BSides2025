@@ -2,8 +2,33 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
+import { useEffect } from "react";
 
 export default function SchedulePage() {
+  useEffect(() => {
+    // Create a script element and append it to the container
+    const container = document.getElementById('sessionize-schedule-container');
+    if (!container) return;
+
+    // Clear any existing content
+    container.innerHTML = '';
+
+    // Create and load the Sessionize script
+    const script = document.createElement('script');
+    script.src = 'https://sessionize.com/api/v2/8yksjn7s/view/GridSmart';
+    script.type = 'text/javascript';
+    script.async = true;
+    
+    // Append to container so it executes in the right context
+    container.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      if (container && container.contains(script)) {
+        container.removeChild(script);
+      }
+    };
+  }, []);
   return (
     <main className="min-h-screen wrapper-pages">
 
@@ -43,14 +68,7 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
-        <iframe
-          src="https://sessionize.com/api/v2/8yksjn7s/view/GridSmart"
-          width="100%"
-          height="1000"
-          frameBorder="0"
-          title="BSides SWFL 2025 Schedule"
-          style={{ border: 'none', minHeight: '1000px' }}
-        />
+        <div id="sessionize-schedule-container"></div>
       </div>
     </main>
   );
