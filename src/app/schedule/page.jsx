@@ -42,10 +42,7 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
-        <script
-          type="text/javascript"
-          src={`https://sessionize.com/api/v2/${process.env.NEXT_PUBLIC_SESSIONIZE_KEY}/view/GridSmart`}>
-        </script>
+        <script type="text/javascript" src="https://sessionize.com/api/v2/8yksjn7s/view/GridSmart"></script>
       </div>
     </main>
   );
