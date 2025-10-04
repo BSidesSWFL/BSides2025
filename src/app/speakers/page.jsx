@@ -3,33 +3,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
 import SpeakersSection from "../components/speakers-section";
-import { useEffect } from "react";
+import Script from "next/script";
 
 export default function SpeakersPage() {
-  useEffect(() => {
-    // Create a script element and append it to the container
-    const container = document.getElementById('sessionize-speakers-container');
-    if (!container) return;
-
-    // Clear any existing content
-    container.innerHTML = '';
-
-    // Create and load the Sessionize script
-    const script = document.createElement('script');
-    script.src = 'https://sessionize.com/api/v2/8yksjn7s/view/Speakers';
-    script.type = 'text/javascript';
-    script.async = true;
-    
-    // Append to container so it executes in the right context
-    container.appendChild(script);
-
-    // Cleanup function
-    return () => {
-      if (container && container.contains(script)) {
-        container.removeChild(script);
-      }
-    };
-  }, []);
   return (
     <main className="min-h-screen wrapper-pages">
       <PageHero
@@ -42,7 +18,16 @@ export default function SpeakersPage() {
 
       {/* Embedded Speakers */}
       <div className="max-w-6xl mx-auto px-6 pb-24">
-        <div id="sessionize-speakers-container"></div>
+        <div 
+          dangerouslySetInnerHTML={{
+            __html: `
+              <div class="sessionize-loader" data-sessionize-load-url="https://sessionize.com/api/v2/8yksjn7s/view/Speakers?under=True">
+                <div class="sz-spinner"></div>
+              </div>
+              <script type="text/javascript" src="https://sessionize.com/api/v2/8yksjn7s/view/Speakers"></script>
+            `
+          }}
+        />
       </div>
     </main>
   )
