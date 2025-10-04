@@ -2,43 +2,8 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
-import { useEffect } from "react";
 
 export default function SchedulePage() {
-  useEffect(() => {
-    // Load Sessionize script after component mounts
-    const loadSessionizeScript = () => {
-      // Remove any existing script
-      const existingScript = document.querySelector('script[src*="sessionize.com/api/v2/8yksjn7s/view/GridSmart"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-
-      // Create new script element
-      const script = document.createElement('script');
-      script.src = 'https://sessionize.com/api/v2/8yksjn7s/view/GridSmart';
-      script.type = 'text/javascript';
-      script.async = true;
-      script.defer = true;
-      
-      // Add to document head
-      document.head.appendChild(script);
-      
-      console.log('Sessionize GridSmart script added to head');
-    };
-
-    // Load script after a short delay to ensure DOM is ready
-    const timer = setTimeout(loadSessionizeScript, 100);
-    
-    return () => {
-      clearTimeout(timer);
-      const script = document.querySelector('script[src*="sessionize.com/api/v2/8yksjn7s/view/GridSmart"]');
-      if (script) {
-        script.remove();
-      }
-    };
-  }, []);
-
   return (
     <main className="min-h-screen wrapper-pages">
 
@@ -78,7 +43,14 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
-        {/* Sessionize content will be injected here */}
+        <iframe
+          src="https://sessionize.com/api/v2/8yksjn7s/view/GridSmart"
+          width="100%"
+          height="1000"
+          frameBorder="0"
+          title="BSides SWFL 2025 Schedule"
+          style={{ border: 'none', minHeight: '1000px' }}
+        />
       </div>
     </main>
   );
