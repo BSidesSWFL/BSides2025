@@ -2,9 +2,51 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
-import Script from "next/script";
+import { useEffect } from "react";
 
 export default function SchedulePage() {
+  useEffect(() => {
+    // Create the Sessionize embed structure
+    const container = document.getElementById('sessionize-schedule-container');
+    if (!container) return;
+
+    // Clear any existing content
+    container.innerHTML = '';
+
+    // Create the loader div with the proper structure
+    const loaderDiv = document.createElement('div');
+    loaderDiv.className = 'sessionize-loader';
+    loaderDiv.setAttribute('data-sessionize-load-url', 'https://sessionize.com/api/v2/8yksjn7s/view/GridSmart?under=True');
+    
+    // Create the spinner
+    const spinner = document.createElement('div');
+    spinner.className = 'sz-spinner';
+    loaderDiv.appendChild(spinner);
+    
+    // Append to container
+    container.appendChild(loaderDiv);
+
+    // Now load the Sessionize script
+    const script = document.createElement('script');
+    script.src = 'https://sessionize.com/api/v2/8yksjn7s/view/GridSmart';
+    script.type = 'text/javascript';
+    script.async = true;
+    
+    // Add script to document head
+    document.head.appendChild(script);
+
+    // Cleanup function
+    return () => {
+      if (container) {
+        container.innerHTML = '';
+      }
+      const existingScript = document.querySelector('script[src*="sessionize.com/api/v2/8yksjn7s/view/GridSmart"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+    };
+  }, []);
+
   return (
     <main className="min-h-screen wrapper-pages">
 
@@ -44,16 +86,7 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
-        <div 
-          dangerouslySetInnerHTML={{
-            __html: `
-              <div class="sessionize-loader" data-sessionize-load-url="https://sessionize.com/api/v2/8yksjn7s/view/GridSmart?under=True">
-                <div class="sz-spinner"></div>
-              </div>
-              <script type="text/javascript" src="https://sessionize.com/api/v2/8yksjn7s/view/GridSmart"></script>
-            `
-          }}
-        />
+        <div id="sessionize-schedule-container"></div>
       </div>
     </main>
   );
