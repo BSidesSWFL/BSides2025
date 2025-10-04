@@ -2,49 +2,21 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function SchedulePage() {
+  const [sessionizeContent, setSessionizeContent] = useState('');
+
   useEffect(() => {
-    // Create the Sessionize embed structure
-    const container = document.getElementById('sessionize-schedule-container');
-    if (!container) return;
-
-    // Clear any existing content
-    container.innerHTML = '';
-
-    // Create the loader div with the proper structure
-    const loaderDiv = document.createElement('div');
-    loaderDiv.className = 'sessionize-loader';
-    loaderDiv.setAttribute('data-sessionize-load-url', 'https://sessionize.com/api/v2/8yksjn7s/view/GridSmart?under=True');
-    
-    // Create the spinner
-    const spinner = document.createElement('div');
-    spinner.className = 'sz-spinner';
-    loaderDiv.appendChild(spinner);
-    
-    // Append to container
-    container.appendChild(loaderDiv);
-
-    // Now load the Sessionize script
-    const script = document.createElement('script');
-    script.src = 'https://sessionize.com/api/v2/8yksjn7s/view/GridSmart';
-    script.type = 'text/javascript';
-    script.async = true;
-    
-    // Add script to document head
-    document.head.appendChild(script);
-
-    // Cleanup function
-    return () => {
-      if (container) {
-        container.innerHTML = '';
-      }
-      const existingScript = document.querySelector('script[src*="sessionize.com/api/v2/8yksjn7s/view/GridSmart"]');
-      if (existingScript) {
-        existingScript.remove();
-      }
-    };
+    // Fetch the Sessionize content directly
+    fetch('https://sessionize.com/api/v2/8yksjn7s/view/GridSmart?under=True')
+      .then(response => response.text())
+      .then(html => {
+        setSessionizeContent(html);
+      })
+      .catch(error => {
+        console.error('Error loading Sessionize content:', error);
+      });
   }, []);
 
   return (
@@ -86,7 +58,18 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
-        <div id="sessionize-schedule-container"></div>
+        {sessionizeContent && (
+          <div 
+            dangerouslySetInnerHTML={{ __html: sessionizeContent }}
+            style={{ minHeight: '800px' }}
+          />
+        )}
+        {!sessionizeContent && (
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading schedule...</p>
+          </div>
+        )}
       </div>
     </main>
   );
