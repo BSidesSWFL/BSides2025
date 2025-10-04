@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
 import SpeakersSection from "../components/speakers-section";
+import Script from "next/script";
 
 export default function SpeakersPage() {
   // Sample speakers data
@@ -17,7 +18,10 @@ export default function SpeakersPage() {
 
       {/* Embedded Speakers */}
       <div className="max-w-6xl mx-auto px-6 pb-24">
-        <script type="text/javascript" src="https://sessionize.com/api/v2/8yksjn7s/view/Speakers"></script>
+        <Script
+          src="https://sessionize.com/api/v2/8yksjn7s/view/Speakers"
+          strategy="afterInteractive"
+        />
       </div>
     </main>
   )

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
+import Script from "next/script";
 
 export default function SchedulePage() {
 
@@ -42,7 +43,10 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
-        <script type="text/javascript" src="https://sessionize.com/api/v2/8yksjn7s/view/GridSmart"></script>
+        <Script
+          src="https://sessionize.com/api/v2/8yksjn7s/view/GridSmart"
+          strategy="afterInteractive"
+        />
       </div>
     </main>
   );
