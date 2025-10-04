@@ -33,10 +33,30 @@ export default function SpeakersPage() {
       {/* Embedded Speakers */}
       <div className="max-w-6xl mx-auto px-6 pb-24">
         {sessionizeContent && (
-          <div 
-            dangerouslySetInnerHTML={{ __html: sessionizeContent }}
-            style={{ minHeight: '600px' }}
-          />
+          <>
+            <style jsx>{`
+              .sessionize-container {
+                contain: layout style;
+                isolation: isolate;
+              }
+              .sessionize-container * {
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+              }
+            `}</style>
+            <div 
+              dangerouslySetInnerHTML={{ __html: sessionizeContent }}
+              style={{ 
+                minHeight: '600px',
+                overflow: 'hidden',
+                position: 'relative',
+                zIndex: 1,
+                contain: 'layout style',
+                isolation: 'isolate'
+              }}
+              className="sessionize-container"
+            />
+          </>
         )}
         {!sessionizeContent && (
           <div className="text-center py-12">
