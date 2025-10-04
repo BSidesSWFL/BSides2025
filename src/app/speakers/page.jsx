@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
 import SpeakersSection from "../components/speakers-section";
