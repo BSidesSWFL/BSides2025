@@ -23,8 +23,8 @@
     "next": "15.3.0",
     "nextjs": "^0.0.3",
     "node": "^22.18.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
