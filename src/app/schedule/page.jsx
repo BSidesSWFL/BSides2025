@@ -1,7 +1,23 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
+import { useEffect, useState } from "react";
 
 export default function SchedulePage() {
+  const [sessionizeContent, setSessionizeContent] = useState('');
+
+  useEffect(() => {
+    // Fetch the Sessionize content directly
+    fetch('https://sessionize.com/api/v2/8yksjn7s/view/GridSmart?under=True')
+      .then(response => response.text())
+      .then(html => {
+        setSessionizeContent(html);
+      })
+      .catch(error => {
+        console.error('Error loading Sessionize content:', error);
+      });
+  }, []);
 
   return (
     <main className="min-h-screen wrapper-pages">
@@ -42,10 +58,38 @@ export default function SchedulePage() {
 
       {/* Schedule Embed */}
       <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
-        <script
-          type="text/javascript"
-          src={`https://sessionize.com/api/v2/${process.env.NEXT_PUBLIC_SESSIONIZE_KEY}/view/GridSmart`}>
-        </script>
+        {sessionizeContent && (
+          <>
+            <style jsx>{`
+              .sessionize-container {
+                contain: layout style;
+                isolation: isolate;
+              }
+              .sessionize-container * {
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+              }
+            `}</style>
+            <div 
+              dangerouslySetInnerHTML={{ __html: sessionizeContent }}
+              style={{ 
+                minHeight: '800px',
+                overflow: 'hidden',
+                position: 'relative',
+                zIndex: 1,
+                contain: 'layout style',
+                isolation: 'isolate'
+              }}
+              className="sessionize-container"
+            />
+          </>
+        )}
+        {!sessionizeContent && (
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading schedule...</p>
+          </div>
+        )}
       </div>
     </main>
   );
