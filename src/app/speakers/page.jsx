@@ -31,7 +31,7 @@ export default function SpeakersPage() {
 
 
       {/* Embedded Speakers */}
-      <div className="max-w-6xl mx-auto px-6 pb-24">
+      <div className="max-w-6xl mx-auto px-6 pb-44 lg:pb-40">
         {sessionizeContent && (
           <>
             <style jsx>{`

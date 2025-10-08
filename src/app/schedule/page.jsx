@@ -57,7 +57,7 @@ export default function SchedulePage() {
       </div>
 
       {/* Schedule Embed */}
-      <div className="max-w-6xl mx-auto px-6 pb-16 md:pb-4">
+      <div className="max-w-6xl mx-auto px-6 pb-48 md:pb-4 lg:pb-40">
         {sessionizeContent && (
           <>
             <style jsx>{`

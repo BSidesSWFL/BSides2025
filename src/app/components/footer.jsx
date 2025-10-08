@@ -5,7 +5,7 @@ import { SiX, SiYoutube, SiDiscord, SiFacebook, SiBluesky } from "@icons-pack/re
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 right-0 w-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-b border-t border-purple-500/20 shadow-2xl opacity-97 mt-12 md:h-[14.5vh] lg:h-[20vh] xl:h-[21vh] 2xl:h-[17vh]">
+    <footer className="fixed -bottom-5 z-10 left-0 right-0 w-full bg-gradient-to-r from-purple-900 via-purple-800 to-pink-800 backdrop-blur-lg border-b border-t border-purple-500/20 shadow-2xl mt-12 h-[21vh] md:h-[13vh] lg:h-[20vh] xl:h-[21vh] 2xl:h-[17vh]">
       <div className="container mx-auto px-4 lg:px-6 py-2">
         {/* Social Media Links */}
         <div className="flex flex-wrap justify-center gap-1 md:gap-2 lg:gap-4 mt-3">
