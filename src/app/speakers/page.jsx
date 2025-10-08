@@ -1,9 +1,24 @@
+"use client";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
 import SpeakersSection from "../components/speakers-section";
+import { useEffect, useState } from "react";
 
 export default function SpeakersPage() {
-  // Sample speakers data
+  const [sessionizeContent, setSessionizeContent] = useState('');
+
+  useEffect(() => {
+    // Fetch the Sessionize content directly
+    fetch('https://sessionize.com/api/v2/8yksjn7s/view/Speakers?under=True')
+      .then(response => response.text())
+      .then(html => {
+        setSessionizeContent(html);
+      })
+      .catch(error => {
+        console.error('Error loading Sessionize content:', error);
+      });
+  }, []);
 
   return (
     <main className="min-h-screen wrapper-pages">
@@ -14,31 +29,41 @@ export default function SpeakersPage() {
 
       <SpeakersSection />
 
-      {/* Call For Action Section */}
-      <div className="max-w-5xl mx-auto px-6 py-4 mb-12 text-slate-800 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold mb-2">Call for Speakers Now Open</h2>
-        <p className="text-lg text-slate-700 mb-2">
-          Have a talk, workshop, or idea that belongs on the BSides SWFL stage? We’re now accepting proposals from speakers of all backgrounds and experience levels.
-        </p>
-        <p className="text-lg text-slate-700 mb-2">
-          Whether you're sharing technical skills, research, lessons learned, or unique stories from the field — we want to hear from you.
-        </p>
-      </div>
 
-      <div className="text-center -mt-8 pb-24 md:pb-20">
-        <a href='https://sessionize.com/bsidesswfl2025/'>
-          <button className="bg-teal-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:bg-teal-700 transition-colors duration-200 w-[90%] md:w-auto">
-            Reach Out Today! <img className="inline-block w-12 h-12 ml-4" src="bsideslogo.png" />
-          </button>
-        </a>
-      </div>
-
-      {/* Embedded SpeakerWall */}
-      <div className="max-w-6xl mx-auto px-6 pb-24">
-        <script
-          type="text/javascript"
-          src={`https://sessionize.com/api/v2/${process.env.NEXT_PUBLIC_SESSIONIZE_KEY}/view/SpeakerWall`}>
-        </script>
+      {/* Embedded Speakers */}
+      <div className="max-w-6xl mx-auto px-6 pb-44 lg:pb-40">
+        {sessionizeContent && (
+          <>
+            <style jsx>{`
+              .sessionize-container {
+                contain: layout style;
+                isolation: isolate;
+              }
+              .sessionize-container * {
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+              }
+            `}</style>
+            <div 
+              dangerouslySetInnerHTML={{ __html: sessionizeContent }}
+              style={{ 
+                minHeight: '600px',
+                overflow: 'hidden',
+                position: 'relative',
+                zIndex: 1,
+                contain: 'layout style',
+                isolation: 'isolate'
+              }}
+              className="sessionize-container"
+            />
+          </>
+        )}
+        {!sessionizeContent && (
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto"></div>
+            <p className="mt-4 text-gray-600">Loading speakers...</p>
+          </div>
+        )}
       </div>
     </main>
   )
