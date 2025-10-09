@@ -23,7 +23,7 @@ const SponsorsPage = () => {
   ];
 
   const bronzeSponsors = [
-    { name: "Lucid Services Group", logo: <img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-8 w-auto mx-auto" />, website: "https://www.lucidservicesgroup.com" },
+    { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-24 ml-1 w-auto mx-auto" /></Link>, website: "" },
     { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Let's Make This Official", logo: "🦠", website: "https://www.bsidesswfl.org/sponsor-form" },
@@ -48,28 +48,27 @@ const SponsorsPage = () => {
 
   const SponsorCard = ({ sponsor, size }) => (
     <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl mx-auto transition-all duration-300 transform hover:-translate-y-1 border border-orange-100 flex flex-col items-center justify-center text-center group ${sizeClasses[size]}`}>
-      <div className="mb-3 group-hover:scale-110 transition-transform duration-300">
+      <div className="mt-4 group-hover:scale-110 transition-transform duration-300">
         {sponsor.logo}
       </div>
-      <h3 className={`font-bold text-teal-800 ${size === 'large' ? 'text-xl' : size === 'medium' ? 'text-lg' : size === 'small' ? 'text-base' : 'text-sm'}`}>
-        {sponsor.name}
-      </h3>
-      <div className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <a
-          href={sponsor.website}
-          className="text-orange-600 hover:text-orange-800 text-sm font-medium"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Fill Sponsor Form →
-        </a>
+      <div className="mt-2 transition-opacity duration-300">
+        <h3 className={`font-bold text-teal-800 ${size === 'large' ? 'text-xl' : size === 'medium' ? 'text-lg' : size === 'small' ? 'text-base' : 'text-sm'}`}>
+          <a
+            href={sponsor.website}
+            className="text-orange-600 hover:text-orange-800 text-sm font-medium"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            {sponsor.name}
+          </a>
+        </h3>
       </div>
     </div>
   );
 
   // SponsorTier component
   const SponsorTier = ({ title, sponsors, tierColor, icon: Icon, cardSize, description }) => (
-    <div className="mb-16">
+    <div className="mb-12">
       <div className="text-center mb-8">
         <div className={`inline-flex items-center gap-3 px-6 py-3 rounded-full ${tierColor} mb-4`}>
           <Icon size={24} className="text-white" />
