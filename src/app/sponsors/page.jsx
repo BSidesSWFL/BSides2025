@@ -23,7 +23,7 @@ const SponsorsPage = () => {
   ];
 
   const bronzeSponsors = [
-    { name: "Become A Sponsor", logo: "🏢", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "Lucid Services Group", logo: <img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-8 w-auto mx-auto" />, website: "https://www.lucidservicesgroup.com" },
     { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Let's Make This Official", logo: "🦠", website: "https://www.bsidesswfl.org/sponsor-form" },
