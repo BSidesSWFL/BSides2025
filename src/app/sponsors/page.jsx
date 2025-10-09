@@ -192,7 +192,7 @@ const SponsorsPage = () => {
         </div>
 
         {/* Sponsors Section */}
-        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-30">
+        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-30 lg:pb-32">
           <SponsorTier
             title="Platinum Sponsors"
             sponsors={platinumSponsors}
