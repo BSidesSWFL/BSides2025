@@ -1,12 +1,20 @@
 import React from 'react';
-import { Users, Zap, Award } from 'lucide-react';
+import { Shield, Users, Zap, Award, Heart } from 'lucide-react';
 import Link from 'next/link';
 import PageHero from "../components/page-hero";
 
 const SponsorsPage = () => {
+  const platinumSponsors = [];
+
+  const goldSponsors = [];
+
+  const silverSponsors = [];
+
   const bronzeSponsors = [
-    { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-24 ml-1 w-auto mx-auto" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-24 w-auto mx-auto" /></Link>, website: "" }
   ];
+
+  const communitySponsors = [];
 
   // SponsorCard component
   const sizeClasses = {
@@ -162,14 +170,60 @@ const SponsorsPage = () => {
 
         {/* Sponsors Section */}
         <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-30 lg:pb-32">
-          <SponsorTier
-            title="Bronze Sponsors"
-            sponsors={bronzeSponsors}
-            tierColor="bg-gradient-to-r from-orange-600 to-red-700"
-            icon={Zap}
-            cardSize="tiny"
-            description="Essential contributors to our mission of building a stronger SWFL security community"
-          />
+          {platinumSponsors.length > 0 && (
+            <SponsorTier
+              title="Platinum Sponsors"
+              sponsors={platinumSponsors}
+              tierColor="bg-gradient-to-r from-slate-500 to-gray-600"
+              icon={Award}
+              cardSize="large"
+              description="Our premier partners who provide exceptional support for the BSides SWFL community"
+            />
+          )}
+
+          {goldSponsors.length > 0 && (
+            <SponsorTier
+              title="Gold Sponsors"
+              sponsors={goldSponsors}
+              tierColor="bg-gradient-to-r from-amber-500 to-orange-600"
+              icon={Award}
+              cardSize="medium"
+              description="Strategic partners committed to advancing cybersecurity education in Southwest Florida"
+            />
+          )}
+
+          {silverSponsors.length > 0 && (
+            <SponsorTier
+              title="Silver Sponsors"
+              sponsors={silverSponsors}
+              tierColor="bg-gradient-to-r from-cyan-500 to-teal-600"
+              icon={Shield}
+              cardSize="small"
+              description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
+            />
+          )}
+
+          {bronzeSponsors.length > 0 && (
+            <SponsorTier
+              title="Bronze Sponsors"
+              sponsors={bronzeSponsors}
+              tierColor="bg-gradient-to-r from-orange-600 to-red-700"
+              icon={Zap}
+              cardSize="tiny"
+              description="Essential contributors to our mission of building a stronger SWFL security community"
+            />
+          )}
+
+          {communitySponsors.length > 0 && (
+            <SponsorTier
+              title="Community Sponsors"
+              sponsors={communitySponsors}
+              tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
+              icon={Heart}
+              cardSize="small"
+              description="Local organizations and groups that champion cybersecurity education in Southwest Florida"
+            />
+          )}
         </div>
       </div>
     </main>
