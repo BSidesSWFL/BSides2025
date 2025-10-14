@@ -13,8 +13,8 @@ export default function Villages() {
       />
 
       <div className="max-w-5xl mx-auto wrapper-pages p-4 md:mb-12 pt-4 -mt-12">
-        <div class="hs-form-frame mt-6 mb-14" data-region="na2" data-form-id="fb4869ea-c35c-4d70-9ddb-7508f9d6cf1f" data-portal-id="242985282">
+        <div className="hs-form-frame mt-6 mb-14" data-region="na2" data-form-id="fb4869ea-c35c-4d70-9ddb-7508f9d6cf1f" data-portal-id="242985282"></div>
       </div>
     </main>
-  )
+  );
 }
