@@ -2,7 +2,7 @@
 
 ## Overview
 
-This implementation provides automatic caching of Sessionize API data in the browser's localStorage. When users first visit the site, all Sessionize data is fetched and cached locally for 24 hours, significantly improving performance on subsequent page loads.
+This implementation provides automatic caching of Sessionize API data in the browser's localStorage. When users first visit the site, all Sessionize data is fetched and cached locally for 8 hours, significantly improving performance on subsequent page loads.
 
 ## How It Works
 
@@ -17,7 +17,7 @@ This implementation provides automatic caching of Sessionize API data in the bro
 ### Subsequent Visits
 - If cached data exists and is less than 24 hours old, it's used immediately
 - No API calls are made, resulting in instant page loads
-- After 24 hours, the cache expires and fresh data is fetched
+- After 8 hours, the cache expires and fresh data is fetched
 
 ### Error Handling
 - If API calls fail, the system attempts to use expired cached data as a fallback
@@ -111,7 +111,7 @@ const SESSIONIZE_ENDPOINTS = {
 ## Benefits
 
 1. **Faster Page Loads**: After initial visit, Sessionize data loads instantly
-2. **Reduced API Calls**: Only fetches fresh data every 24 hours
+2. **Reduced API Calls**: Only fetches fresh data every 8 hours
 3. **Offline Capability**: Site remains functional with cached data during API outages
 4. **Better User Experience**: No loading spinners after initial cache
 5. **Cost Savings**: Fewer API requests to Sessionize
