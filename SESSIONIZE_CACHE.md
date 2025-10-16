@@ -148,7 +148,7 @@ To test the cache system:
 
 ### Stale Data
 - Clear cache manually using debug panel or browser dev tools
-- Or wait for 24-hour expiration
+- Or wait for 8-hour expiration
 
 ### Performance Issues
 - If localStorage is full, clear other site data
