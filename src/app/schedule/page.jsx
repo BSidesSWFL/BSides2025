@@ -2,22 +2,10 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/ui/card"
 import PageHero from "../components/page-hero";
-import { useEffect, useState } from "react";
+import { useSessionize } from "../context/SessionizeProvider";
 
 export default function SchedulePage() {
-  const [sessionizeContent, setSessionizeContent] = useState('');
-
-  useEffect(() => {
-    // Fetch the Sessionize content directly
-    fetch('https://sessionize.com/api/v2/8yksjn7s/view/GridSmart?under=True')
-      .then(response => response.text())
-      .then(html => {
-        setSessionizeContent(html);
-      })
-      .catch(error => {
-        console.error('Error loading Sessionize content:', error);
-      });
-  }, []);
+  const { schedule: sessionizeContent, loading } = useSessionize();
 
   return (
     <main className="min-h-screen wrapper-pages">
@@ -84,7 +72,7 @@ export default function SchedulePage() {
             />
           </>
         )}
-        {!sessionizeContent && (
+        {(loading || !sessionizeContent) && (
           <div className="text-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto"></div>
             <p className="mt-4 text-gray-600">Loading schedule...</p>

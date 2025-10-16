@@ -34,8 +34,8 @@ export default function SpeakersSection() {
             <CardTitle className="text-lg text-orange-800 text-center mb-0.5">{speaker.name}</CardTitle>
             <div className="text-sm text-slate-700 text-center mb-1 font-semibold">{speaker.title}</div>
             <CardContent className="w-full px-0 pt-1 pb-2">
-              <Accordion type="single" collapsible>
-                <AccordionItem value="bio">
+              <Accordion type="single" collapsible key={`accordion-${idx}`}>
+                <AccordionItem value={`bio-${idx}`}>
                   <AccordionTrigger className="text-base font-semibold text-purple-800 py-1 hover:no-underline hover:cursor-pointer">Bio</AccordionTrigger>
                   <AccordionContent className="text-slate-700 text-sm font-normal bg-orange-50 rounded-b-xl px-3 py-1">
                     {speaker.bio}

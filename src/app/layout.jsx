@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Banner from "./components/banner";
 import Footer from "./components/footer";
+import ClientLayout from "./components/client-layout";
+import CacheDebug from "./components/cache-debug";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,9 +44,12 @@ export default function RootLayout({ children }) {
         </video>
         <Navbar />
         <Banner />
-        <main className="max-w-5xl w-auto min-h-screen md:w-[100vw] bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 mx-auto rounded-t-2xl opacity-92 md:opacity-98">
-          {children}
-        </main>
+        <ClientLayout>
+          <main className="max-w-5xl w-auto min-h-screen md:w-[100vw] bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 mx-auto rounded-t-2xl opacity-92 md:opacity-98">
+            {children}
+          </main>
+          <CacheDebug />
+        </ClientLayout>
         <Footer />
       </body>
     </html>
