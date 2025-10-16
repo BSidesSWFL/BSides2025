@@ -15,7 +15,7 @@ This implementation provides automatic caching of Sessionize API data in the bro
 4. All components that need Sessionize data access it from the context
 
 ### Subsequent Visits
-- If cached data exists and is less than 24 hours old, it's used immediately
+- If cached data exists and is less than 8 hours old, it's used immediately
 - No API calls are made, resulting in instant page loads
 - After 8 hours, the cache expires and fresh data is fetched
 
