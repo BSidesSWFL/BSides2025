@@ -16,7 +16,7 @@ const SponsorsPage = () => {
   ];
 
   const silverSponsors = [
-    { name: "SimSpace", logo: <Link href="https://simspace.com/"><div className="h-24 w-auto mx-auto flex items-center justify-center bg-gray-100 rounded-lg border-2 border-gray-300"><span className="text-gray-600 font-bold text-lg">SimSpace</span></div></Link>, website: "" },
+    { name: "", logo: <Link href="https://simspace.com/"><img src="/SimSpace.png" alt="SimSpace" className="h-24 w-auto mx-auto" /></Link>, website: "" },
     { name: "Become A Sponsor", logo: "⚡", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Name Here", logo: "🚨", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://www.bsidesswfl.org/sponsor-form" },
@@ -25,7 +25,7 @@ const SponsorsPage = () => {
 
   const bronzeSponsors = [
     { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-24 w-auto mx-auto" /></Link>, website: "" },
-    { name: "Material Security", logo: <Link href="https://material.security/"><div className="h-24 w-auto mx-auto flex items-center justify-center bg-gray-100 rounded-lg border-2 border-gray-300"><span className="text-gray-600 font-bold text-lg">Material Security</span></div></Link>, website: "" },
+    { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-24 w-auto mx-auto" /></Link>, website: "" },
     { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://www.bsidesswfl.org/sponsor-form" },
     { name: "Let's Make This Official", logo: "🦠", website: "https://www.bsidesswfl.org/sponsor-form" },
@@ -41,7 +41,7 @@ const SponsorsPage = () => {
   ];
 
   const inKindSponsors = [
-    { name: "Black Hills Information Security", logo: <Link href="https://www.blackhillsinfosec.com/"><div className="h-24 w-auto mx-auto flex items-center justify-center bg-gray-100 rounded-lg border-2 border-gray-300"><span className="text-gray-600 font-bold text-lg">Black Hills InfoSec</span></div></Link>, website: "" }
+    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-24 w-auto mx-auto" /></Link>, website: "" }
   ];
 
   // SponsorCard component
