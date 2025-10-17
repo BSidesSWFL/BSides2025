@@ -45,10 +45,10 @@ const SponsorsPage = () => {
         </div>
         <p className="text-teal-700 max-w-2xl mx-auto">{description}</p>
       </div>
-      <div className={`grid gap-8 justify-items-center ${cardSize === 'large' ? 'grid-cols-1 md:grid-cols-2' :
-        cardSize === 'medium' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' :
-          cardSize === 'small' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' :
-            'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+      <div className={`flex flex-wrap gap-8 justify-center ${cardSize === 'large' ? '' :
+        cardSize === 'medium' ? '' :
+          cardSize === 'small' ? '' :
+            ''
         }`}>
         {sponsors.map((sponsor, index) => (
           <SponsorCard key={index} sponsor={sponsor} size={cardSize} />
@@ -123,7 +123,7 @@ const SponsorsPage = () => {
         </div>
 
         {/* Sponsors Section */}
-        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-40 lg:pb-48">
+        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-60 lg:pb-72">
           {silverSponsors.length > 0 && (
             <SponsorTier
               title="Silver Sponsors"
