@@ -1,44 +1,19 @@
 import React from 'react';
-import { Shield, Users, Zap, Award, Heart } from 'lucide-react';
+import { Shield, Users, Zap } from 'lucide-react';
 import Link from 'next/link';
 import PageHero from "../components/page-hero";
 
 const SponsorsPage = () => {
-  const platinumSponsors = [
-    { name: "Become A Sponsor", logo: "🛡️", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Name Here", logo: "🔐", website: "https://www.bsidesswfl.org/sponsor-form" }
-  ];
-
-  const goldSponsors = [
-    { name: "Become A Sponsor", logo: "🎯", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Name Here", logo: "📊", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Logo Could Be Famous", logo: "☁️", website: "https://www.bsidesswfl.org/sponsor-form" }
-  ];
-
   const silverSponsors = [
-    { name: "", logo: <Link href="https://simspace.com/"><img src="/SimSpace.png" alt="SimSpace" className="h-24 w-auto mx-auto" /></Link>, website: "" },
-    { name: "Become A Sponsor", logo: "⚡", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Name Here", logo: "🚨", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Logo Could Be Famous", logo: "🔍", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Swag Bag Royalty", logo: "🔬", website: "https://www.bsidesswfl.org/sponsor-form" },
+    { name: "", logo: <Link href="https://simspace.com/"><img src="/SimSpace.png" alt="SimSpace" className="h-24 w-auto mx-auto" /></Link>, website: "" }
   ];
 
   const bronzeSponsors = [
     { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-24 w-auto mx-auto" /></Link>, website: "" },
-    { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-24 w-auto mx-auto" /></Link>, website: "" },
-    { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Logo Could Be Famous", logo: "🔧", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Let's Make This Official", logo: "🦠", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Buy Us Coffee", logo: "🔑", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Sticker Worthy?", logo: "📋", website: "https://www.bsidesswfl.org/sponsor-form" }
+    { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-24 w-auto mx-auto" /></Link>, website: "" }
   ];
 
-  const communitySponsors = [
-    { name: "Become A Community Sponsor", logo: "🏛️", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Name Here", logo: "🎓", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Your Logo Could Be Famous", logo: "🌐", website: "https://www.bsidesswfl.org/sponsor-form" },
-    { name: "Let's Make This Official", logo: "👥", website: "https://www.bsidesswfl.org/sponsor-form" }
-  ];
+  const communitySponsors = [];
 
   const inKindSponsors = [
     { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-24 w-auto mx-auto" /></Link>, website: "" }
@@ -54,20 +29,8 @@ const SponsorsPage = () => {
 
   const SponsorCard = ({ sponsor, size }) => (
     <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl mx-auto transition-all duration-300 transform hover:-translate-y-1 border border-orange-100 flex flex-col items-center justify-center text-center group ${sizeClasses[size]}`}>
-      <div className="mt-4 group-hover:scale-110 transition-transform duration-300">
+      <div className="group-hover:scale-110 transition-transform duration-300">
         {sponsor.logo}
-      </div>
-      <div className="mt-2 transition-opacity duration-300">
-        <h3 className={`font-bold text-teal-800 ${size === 'large' ? 'text-xl' : size === 'medium' ? 'text-lg' : size === 'small' ? 'text-base' : 'text-sm'}`}>
-          <a
-            href={sponsor.website}
-            className="text-orange-600 hover:text-orange-800 text-sm font-medium"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            {sponsor.name}
-          </a>
-        </h3>
       </div>
     </div>
   );
@@ -161,50 +124,38 @@ const SponsorsPage = () => {
 
         {/* Sponsors Section */}
         <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-30 lg:pb-32">
-          <SponsorTier
-            title="Platinum Sponsors"
-            sponsors={platinumSponsors}
-            tierColor="bg-gradient-to-r from-slate-500 to-gray-600"
-            icon={Award}
-            cardSize="large"
-            description="Our premier partners who provide exceptional support for the BSides SWFL community"
-          />
+          {silverSponsors.length > 0 && (
+            <SponsorTier
+              title="Silver Sponsors"
+              sponsors={silverSponsors}
+              tierColor="bg-gradient-to-r from-cyan-500 to-teal-600"
+              icon={Shield}
+              cardSize="small"
+              description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
+            />
+          )}
 
-          <SponsorTier
-            title="Gold Sponsors"
-            sponsors={goldSponsors}
-            tierColor="bg-gradient-to-r from-amber-500 to-orange-600"
-            icon={Award}
-            cardSize="medium"
-            description="Strategic partners committed to advancing cybersecurity education in Southwest Florida"
-          />
+          {bronzeSponsors.length > 0 && (
+            <SponsorTier
+              title="Bronze Sponsors"
+              sponsors={bronzeSponsors}
+              tierColor="bg-gradient-to-r from-orange-600 to-red-700"
+              icon={Zap}
+              cardSize="tiny"
+              description="Essential contributors to our mission of building a stronger SWFL security community"
+            />
+          )}
 
-          <SponsorTier
-            title="Silver Sponsors"
-            sponsors={silverSponsors}
-            tierColor="bg-gradient-to-r from-cyan-500 to-teal-600"
-            icon={Shield}
-            cardSize="small"
-            description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
-          />
-
-          <SponsorTier
-            title="Bronze Sponsors"
-            sponsors={bronzeSponsors}
-            tierColor="bg-gradient-to-r from-orange-600 to-red-700"
-            icon={Zap}
-            cardSize="tiny"
-            description="Essential contributors to our mission of building a stronger SWFL security community"
-          />
-
-          <SponsorTier
-            title="Community Sponsors"
-            sponsors={communitySponsors}
-            tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
-            icon={Heart}
-            cardSize="small"
-            description="Local organizations and groups that champion cybersecurity education in Southwest Florida"
-          />
+          {communitySponsors.length > 0 && (
+            <SponsorTier
+              title="Community Sponsors"
+              sponsors={communitySponsors}
+              tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
+              icon={Heart}
+              cardSize="small"
+              description="Local organizations and groups that champion cybersecurity education in Southwest Florida"
+            />
+          )}
 
           {inKindSponsors.length > 0 && (
             <SponsorTier
