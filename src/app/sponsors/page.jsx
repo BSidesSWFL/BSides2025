@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Users, Zap } from 'lucide-react';
+import { Shield, Users, Zap, Award } from 'lucide-react';
 import Link from 'next/link';
 import PageHero from "../components/page-hero";
 
