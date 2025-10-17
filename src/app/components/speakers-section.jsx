@@ -26,9 +26,9 @@ export default function SpeakersSection() {
   return (
     <section className="my-10">
       <h2 className="text-3xl font-bold text-center mb-6 text-orange-900">Featured Speakers</h2>
-      <div className="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-6">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-8 max-w-6xl mx-auto">
         {speakers.map((speaker, idx) => (
-          <Card key={idx} className="w-80 flex flex-col items-center p-6 bg-white/90 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-in-out">
+          <Card key={idx} className="w-80 md:w-72 lg:w-80 flex flex-col items-center p-6 bg-white/90 shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-in-out">
             <img
               src={speaker.photo}
               alt={speaker.name}
