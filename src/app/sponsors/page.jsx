@@ -5,26 +5,26 @@ import PageHero from "../components/page-hero";
 
 const SponsorsPage = () => {
   const silverSponsors = [
-    { name: "", logo: <Link href="https://simspace.com/"><img src="/SimSpace.png" alt="SimSpace" className="h-24 w-auto mx-auto" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://simspace.com/"><img src="/SimSpace.png" alt="SimSpace" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
   const bronzeSponsors = [
-    { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-24 w-auto mx-auto" /></Link>, website: "" },
-    { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-24 w-auto mx-auto" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" },
+    { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
   const communitySponsors = [];
 
   const inKindSponsors = [
-    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-24 w-auto mx-auto" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
   // SponsorCard component
   const sizeClasses = {
-    large: "w-full sm:w-80 h-56 p-8",
-    medium: "w-full sm:w-64 h-48 p-6",
-    small: "w-full sm:w-48 h-40 p-4",
-    tiny: "w-full sm:w-40 h-32 p-2"
+    large: "w-full sm:w-96 h-64 p-8",
+    medium: "w-full sm:w-80 h-56 p-6",
+    small: "w-full sm:w-72 h-48 p-6",
+    tiny: "w-full sm:w-64 h-40 p-4"
   };
 
   const SponsorCard = ({ sponsor, size }) => (
@@ -45,10 +45,10 @@ const SponsorsPage = () => {
         </div>
         <p className="text-teal-700 max-w-2xl mx-auto">{description}</p>
       </div>
-      <div className={`grid gap-6 ${cardSize === 'large' ? 'grid-cols-1 md:grid-cols-2' :
+      <div className={`grid gap-8 justify-items-center ${cardSize === 'large' ? 'grid-cols-1 md:grid-cols-2' :
         cardSize === 'medium' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' :
-          cardSize === 'small' ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' :
-            'grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'
+          cardSize === 'small' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' :
+            'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
         }`}>
         {sponsors.map((sponsor, index) => (
           <SponsorCard key={index} sponsor={sponsor} size={cardSize} />
@@ -123,7 +123,7 @@ const SponsorsPage = () => {
         </div>
 
         {/* Sponsors Section */}
-        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-30 lg:pb-32">
+        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-40 lg:pb-48">
           {silverSponsors.length > 0 && (
             <SponsorTier
               title="Silver Sponsors"
