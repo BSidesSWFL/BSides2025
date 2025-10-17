@@ -40,6 +40,10 @@ const SponsorsPage = () => {
     { name: "Let's Make This Official", logo: "👥", website: "https://www.bsidesswfl.org/sponsor-form" }
   ];
 
+  const inKindSponsors = [
+    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-24 w-auto mx-auto" /></Link>, website: "" }
+  ];
+
   // SponsorCard component
   const sizeClasses = {
     large: "w-full sm:w-80 h-56 p-8",
@@ -201,6 +205,17 @@ const SponsorsPage = () => {
             cardSize="small"
             description="Local organizations and groups that champion cybersecurity education in Southwest Florida"
           />
+
+          {inKindSponsors.length > 0 && (
+            <SponsorTier
+              title="In-Kind Sponsors"
+              sponsors={inKindSponsors}
+              tierColor="bg-gradient-to-r from-purple-600 to-indigo-700"
+              icon={Users}
+              cardSize="small"
+              description="Supporters providing in-kind services and resources that elevate the attendee experience"
+            />
+          )}
         </div>
       </div>
     </main>
