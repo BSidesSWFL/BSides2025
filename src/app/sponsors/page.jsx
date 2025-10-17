@@ -120,49 +120,12 @@ const SponsorsPage = () => {
         {/* Photo Collage */}
         <div className="bg-transparent outline-0 py-12 md:py-24">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-              <div className="col-span-1 row-span-2">
-                <img
-                  src="https://images.pexels.com/photos/1181472/pexels-photo-1181472.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
-                  alt="Team meeting discussion"
-                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-                />
-              </div>
-              <div className="col-span-1">
-                <img
-                  src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                  alt="Cybersecurity coding"
-                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-                />
-              </div>
-              <div className="col-span-1">
-                <img
-                  src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                  alt="Conference presentation"
-                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-                />
-              </div>
-              <div className="col-span-1 row-span-2 hidden lg:block">
-                <img
-                  src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop"
-                  alt="Technology workspace"
-                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-                />
-              </div>
-              <div className="col-span-1">
-                <img
-                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                  alt="Network security monitoring"
-                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-                />
-              </div>
-              <div className="col-span-1">
-                <img
-                  src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
-                  alt="Team collaboration"
-                  className="w-full h-full object-cover rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
-                />
-              </div>
+            <div className="flex justify-center">
+              <img
+                src="/tech-team-silhouette.png"
+                alt="Professional tech team silhouettes with network connections and tropical backdrop"
+                className="w-full max-w-4xl h-auto object-contain rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+              />
             </div>
           </div>
         </div>
