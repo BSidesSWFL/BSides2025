@@ -11,7 +11,7 @@ export default function Workshops() {
         subtitle="Our workshops offer immersive, hands-on sessions that dig deep into practical skills across the cybersecurity spectrum. Whether you’re teaching red teaming, OSINT, or something uniquely your own, this is your space to inspire learning and lead with impact."
       />
 
-      <div className="max-w-5xl mx-auto px-6 py-16 text-slate-800 text-center">
+      <div className="max-w-5xl mx-auto px-6 py-16 pb-60 lg:pb-72 text-slate-800 text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">Upcoming Workshops</h2>
         <p className="text-lg text-slate-700 mb-4">
           Expect keyboards clicking, packets flying, and whiteboards filling up. Our Friday, Nov 14, workshops are built to be immersive, lab-driven, and immediately useful. Seats will be limited and registration will open soon. Bring a laptop, your curiosity, and a friend.
