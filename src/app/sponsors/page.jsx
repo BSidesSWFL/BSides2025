@@ -16,7 +16,7 @@ const SponsorsPage = () => {
   const communitySponsors = [];
 
   const inKindSponsors = [
-    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
   // SponsorCard component
