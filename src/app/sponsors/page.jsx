@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Users, Zap, Award } from 'lucide-react';
+import { Shield, Users, Zap, Award, Heart } from 'lucide-react';
 import Link from 'next/link';
 import PageHero from "../components/page-hero";
 
@@ -29,27 +29,9 @@ const SponsorsPage = () => {
 
   const SponsorCard = ({ sponsor, size }) => (
     <div className={`bg-white rounded-xl shadow-lg hover:shadow-xl mx-auto transition-all duration-300 transform hover:-translate-y-1 border border-orange-100 flex flex-col items-center justify-center text-center group ${sizeClasses[size]}`}>
-<<<<<<< HEAD
-      <div className="mt-4 group-hover:scale-110 transition-transform duration-300">
-        {sponsor.logo}
-      </div>
-      <div className="mt-2 transition-opacity duration-300">
-        <h3 className={`font-bold text-teal-800 ${size === 'large' ? 'text-xl' : size === 'medium' ? 'text-lg' : size === 'small' ? 'text-base' : 'text-sm'}`}>
-          <a
-            href={sponsor.website}
-            className="text-orange-600 hover:text-orange-800 text-sm font-medium"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            {sponsor.name}
-          </a>
-        </h3>
-      </div>
-=======
       <div className="group-hover:scale-110 transition-transform duration-300">
         {sponsor.logo}
       </div>
->>>>>>> staging
     </div>
   );
 
@@ -141,17 +123,6 @@ const SponsorsPage = () => {
         </div>
 
         {/* Sponsors Section */}
-<<<<<<< HEAD
-        <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-30 lg:pb-32">
-          <SponsorTier
-            title="Platinum Sponsors"
-            sponsors={platinumSponsors}
-            tierColor="bg-gradient-to-r from-slate-500 to-gray-600"
-            icon={Award}
-            cardSize="large"
-            description="Our premier partners who provide exceptional support for the BSides SWFL community"
-          />
-=======
         <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-60 lg:pb-72">
           {silverSponsors.length > 0 && (
             <SponsorTier
@@ -163,7 +134,6 @@ const SponsorsPage = () => {
               description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
             />
           )}
->>>>>>> staging
 
           {bronzeSponsors.length > 0 && (
             <SponsorTier
