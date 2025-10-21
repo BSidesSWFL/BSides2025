@@ -4,6 +4,10 @@ import Link from 'next/link';
 import PageHero from "../components/page-hero";
 
 const SponsorsPage = () => {
+  const goldSponsors = [
+    { name: "", logo: <Link href="http://www.cyberguardpro.com/"><img src="/cGuardPro.png" alt="Cyber Guard Pro" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" }
+  ];
+
   const silverSponsors = [
     { name: "", logo: <Link href="https://simspace.com/"><img src="/SimSpace.png" alt="SimSpace" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
@@ -13,10 +17,14 @@ const SponsorsPage = () => {
     { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
-  const communitySponsors = [];
+  const communitySponsors = [
+    { name: "", logo: <Link href="https://www.leehealth.org/"><img src="/leeHealth.png" alt="Lucid Services Group" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" },
+  ];
 
   const inKindSponsors = [
-    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" },
+    { name: "", logo: <Link href="https://www.techallianceswfl.org/"><img src="/TechAllianceLogo2.png" alt="Tech Alliance" className="h-64 w-auto max-w-full object-contain" /></Link>, website: "" },
+    { name: "", logo: <Link href="https://www.fsw.edu/academics/programs/ascybersecurityops"><img src="/ristCyber2025.png" alt="Rist Cyber Institute at FSW" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
   // SponsorCard component
@@ -124,6 +132,17 @@ const SponsorsPage = () => {
 
         {/* Sponsors Section */}
         <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-60 lg:pb-72">
+        {goldSponsors.length > 0 && (
+            <SponsorTier
+              title="Gold Sponsors"
+              sponsors={goldSponsors}
+              tierColor="bg-gradient-to-r from-[#fde68a]  to-[#f59e0b]"
+              icon={Award}
+              cardSize="small"
+              description="Strategic partners committed to advancing cybersecurity education in Southwest Florida"
+            />
+          )}
+          
           {silverSponsors.length > 0 && (
             <SponsorTier
               title="Silver Sponsors"
@@ -148,7 +167,7 @@ const SponsorsPage = () => {
 
           {communitySponsors.length > 0 && (
             <SponsorTier
-              title="Community Sponsors"
+              title="Non-Profit Sponsors"
               sponsors={communitySponsors}
               tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
               icon={Heart}
