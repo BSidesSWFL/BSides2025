@@ -20,7 +20,9 @@ const SponsorsPage = () => {
   const communitySponsors = [];
 
   const inKindSponsors = [
-    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" },
+    { name: "", logo: <Link href="https://www.techallianceswfl.org/"><img src="/TechAllianceLogo2.png" alt="Tech Alliance" className="h-64 w-auto max-w-full object-contain" /></Link>, website: "" },
+    { name: "", logo: <Link href="https://www.fsw.edu/academics/programs/ascybersecurityops"><img src="/ristCyber2025.png" alt="Rist Cyber Institute at FSW" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
   // SponsorCard component
