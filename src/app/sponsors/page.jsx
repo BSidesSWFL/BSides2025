@@ -4,6 +4,10 @@ import Link from 'next/link';
 import PageHero from "../components/page-hero";
 
 const SponsorsPage = () => {
+  const goldSponsors = [
+    { name: "", logo: <Link href="http://www.cyberguardpro.com/"><img src="/cGuardPro.png" alt="Cyber Guard Pro" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" }
+  ];
+
   const silverSponsors = [
     { name: "", logo: <Link href="https://simspace.com/"><img src="/SimSpace.png" alt="SimSpace" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
@@ -124,6 +128,17 @@ const SponsorsPage = () => {
 
         {/* Sponsors Section */}
         <div className="container mx-auto items-center justify-center text-center px-6 py-16 pb-60 lg:pb-72">
+        {goldSponsors.length > 0 && (
+            <SponsorTier
+              title="Gold Sponsors"
+              sponsors={goldSponsors}
+              tierColor="bg-gradient-to-r from-[#fde68a]  to-[#f59e0b]"
+              icon={Award}
+              cardSize="small"
+              description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
+            />
+          )}
+          
           {silverSponsors.length > 0 && (
             <SponsorTier
               title="Silver Sponsors"
