@@ -56,7 +56,7 @@ export default function AboutUs() {
 
       {/* Main content */}
       <div className="max-w-5xl mx-auto px-6 py-16 text-center text-slate-800 pb-40 md:pb-30 lg:pb-48">
-        <Accordion type="single" className="w-full" collapsible>
+        <Accordion type="multiple" className="w-full" defaultValue={["item-1", "item-2", "item-3", "item-4"]}>
           {AboutUsData.map((item, index) => (
             <AccordionItem key={item.id} value={`item-${index + 1}`} className="mb-4">
               <AccordionTrigger>{item.title}</AccordionTrigger>
