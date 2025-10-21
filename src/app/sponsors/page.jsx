@@ -17,7 +17,9 @@ const SponsorsPage = () => {
     { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
-  const communitySponsors = [];
+  const communitySponsors = [
+    { name: "", logo: <Link href="https://www.leehealth.org/"><img src="/leeHealth.png" alt="Lucid Services Group" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" },
+  ];
 
   const inKindSponsors = [
     { name: "", logo: <Link href="https://www.blackhillsinfosec.com/"><img src="/BlackHillsInfoSec.png" alt="Black Hills Information Security" className="h-28 w-auto max-w-full object-contain" /></Link>, website: "" },
@@ -165,7 +167,7 @@ const SponsorsPage = () => {
 
           {communitySponsors.length > 0 && (
             <SponsorTier
-              title="Community Sponsors"
+              title="Non-Profit Sponsors"
               sponsors={communitySponsors}
               tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
               icon={Heart}
