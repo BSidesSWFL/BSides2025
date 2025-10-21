@@ -137,7 +137,7 @@ const SponsorsPage = () => {
               tierColor="bg-gradient-to-r from-[#fde68a]  to-[#f59e0b]"
               icon={Award}
               cardSize="small"
-              description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
+              description="Strategic partners committed to advancing cybersecurity education in Southwest Florida"
             />
           )}
           
