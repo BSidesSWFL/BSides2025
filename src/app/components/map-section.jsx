@@ -1,6 +1,6 @@
 export default function MapSection() {
   return (
-    <section className="mb-36 xl:mb-40 2xl:mb-42">
+    <section className="mb-48 xl:mb-52 2xl:mb-56">
       <h2 className="text-2xl font-bold text-center mb-6 text-orange-900">Conference Location</h2>
       <div className="flex justify-center">
         <iframe
