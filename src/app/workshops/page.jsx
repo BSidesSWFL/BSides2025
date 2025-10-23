@@ -20,60 +20,92 @@ export default function Workshops() {
         <h3 className="text-xl md:text-2xl font-bold mb-8 mt-8">Workshop Registration</h3>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-4">
             <h4 className="text-lg font-semibold mb-4 text-center">Interactive Networking Fingerprinting Walkthrough</h4>
-            <iframe
-              src="https://luma.com/embed/event/evt-4q1dQwn9hZwCPA3/simple"
-              width="600"
-              height="450"
-              frameBorder="0"
-              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
-              allow="fullscreen; payment"
-              aria-hidden="false"
-              tabIndex="0"
-            ></iframe>
+            <div className="w-full overflow-hidden rounded-lg">
+              <iframe
+                src="https://luma.com/embed/event/evt-4q1dQwn9hZwCPA3/simple"
+                width="100%"
+                height="400"
+                frameBorder="0"
+                style={{
+                  border: "1px solid #bfcbda88", 
+                  borderRadius: "4px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  overflow: "hidden"
+                }}
+                allow="fullscreen; payment"
+                aria-hidden="false"
+                tabIndex="0"
+              ></iframe>
+            </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-4">
             <h4 className="text-lg font-semibold mb-4 text-center">Stop Reacting, Start Predicting: Threat Modeling</h4>
-            <iframe
-              src="https://luma.com/embed/event/evt-nk3HkWEY86xBGRV/simple"
-              width="600"
-              height="450"
-              frameBorder="0"
-              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
-              allow="fullscreen; payment"
-              aria-hidden="false"
-              tabIndex="0"
-            ></iframe>
+            <div className="w-full overflow-hidden rounded-lg">
+              <iframe
+                src="https://luma.com/embed/event/evt-nk3HkWEY86xBGRV/simple"
+                width="100%"
+                height="400"
+                frameBorder="0"
+                style={{
+                  border: "1px solid #bfcbda88", 
+                  borderRadius: "4px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  overflow: "hidden"
+                }}
+                allow="fullscreen; payment"
+                aria-hidden="false"
+                tabIndex="0"
+              ></iframe>
+            </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-4">
             <h4 className="text-lg font-semibold mb-4 text-center">AI in Action: Building Smarter Data Protection, Privacy, and Compliance Programs</h4>
-            <iframe
-              src="https://luma.com/embed/event/evt-9x9hYPSj6KvYxLU/simple"
-              width="600"
-              height="450"
-              frameBorder="0"
-              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
-              allow="fullscreen; payment"
-              aria-hidden="false"
-              tabIndex="0"
-            ></iframe>
+            <div className="w-full overflow-hidden rounded-lg">
+              <iframe
+                src="https://luma.com/embed/event/evt-9x9hYPSj6KvYxLU/simple"
+                width="100%"
+                height="400"
+                frameBorder="0"
+                style={{
+                  border: "1px solid #bfcbda88", 
+                  borderRadius: "4px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  overflow: "hidden"
+                }}
+                allow="fullscreen; payment"
+                aria-hidden="false"
+                tabIndex="0"
+              ></iframe>
+            </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-4">
             <h4 className="text-lg font-semibold mb-4 text-center">Beyond the Checkbox: Can You Prove Your Controls?</h4>
-            <iframe
-              src="https://luma.com/embed/event/evt-D7XBtrWrT2gCCpC/simple"
-              width="600"
-              height="450"
-              frameBorder="0"
-              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
-              allow="fullscreen; payment"
-              aria-hidden="false"
-              tabIndex="0"
-            ></iframe>
+            <div className="w-full overflow-hidden rounded-lg">
+              <iframe
+                src="https://luma.com/embed/event/evt-D7XBtrWrT2gCCpC/simple"
+                width="100%"
+                height="400"
+                frameBorder="0"
+                style={{
+                  border: "1px solid #bfcbda88", 
+                  borderRadius: "4px",
+                  width: "100%",
+                  maxWidth: "100%",
+                  overflow: "hidden"
+                }}
+                allow="fullscreen; payment"
+                aria-hidden="false"
+                tabIndex="0"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>
