@@ -17,20 +17,64 @@ export default function Workshops() {
           Expect keyboards clicking, packets flying, and whiteboards filling up. Our Friday, Nov 14, workshops are built to be immersive, lab-driven, and immediately useful. Seats will be limited and registration will open soon. Bring a laptop, your curiosity, and a friend.
         </p>
         
-        <h3 className="text-xl md:text-2xl font-bold mb-4 mt-8">A peek at what's confirmed</h3>
+        <h3 className="text-xl md:text-2xl font-bold mb-8 mt-8">Workshop Registration</h3>
         
-        <div className="text-left max-w-4xl mx-auto">
-          <p className="text-lg text-slate-700 mb-4">
-            <strong>Shift from reactive to proactive</strong> with real-world threat modeling techniques using frameworks like STRIDE and data-flow diagrams, plus attack-path mapping and risk-based decision making.
-          </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h4 className="text-lg font-semibold mb-4 text-center">Interactive Networking Fingerprinting Walkthrough</h4>
+            <iframe
+              src="https://luma.com/embed/event/evt-4q1dQwn9hZwCPA3/simple"
+              width="600"
+              height="450"
+              frameBorder="0"
+              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
+              allow="fullscreen; payment"
+              aria-hidden="false"
+              tabIndex="0"
+            ></iframe>
+          </div>
           
-          <p className="text-lg text-slate-700 mb-4">
-            <strong>Go hands-on with network fingerprinting:</strong> see how TLS handshakes and client behavior reveal who is on the other end, then practice JA3 and JA4 capture, p0f and MuonFP analysis, and BPF-based blocking.
-          </p>
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h4 className="text-lg font-semibold mb-4 text-center">Stop Reacting, Start Predicting: Threat Modeling</h4>
+            <iframe
+              src="https://luma.com/embed/event/evt-nk3HkWEY86xBGRV/simple"
+              width="600"
+              height="450"
+              frameBorder="0"
+              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
+              allow="fullscreen; payment"
+              aria-hidden="false"
+              tabIndex="0"
+            ></iframe>
+          </div>
           
-          <p className="text-lg text-slate-700 mb-4">
-            <strong>Test your program's readiness</strong> in a cyber-insurance attestation tabletop where you document and defend controls like MFA, EDR, backups, and incident response against realistic scenarios.
-          </p>
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h4 className="text-lg font-semibold mb-4 text-center">AI in Action: Building Smarter Data Protection, Privacy, and Compliance Programs</h4>
+            <iframe
+              src="https://luma.com/embed/event/evt-9x9hYPSj6KvYxLU/simple"
+              width="600"
+              height="450"
+              frameBorder="0"
+              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
+              allow="fullscreen; payment"
+              aria-hidden="false"
+              tabIndex="0"
+            ></iframe>
+          </div>
+          
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h4 className="text-lg font-semibold mb-4 text-center">Beyond the Checkbox: Can You Prove Your Controls?</h4>
+            <iframe
+              src="https://luma.com/embed/event/evt-D7XBtrWrT2gCCpC/simple"
+              width="600"
+              height="450"
+              frameBorder="0"
+              style={{border: "1px solid #bfcbda88", borderRadius: "4px"}}
+              allow="fullscreen; payment"
+              aria-hidden="false"
+              tabIndex="0"
+            ></iframe>
+          </div>
         </div>
       </div>
     </main>
