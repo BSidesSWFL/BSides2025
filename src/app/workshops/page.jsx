@@ -42,27 +42,6 @@ export default function Workshops() {
           </div>
           
           <div className="bg-white rounded-lg shadow-lg p-4">
-            <h4 className="text-lg font-semibold mb-4 text-center">Stop Reacting, Start Predicting: Threat Modeling</h4>
-            <div className="w-full rounded-lg">
-              <iframe
-                src="https://luma.com/embed/event/evt-nk3HkWEY86xBGRV/simple"
-                width="100%"
-                height="400"
-                frameBorder="0"
-                style={{
-                  border: "1px solid #bfcbda88", 
-                  borderRadius: "4px",
-                  width: "100%",
-                  maxWidth: "100%"
-                }}
-                allow="fullscreen; payment"
-                aria-hidden="false"
-                tabIndex="0"
-              ></iframe>
-            </div>
-          </div>
-          
-          <div className="bg-white rounded-lg shadow-lg p-4">
             <h4 className="text-lg font-semibold mb-4 text-center">AI in Action: Building Smarter Data Protection, Privacy, and Compliance Programs</h4>
             <div className="w-full rounded-lg">
               <iframe
@@ -83,26 +62,6 @@ export default function Workshops() {
             </div>
           </div>
           
-          <div className="bg-white rounded-lg shadow-lg p-4">
-            <h4 className="text-lg font-semibold mb-4 text-center">Beyond the Checkbox: Can You Prove Your Controls?</h4>
-            <div className="w-full rounded-lg">
-              <iframe
-                src="https://luma.com/embed/event/evt-D7XBtrWrT2gCCpC/simple"
-                width="100%"
-                height="400"
-                frameBorder="0"
-                style={{
-                  border: "1px solid #bfcbda88", 
-                  borderRadius: "4px",
-                  width: "100%",
-                  maxWidth: "100%"
-                }}
-                allow="fullscreen; payment"
-                aria-hidden="false"
-                tabIndex="0"
-              ></iframe>
-            </div>
-          </div>
         </div>
       </div>
     </main>
