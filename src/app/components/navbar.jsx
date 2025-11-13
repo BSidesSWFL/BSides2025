@@ -31,7 +31,7 @@ const Navbar = () => {
           </Link>
           <div className="flex flex-col mb-2 pt-2 md:pt-0 sm:flex-row gap-2 justify-center md:hidden">
             <Link
-              href="https://lu.ma/btwze03o"
+              href="/tickets"
               className="group flex items-center px-4 py-2.5 text-white/90 hover:text-white font-medium transition-all duration-200 hover:bg-white/10 rounded-xl backdrop-blur-sm border border-transparent hover:border-white/20 hover:scale-105"
             >
               <Image src="/kindpng_278375.png" alt="Kindpng" width={20} height={20} className="mr-2 opacity-80 group-hover:opacity-100 transition-opacity duration-200" />
@@ -45,7 +45,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-1">
             <NavLink href="/aboutus" icon={ScrollText} label="About Us" />
             <NavLink href="/volunteer" icon={Handshake} label="Volunteer" />
-            <NavLink href="https://lu.ma/btwze03o" icon={Tickets} label="Tickets" />
+            <NavLink href="/tickets" icon={Tickets} label="Tickets" />
             <NavLink href="/sponsors" icon={Award} label="Sponsors" />
             <NavLink href="/speakers" icon={User2} label="Speakers" />
             <NavLink href="/workshops" icon={Computer} label="Workshops" />
@@ -72,7 +72,7 @@ const Navbar = () => {
           <div className="container mx-auto px-4 py-6 space-y-2">
             <MobileNavLink href="/aboutus" icon={ScrollText} label="About Us" onClick={toggleMobileMenu} />
             <MobileNavLink href="/volunteer" icon={Handshake} label="Volunteer" onClick={toggleMobileMenu} />
-            <MobileNavLink href="https://lu.ma/btwze03o" icon={Tickets} label="Tickets" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/tickets" icon={Tickets} label="Tickets" onClick={toggleMobileMenu} />
             <MobileNavLink href="/sponsors" icon={Award} label="Sponsors" onClick={toggleMobileMenu} />
             <MobileNavLink href="/speakers" icon={User2} label="Speakers" onClick={toggleMobileMenu} />
             <MobileNavLink href="/workshops" icon={Computer} label="Workshops" onClick={toggleMobileMenu} />
