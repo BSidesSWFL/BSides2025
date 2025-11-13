@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Search, Menu, X, ScrollText, Calendar, User2, Users, Computer, Handshake, Tickets, Award } from "lucide-react"
+import { Search, Menu, X, ScrollText, Calendar, User2, Users, Computer, Handshake, Tickets, Award, Building, Building2 } from "lucide-react"
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -44,7 +44,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
             <NavLink href="/aboutus" icon={ScrollText} label="About Us" />
-            <NavLink href="/volunteer" icon={Handshake} label="Volunteer" />
+            <NavLink href="/venue" icon={Building} label="Venue" />
             <NavLink href="/tickets" icon={Tickets} label="Tickets" />
             <NavLink href="/sponsors" icon={Award} label="Sponsors" />
             <NavLink href="/speakers" icon={User2} label="Speakers" />
@@ -71,7 +71,7 @@ const Navbar = () => {
         <div className="lg:hidden bg-gradient-to-b from-purple-900/95 to-pink-900/95 backdrop-blur-xl border-t border-purple-500/20">
           <div className="container mx-auto px-4 py-6 space-y-2">
             <MobileNavLink href="/aboutus" icon={ScrollText} label="About Us" onClick={toggleMobileMenu} />
-            <MobileNavLink href="/volunteer" icon={Handshake} label="Volunteer" onClick={toggleMobileMenu} />
+            <MobileNavLink href="/venue" icon={Building} label="Venue" onClick={toggleMobileMenu} />
             <MobileNavLink href="/tickets" icon={Tickets} label="Tickets" onClick={toggleMobileMenu} />
             <MobileNavLink href="/sponsors" icon={Award} label="Sponsors" onClick={toggleMobileMenu} />
             <MobileNavLink href="/speakers" icon={User2} label="Speakers" onClick={toggleMobileMenu} />
