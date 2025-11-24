@@ -307,3 +307,35 @@ html {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
+/* Photo collage animations */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-99.99%);
+  }
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(-99.99%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 60s linear infinite;
+}
+
+.animate-scroll-up {
+  animation: scroll-up 60s linear infinite;
+}
+
+.animate-scroll-down:hover,
+.animate-scroll-up:hover {
+  animation-play-state: paused;
+}
+
