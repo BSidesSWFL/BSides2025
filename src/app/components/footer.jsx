@@ -42,6 +42,10 @@ export default function Footer() {
               <Link href="https://docs.google.com/document/d/1YChfNA9aJXRUQudrAq5ffu5QlHcwJtc2fsAr34wCKiw/edit?tab=t.0" className="text-white/60 text-xs no-underline hover:text-white transition-all duration-200">
                 Privacy Policy
               </Link>
+              {" | "}
+              <Link href="/code-of-conduct" className="text-white/60 text-xs no-underline hover:text-white transition-all duration-200">
+                Code of Conduct
+              </Link>
             </p>
           </div>
         </div>
