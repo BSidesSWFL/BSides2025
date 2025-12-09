@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="space-y-2">
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-white/70 text-sm font-medium">© 2025 BSides SWFL. All rights reserved.</p>
+            <p className="text-white/70 text-sm font-medium">© BSides SWFL. All rights reserved.</p>
           </div>
 
           {/* Powered By */}
