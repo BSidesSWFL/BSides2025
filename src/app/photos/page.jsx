@@ -74,7 +74,7 @@ export default function Photos() {
               <img
                 src={photo}
                 alt={`Photo ${index + 1}`}
-                className="w-full h-auto object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                className="w-full h-64 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
                 loading="lazy"
                 draggable="false"
               />
@@ -93,7 +93,7 @@ export default function Photos() {
               <img
                 src={photo}
                 alt={`Photo ${index + 1}`}
-                className="w-full h-auto object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                className="w-full h-80 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
                 loading="lazy"
                 draggable="false"
               />
