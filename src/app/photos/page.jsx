@@ -1,38 +1,10 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import confetti from "canvas-confetti";
-import { shuffleArray, duplicatePhotos, splitPhotosEqually, fetchPhotos } from "@/lib/photos-utils";
+import { shuffleArray, fetchPhotos } from "@/lib/photos-utils";
 import { triggerConfetti } from "@/lib/confetti-utils";
-import MobileSwipeable from "../components/mobile-swipeable";
 import PhotoModal from "../components/photo-modal";
-
-// Scrollable Column Component
-function ScrollableColumn({ photos, direction = 'down', className = '', onPhotoClick }) {
-  return (
-    <div className={`flex-1 h-full overflow-hidden ${className}`}>
-      <div 
-        className={`flex flex-col h-full ${direction === 'up' ? 'animate-scroll-up' : 'animate-scroll-down'}`}
-      >
-        {photos.map((photo, index) => (
-          <div
-            key={`${className}-${index}`}
-            className="flex-shrink-0 w-full h-1/3 px-1 my-2 cursor-pointer"
-            onClick={() => onPhotoClick(photo)}
-          >
-            <img
-              src={photo}
-              alt={`Photo ${index + 1}`}
-              className="w-full h-full object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
-              loading="lazy"
-              draggable="false"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function Photos() {
   const [photos, setPhotos] = useState([]);
@@ -85,50 +57,49 @@ export default function Photos() {
     );
   }
 
-  // Shuffle all photos first, then split equally across three columns
+  // Shuffle photos for variety
   const shuffledPhotos = shuffleArray(photos);
-  const [leftColumnPhotos, centerColumnPhotos, rightColumnPhotos] = splitPhotosEqually(shuffledPhotos);
-  
-  // Duplicate each column's photos for seamless infinite scroll
-  const leftPhotos = duplicatePhotos(leftColumnPhotos, 3);
-  const centerPhotos = duplicatePhotos(centerColumnPhotos, 3);
-  const rightPhotos = duplicatePhotos(rightColumnPhotos, 3);
   
   return (
-    <div className="min-h-screen w-full overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 relative">
-      {/* Title - positioned absolutely for mobile, normal for desktop */}
-      
-      {/* Mobile: Horizontal carousel */}
-      <MobileSwipeable 
-        photos={photos}
-        onPhotoClick={handlePhotoClick}
-      />
+    <div className="min-h-screen w-full bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+      <div className="container mx-auto px-4 py-8">
+        {/* Mobile: Single column */}
+        <div className="md:hidden space-y-4">
+          {shuffledPhotos.map((photo, index) => (
+            <div
+              key={`mobile-${index}`}
+              className="w-full cursor-pointer"
+              onClick={() => handlePhotoClick(photo)}
+            >
+              <img
+                src={photo}
+                alt={`Photo ${index + 1}`}
+                className="w-full h-auto object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                loading="lazy"
+                draggable="false"
+              />
+            </div>
+          ))}
+        </div>
 
-      {/* Tablet/Desktop: Three rows */}
-      <div className="hidden md:flex w-full h-screen gap-2 px-2 pt-24">
-        {/* Left row - scrolls down */}
-        <ScrollableColumn 
-          photos={leftPhotos} 
-          direction="down" 
-          className="left-column"
-          onPhotoClick={handlePhotoClick}
-        />
-
-        {/* Center row - scrolls up */}
-        <ScrollableColumn 
-          photos={centerPhotos} 
-          direction="up" 
-          className="center-column"
-          onPhotoClick={handlePhotoClick}
-        />
-
-        {/* Right row - scrolls down */}
-        <ScrollableColumn 
-          photos={rightPhotos} 
-          direction="down" 
-          className="right-column"
-          onPhotoClick={handlePhotoClick}
-        />
+        {/* Tablet/Desktop: Two columns */}
+        <div className="hidden md:grid md:grid-cols-2 gap-4">
+          {shuffledPhotos.map((photo, index) => (
+            <div
+              key={`desktop-${index}`}
+              className="w-full cursor-pointer"
+              onClick={() => handlePhotoClick(photo)}
+            >
+              <img
+                src={photo}
+                alt={`Photo ${index + 1}`}
+                className="w-full h-auto object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                loading="lazy"
+                draggable="false"
+              />
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Photo Modal */}

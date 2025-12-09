@@ -19,7 +19,13 @@ export default function MobileSwipeable({ photos, onPhotoClick }) {
   const startXValueRef = useRef(0);
 
   // Get unique photos (remove duplicates)
-  const uniquePhotos = Array.from(new Set(photos));
+  const uniquePhotos = photos && photos.length > 0 ? Array.from(new Set(photos)) : [];
+
+  // Debug: Log photos on mount
+  useEffect(() => {
+    console.log('MobileSwipeable - Photos received:', photos?.length || 0);
+    console.log('MobileSwipeable - Unique photos:', uniquePhotos.length);
+  }, [photos, uniquePhotos.length]);
 
   const handleTouchStart = (e) => {
     const touch = e.touches[0];
@@ -52,15 +58,15 @@ export default function MobileSwipeable({ photos, onPhotoClick }) {
       e.preventDefault();
     }
     
-    // Convert pixel delta to percentage (assuming viewport width)
+    // Convert pixel delta to viewport width units
     const viewportWidth = window.innerWidth;
-    const deltaPercent = (deltaX / viewportWidth) * 100;
-    const newTranslateX = currentTranslateRef.current + deltaPercent;
+    const deltaVw = (deltaX / viewportWidth) * 100;
+    const newTranslateX = currentTranslateRef.current + deltaVw;
     
     setTranslateX(newTranslateX);
     
     if (carouselRef.current) {
-      carouselRef.current.style.transform = `translateX(${newTranslateX}%)`;
+      carouselRef.current.style.transform = `translateX(${newTranslateX}vw)`;
       carouselRef.current.style.transition = 'none';
     }
   };
@@ -95,8 +101,9 @@ export default function MobileSwipeable({ photos, onPhotoClick }) {
   const updateCarouselPosition = () => {
     if (carouselRef.current) {
       carouselRef.current.style.transition = 'transform 0.3s ease-out';
+      // Translate by viewport width (100vw) for each slide
       const translateValue = -currentIndex * 100;
-      carouselRef.current.style.transform = `translateX(${translateValue}%)`;
+      carouselRef.current.style.transform = `translateX(${translateValue}vw)`;
       currentTranslateRef.current = translateValue;
     }
   };
@@ -119,6 +126,15 @@ export default function MobileSwipeable({ photos, onPhotoClick }) {
     }
   };
 
+  // Early return if no photos
+  if (!uniquePhotos || uniquePhotos.length === 0) {
+    return (
+      <div className="md:hidden w-full h-screen flex items-center justify-center">
+        <p className="text-orange-900">No photos available</p>
+      </div>
+    );
+  }
+
   return (
     <div 
       className="md:hidden w-full h-screen overflow-hidden relative"
@@ -131,7 +147,7 @@ export default function MobileSwipeable({ photos, onPhotoClick }) {
         ref={carouselRef}
         className="flex h-full"
         style={{
-          width: `${uniquePhotos.length * 100}%`,
+          width: `${uniquePhotos.length * 100}vw`,
           transition: isDragging ? 'none' : 'transform 0.3s ease-out'
         }}
       >
@@ -139,7 +155,7 @@ export default function MobileSwipeable({ photos, onPhotoClick }) {
           <div
             key={`mobile-carousel-${index}`}
             className="flex-shrink-0 h-full px-2 flex items-center justify-center"
-            style={{ width: `${100 / uniquePhotos.length}%` }}
+            style={{ width: '100vw' }}
           >
             <div
               className="w-full h-full flex items-center justify-center cursor-pointer"
@@ -151,6 +167,10 @@ export default function MobileSwipeable({ photos, onPhotoClick }) {
                 className="max-w-full max-h-full object-contain rounded-lg shadow-lg"
                 loading="lazy"
                 draggable="false"
+                onError={(e) => {
+                  console.error('Failed to load image:', photo);
+                  e.target.style.display = 'none';
+                }}
               />
             </div>
           </div>

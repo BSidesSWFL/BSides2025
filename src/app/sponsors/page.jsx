@@ -69,7 +69,7 @@ const SponsorsPage = () => {
   return (
     <main className="min-h-screen wrapper-pages">
       <PageHero
-        title="Our Amazing Sponsors"
+        title="Our Amazing 2025 Sponsors"
         subtitle="Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors. Join us in thanking these organizations that support our cybersecurity community."
       />
 
