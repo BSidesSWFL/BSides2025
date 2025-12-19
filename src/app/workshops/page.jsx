@@ -58,7 +58,8 @@ export default function Workshops() {
                 allow="fullscreen; payment"
                 aria-hidden="false"
                 tabIndex="0"
-              ></iframe>
+              >
+              </iframe>
             </div>
           </div>
           

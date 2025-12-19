@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="space-y-2">
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-white/70 text-sm font-medium">© 2025 BSides SWFL. All rights reserved.</p>
+            <p className="text-white/70 text-sm font-medium">© BSides SWFL. All rights reserved.</p>
           </div>
 
           {/* Powered By */}
@@ -41,6 +41,10 @@ export default function Footer() {
               </a>     |
               <Link href="https://docs.google.com/document/d/1YChfNA9aJXRUQudrAq5ffu5QlHcwJtc2fsAr34wCKiw/edit?tab=t.0" className="text-white/60 text-xs no-underline hover:text-white transition-all duration-200">
                 Privacy Policy
+              </Link>
+              {" | "}
+              <Link href="/code-of-conduct" className="text-white/60 text-xs no-underline hover:text-white transition-all duration-200">
+                Code of Conduct
               </Link>
             </p>
           </div>

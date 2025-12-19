@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "BSides SWFL 2025- Get Your Tickets Now!",
-  description: "For the BSides SWFL 2025 cybersecurity conference.",
+  title: "BSides SWFL- Thank You For Coming!",
+  description: "For the BSides SWFL cybersecurity conference.",
   icons: {
     icon: "icon.ico",
     shortcut: "icon.ico",

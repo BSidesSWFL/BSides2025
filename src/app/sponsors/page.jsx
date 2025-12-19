@@ -14,7 +14,8 @@ const SponsorsPage = () => {
 
   const bronzeSponsors = [
     { name: "", logo: <Link href="https://www.lucidservicesgroup.com"><img src="/LucidServicesGroup.png" alt="Lucid Services Group" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" },
-    { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
+    { name: "", logo: <Link href="https://material.security/"><img src="/MaterialSecurity.png" alt="Material Security" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" },
+    { name: "", logo: <Link href="https://www.zscaler.com/"><img src="/zscaler.png" alt="zscaler" className="h-20 w-auto max-w-full object-contain" /></Link>, website: "" }
   ];
 
   const communitySponsors = [
@@ -68,7 +69,7 @@ const SponsorsPage = () => {
   return (
     <main className="min-h-screen wrapper-pages">
       <PageHero
-        title="Our Amazing Sponsors"
+        title="Our Amazing 2025 Sponsors"
         subtitle="Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors. Join us in thanking these organizations that support our cybersecurity community."
       />
 
