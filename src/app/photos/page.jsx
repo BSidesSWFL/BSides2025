@@ -1,14 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import confetti from "canvas-confetti";
-import { shuffleArray, fetchPhotos } from "@/lib/photos-utils";
+import { shuffleArray, getPhotos } from "@/lib/photos-utils";
 import { triggerConfetti } from "@/lib/confetti-utils";
 import PhotoModal from "../components/photo-modal";
 
 export default function Photos() {
-  const [photos, setPhotos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [photos] = useState(() => getPhotos());
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -25,24 +25,7 @@ export default function Photos() {
   useEffect(() => {
     // Trigger confetti on mount
     triggerConfetti(confetti);
-    
-    // Fetch photos
-    const loadPhotos = async () => {
-      const fetchedPhotos = await fetchPhotos();
-      setPhotos(fetchedPhotos);
-      setLoading(false);
-    };
-    
-    loadPhotos();
   }, []);
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-2xl text-orange-900">Loading photos...</div>
-      </div>
-    );
-  }
 
   if (photos.length === 0) {
     return (
@@ -68,15 +51,16 @@ export default function Photos() {
           {shuffledPhotos.map((photo, index) => (
             <div
               key={`mobile-${index}`}
-              className="w-full cursor-pointer"
+              className="w-full h-64 relative cursor-pointer rounded-lg shadow-lg hover:opacity-90 transition-opacity overflow-hidden"
               onClick={() => handlePhotoClick(photo)}
             >
-              <img
+              <Image
                 src={photo}
                 alt={`Photo ${index + 1}`}
-                className="w-full h-64 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                fill
+                className="object-cover"
+                sizes="100vw"
                 loading="lazy"
-                draggable="false"
               />
             </div>
           ))}
@@ -87,15 +71,16 @@ export default function Photos() {
           {shuffledPhotos.map((photo, index) => (
             <div
               key={`desktop-${index}`}
-              className="w-full cursor-pointer"
+              className="w-full h-80 relative cursor-pointer rounded-lg shadow-lg hover:opacity-90 transition-opacity overflow-hidden"
               onClick={() => handlePhotoClick(photo)}
             >
-              <img
+              <Image
                 src={photo}
                 alt={`Photo ${index + 1}`}
-                className="w-full h-80 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 loading="lazy"
-                draggable="false"
               />
             </div>
           ))}
