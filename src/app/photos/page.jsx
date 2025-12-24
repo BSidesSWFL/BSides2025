@@ -25,7 +25,6 @@ export default function Photos() {
   useEffect(() => {
     // Trigger confetti on mount
     triggerConfetti(confetti);
-  }, []);
 
   if (photos.length === 0) {
     return (
