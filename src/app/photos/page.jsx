@@ -1,50 +1,45 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import Image from "next/image";
 import confetti from "canvas-confetti";
-import { shuffleArray, fetchPhotos } from "@/lib/photos-utils";
+import { shuffleArray, getPhotos } from "@/lib/photos-utils";
 import { triggerConfetti } from "@/lib/confetti-utils";
 import PhotoModal from "../components/photo-modal";
 
 export default function Photos() {
-  const [photos, setPhotos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [shuffledPhotos] = useState(() => shuffleArray(getPhotos()));
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handlePhotoClick = (photo) => {
-    setSelectedPhoto(photo);
-    setIsModalOpen(true);
-  };
+  const handlePhotoClick = useCallback((event) => {
+    // Always get photo from data attribute to ensure we have the correct one
+    const clickedPhoto = event.currentTarget.dataset.photo;
+    console.log('Photo clicked - data attribute:', clickedPhoto);
+    
+    if (!clickedPhoto) {
+      console.error('No photo found in data attribute!');
+      return;
+    }
+    
+    console.log('Setting selected photo to:', clickedPhoto);
+    
+    // Use functional updates to ensure state is set correctly
+    setSelectedPhoto(() => clickedPhoto);
+    setIsModalOpen(() => true);
+  }, []);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
     setSelectedPhoto(null);
-  };
+  }, []);
 
   useEffect(() => {
     // Trigger confetti on mount
     triggerConfetti(confetti);
-    
-    // Fetch photos
-    const loadPhotos = async () => {
-      const fetchedPhotos = await fetchPhotos();
-      setPhotos(fetchedPhotos);
-      setLoading(false);
-    };
-    
-    loadPhotos();
   }, []);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-2xl text-orange-900">Loading photos...</div>
-      </div>
-    );
-  }
-
-  if (photos.length === 0) {
+  if (shuffledPhotos.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center p-4">
         <div className="text-center">
@@ -56,27 +51,34 @@ export default function Photos() {
       </div>
     );
   }
-
-  // Shuffle photos for variety
-  const shuffledPhotos = shuffleArray(photos);
   
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
       <div className="container mx-auto px-4 py-8">
         {/* Mobile: Single column */}
         <div className="md:hidden space-y-4">
-          {shuffledPhotos.map((photo, index) => (
+          {shuffledPhotos.map((photo) => (
             <div
-              key={`mobile-${index}`}
-              className="w-full cursor-pointer"
-              onClick={() => handlePhotoClick(photo)}
+              key={`mobile-${photo}`}
+              className="w-full h-64 relative cursor-pointer rounded-lg shadow-lg hover:opacity-90 transition-opacity overflow-hidden"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handlePhotoClick(e);
+              }}
+              data-photo={photo}
             >
-              <img
+              <Image
                 src={photo}
-                alt={`Photo ${index + 1}`}
-                className="w-full h-64 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                alt={photo}
+                fill
+                className="object-cover pointer-events-none"
+                sizes="100vw"
                 loading="lazy"
-                draggable="false"
+                onLoad={(e) => {
+                  const imgSrc = e.target.src;
+                  console.log(`Thumbnail loaded - expected: ${photo}, actual: ${imgSrc}`);
+                }}
               />
             </div>
           ))}
@@ -84,18 +86,24 @@ export default function Photos() {
 
         {/* Tablet/Desktop: Two columns */}
         <div className="hidden md:grid md:grid-cols-2 gap-4">
-          {shuffledPhotos.map((photo, index) => (
+          {shuffledPhotos.map((photo) => (
             <div
-              key={`desktop-${index}`}
-              className="w-full cursor-pointer"
-              onClick={() => handlePhotoClick(photo)}
+              key={`desktop-${photo}`}
+              className="w-full h-80 relative cursor-pointer rounded-lg shadow-lg hover:opacity-90 transition-opacity overflow-hidden"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handlePhotoClick(e);
+              }}
+              data-photo={photo}
             >
-              <img
+              <Image
                 src={photo}
-                alt={`Photo ${index + 1}`}
-                className="w-full h-80 object-cover rounded-lg shadow-lg hover:opacity-90 transition-opacity"
+                alt={photo}
+                fill
+                className="object-cover pointer-events-none"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 loading="lazy"
-                draggable="false"
               />
             </div>
           ))}
