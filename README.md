@@ -95,6 +95,30 @@ Prefer Conventional Commits:
 
 ---
 
+## 🚀 Deployment
+
+The site is automatically deployed to **Cloudflare Workers** when changes are merged to the `main` branch via GitHub Actions.
+
+### Automated Deployment
+
+- Merges to `main` trigger an automatic build and deployment
+- The deployment workflow uses `@opennextjs/cloudflare` to deploy the Next.js app
+- Deployments require configured Cloudflare credentials in repository secrets
+
+### Setup & Troubleshooting
+
+For detailed instructions on:
+- Setting up Cloudflare deployment credentials
+- Troubleshooting deployment errors  
+- Manual deployment testing
+- Local deployment testing
+
+See the **[DEPLOYMENT.md](DEPLOYMENT.md)** guide.
+
+> **Note:** Only repository administrators can configure deployment secrets.
+
+---
+
 ## 🧾 License
 
 This project is licensed under the [MIT License](LICENSE).
