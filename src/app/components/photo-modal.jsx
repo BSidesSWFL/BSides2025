@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Photo Modal Component
@@ -10,6 +10,21 @@ import { useEffect } from "react";
  * @param {Function} onClose - Callback function to close the modal
  */
 export default function PhotoModal({ photo, isOpen, onClose }) {
+  // Store the photo in local state to prevent stale values
+  const [displayPhoto, setDisplayPhoto] = useState(null);
+  const [imageKey, setImageKey] = useState(0);
+
+  useEffect(() => {
+    if (isOpen && photo) {
+      // Reset image key to force remount when photo changes
+      setImageKey(prev => prev + 1);
+      setDisplayPhoto(photo);
+    } else if (!isOpen) {
+      // Clear photo when modal closes
+      setDisplayPhoto(null);
+    }
+  }, [isOpen, photo]);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -26,7 +41,7 @@ export default function PhotoModal({ photo, isOpen, onClose }) {
     }
   }, [isOpen, onClose]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !displayPhoto) return null;
 
   return (
     <div
@@ -41,14 +56,19 @@ export default function PhotoModal({ photo, isOpen, onClose }) {
         >
           ×
         </button>
-        <img
-          src={photo}
-          alt="Full size photo"
-          className="max-w-full max-h-full object-contain rounded-lg"
-          onClick={(e) => e.stopPropagation()}
-        />
+        {displayPhoto && (
+          <img
+            src={displayPhoto}
+            alt="Full size photo"
+            className="max-w-full max-h-full object-contain rounded-lg"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            key={`${displayPhoto}-${imageKey}`}
+            style={{ display: 'block' }}
+          />
+        )}
       </div>
     </div>
   );
 }
-

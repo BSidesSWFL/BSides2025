@@ -35,11 +35,11 @@ export function splitPhotosEqually(allPhotos) {
   const totalPhotos = allPhotos.length;
   const photosPerColumn = Math.floor(totalPhotos / 3);
   const remainder = totalPhotos % 3;
-  
+
   // Calculate start and end indices for each column
   let start = 0;
   const columns = [];
-  
+
   for (let i = 0; i < 3; i++) {
     // Distribute remainder photos to first columns
     const count = photosPerColumn + (i < remainder ? 1 : 0);
@@ -48,7 +48,7 @@ export function splitPhotosEqually(allPhotos) {
     columns.push(shuffleArray(columnPhotos));
     start += count;
   }
-  
+
   return columns;
 }
 
@@ -68,7 +68,6 @@ export async function fetchPhotos() {
   } catch (error) {
     console.error("Error fetching photos:", error);
   }
-  
+
   return [];
 }
-
