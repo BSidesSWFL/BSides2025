@@ -9,4 +9,6 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   }
+  // Account ID is provided via CLOUDFLARE_ACCOUNT_ID environment variable
+  // Set in GitHub Actions secrets for automated deployments
 }

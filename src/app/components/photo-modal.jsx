@@ -16,22 +16,14 @@ export default function PhotoModal({ photo, isOpen, onClose }) {
 
   useEffect(() => {
     if (isOpen && photo) {
-      console.log('Modal useEffect - photo prop:', photo);
       // Reset image key to force remount when photo changes
       setImageKey(prev => prev + 1);
       setDisplayPhoto(photo);
-      console.log('Modal useEffect - set displayPhoto to:', photo);
     } else if (!isOpen) {
       // Clear photo when modal closes
       setDisplayPhoto(null);
     }
   }, [isOpen, photo]);
-
-  useEffect(() => {
-    if (displayPhoto) {
-      console.log('Modal displayPhoto state updated to:', displayPhoto);
-    }
-  }, [displayPhoto]);
 
   useEffect(() => {
     if (isOpen) {
@@ -71,19 +63,8 @@ export default function PhotoModal({ photo, isOpen, onClose }) {
             className="max-w-full max-h-full object-contain rounded-lg"
             onClick={(e) => {
               e.stopPropagation();
-              console.log('Modal image clicked - current src:', e.currentTarget.src);
-              console.log('Modal image clicked - displayPhoto state:', displayPhoto);
             }}
             key={`${displayPhoto}-${imageKey}`}
-            onLoad={(e) => {
-              console.log('Image loaded - src attribute:', e.currentTarget.src);
-              console.log('Image loaded - displayPhoto state:', displayPhoto);
-              console.log('Image loaded - URLs match:', e.currentTarget.src.includes(displayPhoto.split('/').pop()));
-            }}
-            onError={(e) => {
-              console.error('Image error - src:', e.currentTarget.src);
-              console.error('Image error - displayPhoto:', displayPhoto);
-            }}
             style={{ display: 'block' }}
           />
         )}
@@ -91,4 +72,3 @@ export default function PhotoModal({ photo, isOpen, onClose }) {
     </div>
   );
 }
-
