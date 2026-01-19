@@ -1,0 +1,47 @@
+---
+interface Sponsor {
+  name: string;
+  logo: string;
+  website: string;
+  imgClass?: string;
+}
+
+interface Props {
+  title: string;
+  sponsors: Sponsor[];
+  tierColor: string;
+  iconSvg: string;
+  cardSize: 'large' | 'medium' | 'small' | 'tiny';
+  description: string;
+}
+
+const { title, sponsors, tierColor, iconSvg, cardSize, description } = Astro.props;
+
+const sizeClasses = {
+  large: 'w-full sm:w-96 h-64 p-8',
+  medium: 'w-full sm:w-80 h-56 p-6',
+  small: 'w-full sm:w-72 h-48 p-6',
+  tiny: 'w-full sm:w-64 h-40 p-4',
+};
+---
+
+<div class="mb-12">
+  <div class="text-center mb-8">
+    <div class={`inline-flex items-center gap-3 px-6 py-3 rounded-full ${tierColor} mb-4`}>
+      <Fragment set:html={iconSvg} />
+      <h2 class="text-2xl font-bold text-white">{title}</h2>
+    </div>
+    <p class="text-teal-700 max-w-2xl mx-auto">{description}</p>
+  </div>
+  <div class="flex flex-wrap gap-8 justify-center">
+    {sponsors.map((sponsor) => (
+      <div class={`bg-white rounded-xl shadow-lg hover:shadow-xl mx-auto transition-all duration-300 transform hover:-translate-y-1 border border-orange-100 flex flex-col items-center justify-center text-center group ${sizeClasses[cardSize]}`}>
+        <div class="group-hover:scale-110 transition-transform duration-300">
+          <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
+            <img src={sponsor.logo} alt={sponsor.name} class={sponsor.imgClass || 'h-20 w-auto max-w-full object-contain'} />
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

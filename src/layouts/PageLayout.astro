@@ -1,0 +1,20 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import PageHero from '@/components/astro/PageHero.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  heroTitle: string;
+  heroSubtitle: string;
+}
+
+const { title, description, heroTitle, heroSubtitle } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="min-h-screen wrapper-pages">
+    <PageHero title={heroTitle} subtitle={heroSubtitle} />
+    <slot />
+  </div>
+</BaseLayout>

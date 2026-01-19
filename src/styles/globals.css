@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+:root {
+  --radius: 0.625rem;
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+.share-tech-regular {
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.wrapper-hero {
+  height: auto;
+  min-height: 35vh;
+  margin-top: 5px;
+  align-items: center;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') no-repeat center center/cover;
+}
+
+.wrapper-pagehero {
+  margin-top: 25px;
+  align-items: center;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') no-repeat center center/cover;
+}
+
+.wrapper-pages {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 251, 235, 0.9),
+      rgba(255, 247, 237, 0.9),
+      rgba(254, 242, 242, 0.9)
+    );
+}
+
+.wrapper {
+  height: auto;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') repeat center/cover;
+}
+
+.wrapper-2 {
+  height: 64vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') repeat center/cover;
+}
+
+.wrapper-3 {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 251, 235, 0.8),
+      rgba(255, 247, 237, 0.8),
+      rgba(254, 242, 242, 0.8)
+    ),
+    url('https://th.bing.com/th/id/OIP.wsJJgBCfZr4ckXqBLwhAXAHaE7?rs=1&pid=ImgDetMain') repeat center/cover;
+}
+
+.wrapper-4 {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 251, 235, 0.9),
+      rgba(255, 247, 237, 0.9),
+      rgba(254, 242, 242, 0.9)
+    ),
+    url('/bsideslogo.png') repeat-y center/contain;
+}
+
+.wrapper-5 {
+  min-height: 25vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 251, 235, 0.9),
+      rgba(255, 247, 237, 0.9),
+      rgba(254, 242, 242, 0.9)
+    ),
+    url('/bsideslogo.png') no-repeat center/contain;
+}
+
+.wrapper-6 {
+  height: 40vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') repeat center/cover;
+}
+
+.wrapper-7 {
+  height: 100vh;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') repeat center/cover;
+}
+
+.wrapper-8 {
+  height: 880px;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(126, 10, 141, 0.8),
+      rgba(149, 82, 181, 0.8),
+      rgba(70, 133, 205, 0.8)
+    ),
+    url('/bsideslogo.png') repeat center/cover;
+}
+
+.bsides-gradient-text {
+  background: linear-gradient(to right, #6A2199, #AE4996, #0f6f66, #F2A600, #FCDD30);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Sessionize embed styles */
+.sessionize-container {
+  contain: layout style;
+  isolation: isolate;
+}
+
+.sessionize-container * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}

@@ -1,38 +1,39 @@
 {
   "name": "bsides-swfl",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy dist"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.0.1",
+    "@astrojs/react": "^4.2.0",
+    "@astrojs/tailwind": "^6.0.0",
     "@icons-pack/react-simple-icons": "^12.6.0",
-    "@opennextjs/cloudflare": "^1.3.0",
     "@radix-ui/react-accordion": "^1.2.11",
-    "@radix-ui/react-slot": "^1.2.0",
+    "astro": "^5.1.0",
     "canvas-confetti": "^1.9.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "dotenv": "^16.5.0",
     "lucide-react": "^0.487.0",
-    "next": "^16.0.8",
-    "nextjs": "^0.0.3",
-    "node": "^22.18.0",
-    "react": "^19.2.1",
-    "react-dom": "^19.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
+    "@types/canvas-confetti": "^1.6.4",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
-    "tw-animate-css": "^1.2.9",
+    "typescript": "^5.7.0",
     "wrangler": "^4.19.1"
   }
 }

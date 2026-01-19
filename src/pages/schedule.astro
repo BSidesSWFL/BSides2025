@@ -1,0 +1,63 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+
+// Fetch Sessionize schedule at build time - data baked into static HTML
+let scheduleHtml = '';
+try {
+  const response = await fetch(
+    'https://sessionize.com/api/v2/8yksjn7s/view/GridSmart?under=True'
+  );
+  scheduleHtml = await response.text();
+} catch (error) {
+  console.error('Failed to fetch schedule at build time:', error);
+}
+---
+
+<PageLayout
+  title="Schedule - BSides SWFL"
+  heroTitle="Theme: Hack the Hurricane, Defend the Coast"
+  heroSubtitle="This year's theme—Hack the Hurricane, Defend the Coast—challenges us to stress-test our systems and build resilience in the face of chaos. From red team tactics to blue team defense, this is your call to act, adapt, and secure what matters most."
+>
+  <!-- Schedule Overview -->
+  <div class="max-w-5xl mx-auto mt-12 px-6 py-16 md:py-12 text-slate-800 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Two Days of Community and Cybersecurity</h2>
+    <p class="text-lg mb-8">
+      BSides SWFL spans two full days of learning, sharing, and hands-on exploration.
+    </p>
+
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-xl font-semibold text-teal-800 mb-2">Friday is Workshop Day</h3>
+        <p>
+          Dive deep with 3–4 hour training sessions led by experts and educators.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold text-teal-800 mb-2">Saturday is Conference Day</h3>
+        <p>
+          Hear from speakers, explore villages, connect with sponsors, and be part of a community-driven event built for all skill levels.
+        </p>
+      </div>
+
+      <p class="mt-6 mb-10 text-base text-slate-700 font-medium">
+        Come ready to learn, share, and build something stronger—together.
+      </p>
+    </div>
+  </div>
+
+  <!-- Schedule Embed from Sessionize -->
+  <div class="max-w-6xl mx-auto px-6 pb-60 lg:pb-72">
+    {scheduleHtml ? (
+      <div
+        set:html={scheduleHtml}
+        style="min-height: 800px; overflow: hidden; position: relative; z-index: 1; contain: layout style; isolation: isolate;"
+        class="sessionize-container"
+      />
+    ) : (
+      <div class="text-center py-12">
+        <p class="text-gray-600">Schedule information will be available soon.</p>
+      </div>
+    )}
+  </div>
+</PageLayout>
