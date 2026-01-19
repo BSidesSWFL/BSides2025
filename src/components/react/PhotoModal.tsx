@@ -57,7 +57,7 @@ export default function PhotoModal({ photo, isOpen, onClose }: PhotoModalProps) 
             className="max-w-full max-h-full object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
             key={`${displayPhoto}-${imageKey}`}
-            style={{ display: 'block' }}
+            style={{ display: 'block', imageOrientation: 'from-image' }}
           />
         )}
       </div>

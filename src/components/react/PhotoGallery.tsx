@@ -125,16 +125,17 @@ export default function PhotoGallery() {
             </svg>
           </button>
 
-          {/* Photo Display */}
+          {/* Photo Display - fixed height container for both portrait and landscape */}
           <div
-            className="aspect-[4/3] overflow-hidden rounded-xl shadow-2xl bg-orange-100 cursor-pointer"
+            className="h-[500px] md:h-[600px] overflow-hidden rounded-xl shadow-2xl bg-slate-900 cursor-pointer flex items-center justify-center"
             onClick={handlePhotoClick}
           >
             <img
               key={currentIndex}
               src={currentPhoto}
               alt={`BSides SWFL Event Photo ${currentIndex + 1}`}
-              className="w-full h-full object-cover transition-opacity duration-300"
+              className="max-w-full max-h-full object-contain transition-opacity duration-300"
+              style={{ imageOrientation: 'from-image' }}
               loading="eager"
               decoding="async"
               draggable="false"
