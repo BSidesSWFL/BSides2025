@@ -4,15 +4,15 @@ import { shuffleArray, getPhotoUrls } from '@/lib/photos-utils';
 import { triggerConfetti } from '@/lib/confetti-utils';
 import PhotoModal from './PhotoModal';
 
-// Reduced to prevent memory issues - large images (2-3MB each) cause browser crashes
-const ITEMS_PER_PAGE = 12;
-const MAX_RENDERED_IMAGES = 36; // Cap to prevent memory exhaustion
+// Very conservative to prevent memory crashes - images are 2-3MB each
+const ITEMS_PER_PAGE = 6;
 
 export default function PhotoGallery() {
   const [photos] = useState<string[]>(() => getPhotoUrls());
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isChangingPage, setIsChangingPage] = useState(false);
   const hasTriggeredConfetti = useRef(false);
 
   const handlePhotoClick = (photo: string) => {
@@ -40,18 +40,27 @@ export default function PhotoGallery() {
 
   const totalPages = Math.ceil(shuffledPhotos.length / ITEMS_PER_PAGE);
   const startIndex = currentPage * ITEMS_PER_PAGE;
-  const endIndex = Math.min(startIndex + MAX_RENDERED_IMAGES, shuffledPhotos.length);
-  const visiblePhotos = shuffledPhotos.slice(startIndex, endIndex);
+  const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, shuffledPhotos.length);
+  const visiblePhotos = isChangingPage ? [] : shuffledPhotos.slice(startIndex, endIndex);
 
-  const handlePrevPage = useCallback(() => {
-    setCurrentPage((prev) => Math.max(0, prev - 1));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Force complete unmount/remount to release memory
+  const changePage = useCallback((newPage: number) => {
+    setIsChangingPage(true);
+    // Clear images first
+    setTimeout(() => {
+      setCurrentPage(newPage);
+      setIsChangingPage(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 50);
   }, []);
 
+  const handlePrevPage = useCallback(() => {
+    changePage(Math.max(0, currentPage - 1));
+  }, [changePage, currentPage]);
+
   const handleNextPage = useCallback(() => {
-    setCurrentPage((prev) => Math.min(totalPages - 1, prev + 1));
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [totalPages]);
+    changePage(Math.min(totalPages - 1, currentPage + 1));
+  }, [changePage, currentPage, totalPages]);
 
   if (photos.length === 0) {
     return (
@@ -72,29 +81,33 @@ export default function PhotoGallery() {
           Page {currentPage + 1} of {totalPages} ({shuffledPhotos.length} photos)
         </p>
 
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visiblePhotos.map((photo, index) => (
-            <div
-              key={`photo-${startIndex + index}-${photo}`}
-              className="w-full cursor-pointer group"
-              onClick={() => handlePhotoClick(photo)}
-            >
-              <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg bg-orange-100">
-                <img
-                  src={photo}
-                  alt={`BSides SWFL Event Photo ${startIndex + index + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                  decoding="async"
-                  draggable="false"
-                  width={400}
-                  height={300}
-                />
+        {/* Responsive Grid - key forces complete remount on page change */}
+        {isChangingPage ? (
+          <div className="min-h-[400px] flex items-center justify-center">
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-orange-600"></div>
+          </div>
+        ) : (
+          <div key={`page-${currentPage}`} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {visiblePhotos.map((photo, index) => (
+              <div
+                key={`photo-${startIndex + index}`}
+                className="w-full cursor-pointer group"
+                onClick={() => handlePhotoClick(photo)}
+              >
+                <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg bg-orange-100">
+                  <img
+                    src={photo}
+                    alt={`BSides SWFL Event Photo ${startIndex + index + 1}`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="eager"
+                    decoding="async"
+                    draggable="false"
+                  />
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Pagination Controls */}
         <div className="mt-12 flex justify-center items-center gap-4">
