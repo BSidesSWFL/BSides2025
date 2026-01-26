@@ -1,0 +1,69 @@
+---
+import '../styles/globals.css';
+import Navbar from '@/components/astro/Navbar.astro';
+import Banner from '@/components/astro/Banner.astro';
+import Footer from '@/components/astro/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'BSides SWFL - Thank You For Coming!',
+  description = 'For the BSides SWFL cybersecurity conference.'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/x-icon" href="/icon.ico" />
+    <link rel="shortcut icon" href="/icon.ico" />
+    <link rel="apple-touch-icon" href="/icon.ico" />
+    <title>{title}</title>
+
+    <!-- Google Fonts - Geist -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- HubSpot Forms Embed Script -->
+    <script src="https://js-na2.hsforms.net/forms/embed/242985282.js"></script>
+  </head>
+  <body class="font-sans antialiased bg-gradient-to-r from-purple-800 via-purple-400 to-blue-500 h-auto overflow-x-hidden">
+    <!-- Background Video -->
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="fixed hidden md:block -z-10 min-w-full h-auto cover max-w-[1200px] md:max-w-[100vw] md:h-[870px] lg:h-[1080px] xl:h-[870px] 2xl:h-[1080px] opacity-45"
+    >
+      <source src="/video.mp4" type="video/mp4" />
+    </video>
+
+    <Navbar />
+    <Banner />
+
+    <main class="max-w-5xl w-auto min-h-screen md:w-[100vw] bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 mx-auto rounded-t-2xl opacity-92 md:opacity-98">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Geist', sans-serif;
+    --font-geist-sans: 'Geist', sans-serif;
+    --font-geist-mono: 'Geist Mono', monospace;
+  }
+</style>

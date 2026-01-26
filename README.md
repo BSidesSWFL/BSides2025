@@ -1,86 +1,84 @@
-[![Next](https://img.shields.io/badge/NextJS-v15.2.0-blue.svg?logo=next.js)](https://nextjs.org)
+[![Astro](https://img.shields.io/badge/Astro-v5.1.0-purple.svg?logo=astro)](https://astro.build)
 [![React](https://img.shields.io/badge/React-v19-teal.svg?logo=react)](https://react.dev)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-v4-lightblue.svg?logo=tailwindcss)](https://nextjs.org)
-[![@Opennextjs/Cloudflare](https://img.shields.io/badge/OpenNextJS%20Cloudflare-v1.3.0-orange.svg?logo=cloudflare)](https://www.cloudflare.com/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind%20CSS-v3.4-lightblue.svg?logo=tailwindcss)](https://tailwindcss.com)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-orange.svg?logo=cloudflare)](https://pages.cloudflare.com/)
 
 ---
 
 # BSides SWFL 2025 Website
 
-Welcome to the official website repository for the **BSides Southwest Florida 2025** conference, taking place on **November 14–15, 2025**. This is a collaborative project led by FSW's Software Engineering Club and community volunteers. Our goal is to build a clean, accessible, and exciting web presence for BSides SWFL!
+Welcome to the official website repository for the **BSides Southwest Florida 2025** conference. This site is built with Astro and deployed to Cloudflare Pages.
 
 ![BSides SWFL Logo](public/bsideslogo.png)
 
-## 🧭 Project Goals
+## Tech Stack
 
-This site will provide:
+- **Framework:** [Astro](https://astro.build) with React islands
+- **Styling:** [Tailwind CSS](https://tailwindcss.com)
+- **Deployment:** [Cloudflare Pages](https://pages.cloudflare.com)
+- **Language:** TypeScript
 
-- Event date and location info
-- Speaker and sponsor information
-- Call for papers and volunteer forms
-- Agenda, workshops, and after-party info
-- Resources and archives post-event
+## Project Structure
 
----
+```
+src/
+├── components/
+│   ├── astro/          # Pure Astro components (no JS)
+│   └── react/          # React islands (interactive)
+├── layouts/
+│   ├── BaseLayout.astro
+│   └── PageLayout.astro
+├── pages/              # Route pages
+├── lib/                # Utility functions
+├── styles/             # Global CSS
+└── types/              # TypeScript types
+```
 
-## 📦 Getting Started
+## Getting Started
 
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/YOUR-USERNAME/bsides-swfl-2025.git
-   cd bsides-swfl-2025
+   git clone https://github.com/BSidesSWFL/Bsides2025.git
+   cd Bsides2025
    ```
 
-2. **Switch to the staging branch**
+2. **Install dependencies**
 
    ```bash
-   git checkout staging
+   npm install
    ```
 
-3. **Open or edit `index.html`**
+3. **Start development server**
 
    ```bash
-   code index.html
+   npm run dev
    ```
 
-   You can also use any editor of your choice.
+4. **Build for production**
 
----
+   ```bash
+   npm run build
+   ```
 
-## 🔐 Branch Protection Rules (Important)
+5. **Preview production build**
 
-The `main` branch is protected by a GitHub ruleset. You **cannot push or commit directly to `main`**. All contributions must go through the following process:
+   ```bash
+   npm run preview
+   ```
 
-- Work from the `staging` branch (or a feature branch created from it).
-- Open a **pull request (PR)** into `main` from `staging`.
-- Your PR must meet the following requirements:
-  - ✅ At least 1 approval from a reviewer
-  - ✅ All conversations must be resolved before merging
-  - 🚫 Direct commits and force pushes to `main` are blocked
-  - ✅ Merge method is limited to **Squash** for a clean history
+## Branch Protection Rules
 
-These rules ensure a safe, organized, and review-driven development process.
+The `main` branch is protected. All contributions must go through:
 
----
+- Work from the `staging` branch (or a feature branch)
+- Open a **pull request (PR)** into `main` from `staging`
+- Requirements:
+  - At least 1 approval from a reviewer
+  - All conversations must be resolved
+  - Merge method is **Squash** for clean history
 
-## 🧑‍💻 How to Contribute
-
-1. **Work on the `staging` branch only.**  
-   Do not commit directly to `main`.
-
-2. **Suggested contributions:**
-
-   - Layout and design updates (HTML/CSS/JS)
-   - Components for speaker lists, schedules, forms, etc.
-   - Branding updates (use the provided logo)
-
-3. **Submit a pull request from `staging` to `main`**  
-   Only when you're ready for production review.
-
----
-
-## ✅ Commit Guidelines
+## Commit Messages
 
 Use clear and descriptive commit messages like:
 
@@ -93,49 +91,30 @@ Prefer Conventional Commits:
 - `feat(home): add hero section`
 - `fix(style): adjust contrast for accessibility`
 
----
+## Deployment
 
-## 🚀 Deployment
+The site automatically deploys to Cloudflare Pages on push to `main` or `staging` branches via GitHub Actions.
 
-The site is automatically deployed to **Cloudflare Workers** when changes are merged to the `main` branch via GitHub Actions.
+### Manual Deployment
 
-### Automated Deployment
+```bash
+npm run deploy
+```
 
-- Merges to `main` trigger an automatic build and deployment
-- The deployment workflow uses `@opennextjs/cloudflare` to deploy the Next.js app
-- Deployments require configured Cloudflare credentials in repository secrets
+## Migration from Next.js
 
-### Setup & Troubleshooting
+This project was migrated from Next.js to Astro. See [MIGRATION_GUIDE.md](MIGRATION_GUIDE.md) for details on:
 
-For detailed instructions on:
-- Setting up Cloudflare deployment credentials
-- Troubleshooting deployment errors  
-- Manual deployment testing
-- Local deployment testing
+- Architecture changes
+- Component migration strategy
+- Data fetching changes (Sessionize)
+- Performance improvements
 
-See the **[DEPLOYMENT.md](DEPLOYMENT.md)** guide.
-
-> **Note:** Only repository administrators can configure deployment secrets.
-
----
-
-## 🧾 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
----
+## Credits
 
-## 🌐 Domain
-
-The domain `bsidesswfl.org` is already registered and configured via the `CNAME` file for deployment.
-
----
-
-## 🙌 Credits
-
-Organized by [BSides SWFL](https://bsidesswfl.org)  
+Organized by [BSides SWFL](https://bsidesswfl.org)
 Developed by the **FSW Software Engineering Club** and community volunteers.
-
----
-
-Thanks for contributing — let’s build something awesome together!

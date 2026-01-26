@@ -1,0 +1,10 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PhotoGallery from '@/components/react/PhotoGallery';
+---
+
+<BaseLayout title="Event Photos - BSides SWFL">
+  <div class="min-h-screen wrapper-pages pb-40">
+    <PhotoGallery client:load />
+  </div>
+</BaseLayout>

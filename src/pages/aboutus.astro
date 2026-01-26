@@ -1,0 +1,203 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="About Us - BSides SWFL"
+  heroTitle="About Us"
+  heroSubtitle="BSides SWFL is a community-built cybersecurity event where professionals, students, and enthusiasts come together to share ideas, gain hands-on experience, and grow the local infosec community. We celebrate curiosity, support newcomers, and provide a space where everyone can contribute."
+>
+  <div class="min-h-screen wrapper-pages">
+    <!-- Stats Bar -->
+    <div class="container mx-auto px-6 text-center relative z-10 -mt-16 mb-12">
+      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 text-sm text-orange-100">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span>Community-Driven</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          <span>Security Focused</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+          </svg>
+          <span>Open to All</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-6 pb-40 md:pb-48 lg:pb-56">
+      <!-- About BSides Card - Full Width -->
+      <div class="mb-8 group">
+        <div class="relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 md:p-10">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+          <div class="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-orange-500/20 to-transparent rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+          <div class="relative">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="p-3 rounded-xl bg-gradient-to-br from-cyan-500 to-teal-600 shadow-lg">
+                <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 16v-4" />
+                  <path d="M12 8h.01" />
+                </svg>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold text-white">About BSides SWFL</h2>
+            </div>
+            <p class="text-lg text-slate-300 leading-relaxed">
+              BSides Southwest Florida (BSides SWFL) is a community-driven cybersecurity conference designed to create space for open conversation, hands-on learning, and professional growth. As part of the global Security BSides movement, our event brings together a diverse mix of security professionals, students, researchers, and curious minds to explore and advance the field of information security.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Three Column Cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <!-- Mission Card -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white p-6 border-t-4 border-orange-500 hover:shadow-2xl transition-shadow duration-300">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-orange-100 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-70"></div>
+          <div class="relative">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 shadow-md">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">Our Mission</h3>
+            </div>
+            <p class="text-slate-700 leading-relaxed">
+              To provide a welcoming, inclusive environment where people of all skill levels can connect, share knowledge, and collaborate on solutions to today's cybersecurity challenges. We believe in lowering barriers to entry, uplifting new voices, and creating opportunities to grow.
+            </p>
+          </div>
+        </div>
+
+        <!-- What to Expect Card -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white p-6 border-t-4 border-teal-500 hover:shadow-2xl transition-shadow duration-300">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-100 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-70"></div>
+          <div class="relative">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-lg bg-gradient-to-br from-teal-500 to-cyan-600 shadow-md">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">What to Expect</h3>
+            </div>
+            <p class="text-slate-700 leading-relaxed">
+              Engaging talks, interactive villages, workshops, and opportunities to connect. Whether you're just beginning your journey or you've been in the industry for years, BSides SWFL is a place where you can share, learn, and be part of something meaningful.
+            </p>
+          </div>
+        </div>
+
+        <!-- Why It Matters Card -->
+        <div class="group relative overflow-hidden rounded-2xl shadow-xl bg-white p-6 border-t-4 border-purple-500 hover:shadow-2xl transition-shadow duration-300">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-100 to-transparent rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 opacity-70"></div>
+          <div class="relative">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-2.5 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 shadow-md">
+                <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900">Why It Matters</h3>
+            </div>
+            <p class="text-slate-700 leading-relaxed">
+              Traditional conferences often come with barriers: cost, exclusivity, or limited speaker slots. BSides flips the script by offering a platform where more voices can be heard and more people can participate. We celebrate curiosity and build community.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Highlights -->
+      <div class="relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 p-8 md:p-10">
+        <div class="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+        <div class="relative">
+          <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">What Makes BSides SWFL Special</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <h4 class="font-bold text-white mb-1">Inclusive Community</h4>
+              <p class="text-sm text-white/80">Open to everyone from beginners to experts</p>
+            </div>
+            <div class="text-center">
+              <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+              </div>
+              <h4 class="font-bold text-white mb-1">Hands-On Learning</h4>
+              <p class="text-sm text-white/80">Interactive workshops and villages</p>
+            </div>
+            <div class="text-center">
+              <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 20h9" />
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+              </div>
+              <h4 class="font-bold text-white mb-1">Expert Speakers</h4>
+              <p class="text-sm text-white/80">Learn from industry professionals</p>
+            </div>
+            <div class="text-center">
+              <div class="w-14 h-14 mx-auto mb-3 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                  <line x1="9" y1="9" x2="9.01" y2="9" />
+                  <line x1="15" y1="9" x2="15.01" y2="9" />
+                </svg>
+              </div>
+              <h4 class="font-bold text-white mb-1">Fun Atmosphere</h4>
+              <p class="text-sm text-white/80">Networking meets good vibes</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="mt-12 text-center">
+        <h3 class="text-2xl font-bold text-slate-800 mb-4">Ready to Join Us?</h3>
+        <p class="text-slate-600 mb-6 max-w-2xl mx-auto">
+          Be part of Southwest Florida's premier cybersecurity community event. Whether you want to attend, speak, volunteer, or sponsor, there's a place for you at BSides SWFL.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/tickets" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-teal-600 text-white font-bold rounded-lg shadow-lg hover:from-cyan-600 hover:to-teal-700 transition-all duration-200">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+              <path d="M13 5v2" />
+              <path d="M13 17v2" />
+              <path d="M13 11v2" />
+            </svg>
+            Get Tickets
+          </a>
+          <a href="/speakers" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-800 font-bold rounded-lg shadow-lg border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all duration-200">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+            View Speakers
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,12 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/astro/Hero.astro';
+import PhotoGallery from '@/components/react/PhotoGallery';
+---
+
+<BaseLayout>
+  <div class="max-w-5xl bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 mx-auto my-6 p-4 pb-20 rounded-t-2xl">
+    <Hero />
+    <PhotoGallery client:visible />
+  </div>
+</BaseLayout>

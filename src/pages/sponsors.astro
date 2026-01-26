@@ -1,0 +1,156 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro';
+import SponsorTier from '@/components/astro/SponsorTier.astro';
+
+const goldSponsors = [
+  { name: 'Cyber Guard Pro', logo: '/cGuardPro.png', website: 'http://www.cyberguardpro.com/', imgClass: 'h-28 w-auto max-w-full object-contain' }
+];
+
+const silverSponsors = [
+  { name: 'SimSpace', logo: '/SimSpace.png', website: 'https://simspace.com/', imgClass: 'h-20 w-auto max-w-full object-contain' }
+];
+
+const bronzeSponsors = [
+  { name: 'Lucid Services Group', logo: '/LucidServicesGroup.png', website: 'https://www.lucidservicesgroup.com', imgClass: 'h-20 w-auto max-w-full object-contain' },
+  { name: 'Material Security', logo: '/MaterialSecurity.png', website: 'https://material.security/', imgClass: 'h-20 w-auto max-w-full object-contain' },
+  { name: 'Zscaler', logo: '/zscaler.png', website: 'https://www.zscaler.com/', imgClass: 'h-20 w-auto max-w-full object-contain' }
+];
+
+const communitySponsors = [
+  { name: 'Lee Health', logo: '/leeHealth.png', website: 'https://www.leehealth.org/', imgClass: 'h-20 w-auto max-w-full object-contain' }
+];
+
+const inKindSponsors = [
+  { name: 'Black Hills Information Security', logo: '/BlackHillsInfoSec.png', website: 'https://www.blackhillsinfosec.com/', imgClass: 'h-28 w-auto max-w-full object-contain' },
+  { name: 'Tech Alliance', logo: '/TechAllianceLogo2.png', website: 'https://www.techallianceswfl.org/', imgClass: 'h-64 w-auto max-w-full object-contain' },
+  { name: 'Rist Cyber Institute at FSW', logo: '/ristCyber2025.png', website: 'https://www.fsw.edu/academics/programs/ascybersecurityops', imgClass: 'h-28 w-auto max-w-full object-contain' }
+];
+
+// SVG icons
+const awardIcon = '<svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>';
+const shieldIcon = '<svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>';
+const zapIcon = '<svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>';
+const heartIcon = '<svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>';
+const usersIcon = '<svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>';
+---
+
+<PageLayout
+  title="Our Sponsors - BSides SWFL"
+  heroTitle="Our Amazing 2025 Sponsors"
+  heroSubtitle="Southwest Florida's greatest cybersecurity conference is made possible by our incredible sponsors. Join us in thanking these organizations that support our cybersecurity community."
+>
+  <!-- Content Wrapper -->
+  <div class="min-h-screen wrapper-pages">
+    <!-- Unique Stats Section -->
+    <div class="container mx-auto px-6 text-center relative z-10 -mt-20">
+      <div class="flex justify-center items-center gap-8 text-sm text-orange-200">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+          <span>300+ Participants</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
+          <span>25+ Speakers</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6" /><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" /></svg>
+          <span>5+ Tracks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photo Collage -->
+    <div class="bg-transparent outline-0 py-12 md:py-24">
+      <div class="container mx-auto px-6">
+        <div class="flex justify-center">
+          <img
+            src="/tech-team-silhouette.png"
+            alt="Professional tech team silhouettes with network connections and tropical backdrop"
+            class="w-full max-w-4xl h-auto object-contain rounded-lg hover:shadow-lg transition-shadow duration-300 shadow-xl"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="max-w-5xl mx-auto px-6 py-16 text-slate-800 text-center -mt-20 -mb-24">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Interested in Sponsoring?</h2>
+      <p class="text-lg text-slate-700 mb-4">
+        Join our community of security leaders and help support Southwest Florida's premier cybersecurity conference.
+      </p>
+
+      <!-- Sponsor Buttons -->
+      <div class="flex flex-col mb-16 sm:flex-row gap-4 justify-center">
+        <a href="/BSides-SWFL-Sponsorship-Packet-2025.pdf" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto">
+          <button class="bg-gradient-to-r from-cyan-500 to-teal-600 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-colors duration-200 w-full md:w-auto hover:from-cyan-600 hover:to-teal-700">
+            Download Sponsorship Package
+          </button>
+        </a>
+
+        <a href="/sponsor-form" class="w-full sm:w-auto">
+          <button class="bg-gradient-to-r from-teal-600 to-cyan-500 text-white font-bold px-8 py-3 rounded-lg shadow-lg transition-colors duration-200 w-full md:w-auto hover:from-teal-700 hover:to-cyan-600">
+            Sponsor Us Today!
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sponsors Section -->
+    <div class="container mx-auto items-center justify-center text-center px-6 py-16 pb-60 lg:pb-72">
+      {goldSponsors.length > 0 && (
+        <SponsorTier
+          title="Gold Sponsors"
+          sponsors={goldSponsors}
+          tierColor="bg-gradient-to-r from-[#fde68a] to-[#f59e0b]"
+          iconSvg={awardIcon}
+          cardSize="small"
+          description="Strategic partners committed to advancing cybersecurity education in Southwest Florida"
+        />
+      )}
+
+      {silverSponsors.length > 0 && (
+        <SponsorTier
+          title="Silver Sponsors"
+          sponsors={silverSponsors}
+          tierColor="bg-gradient-to-r from-cyan-500 to-teal-600"
+          iconSvg={shieldIcon}
+          cardSize="small"
+          description="Valued supporters helping us deliver world-class security content and Gulf Coast networking"
+        />
+      )}
+
+      {bronzeSponsors.length > 0 && (
+        <SponsorTier
+          title="Bronze Sponsors"
+          sponsors={bronzeSponsors}
+          tierColor="bg-gradient-to-r from-orange-600 to-red-700"
+          iconSvg={zapIcon}
+          cardSize="tiny"
+          description="Essential contributors to our mission of building a stronger SWFL security community"
+        />
+      )}
+
+      {communitySponsors.length > 0 && (
+        <SponsorTier
+          title="Non-Profit Sponsors"
+          sponsors={communitySponsors}
+          tierColor="bg-gradient-to-r from-emerald-600 to-teal-700"
+          iconSvg={heartIcon}
+          cardSize="small"
+          description="Local organizations and groups that champion cybersecurity education in Southwest Florida"
+        />
+      )}
+
+      {inKindSponsors.length > 0 && (
+        <SponsorTier
+          title="In-Kind Sponsors"
+          sponsors={inKindSponsors}
+          tierColor="bg-gradient-to-r from-purple-600 to-indigo-700"
+          iconSvg={usersIcon}
+          cardSize="small"
+          description="Supporters providing in-kind services and resources that elevate the attendee experience"
+        />
+      )}
+    </div>
+  </div>
+</PageLayout>

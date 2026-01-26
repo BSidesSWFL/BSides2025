@@ -1,0 +1,20 @@
+---
+interface Props {
+  formId: string;
+  region?: string;
+  portalId?: string;
+}
+
+const {
+  formId,
+  region = 'na2',
+  portalId = '242985282'
+} = Astro.props;
+---
+
+<div
+  class="hs-form-frame"
+  data-region={region}
+  data-form-id={formId}
+  data-portal-id={portalId}
+></div>
