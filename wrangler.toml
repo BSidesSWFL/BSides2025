@@ -1,5 +1,3 @@
 name = "bsides-swfl"
 compatibility_date = "2025-01-15"
-
-[site]
-bucket = "./dist"
+pages_build_output_dir = "dist"
