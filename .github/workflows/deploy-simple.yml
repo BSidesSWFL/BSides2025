@@ -21,6 +21,22 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
+      - name: Validate required secrets
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "❌ ERROR: CLOUDFLARE_API_TOKEN secret is not set"
+            echo "Please configure this secret in repository settings:"
+            echo "https://github.com/${{ github.repository }}/settings/secrets/actions"
+            exit 1
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "❌ ERROR: CLOUDFLARE_ACCOUNT_ID secret is not set"
+            echo "Please configure this secret in repository settings:"
+            echo "https://github.com/${{ github.repository }}/settings/secrets/actions"
+            exit 1
+          fi
+          echo "✅ All required secrets are configured"
+
       - name: Install dependencies
         run: npm ci
 

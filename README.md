@@ -78,6 +78,19 @@ The `main` branch is protected. All contributions must go through:
   - All conversations must be resolved
   - Merge method is **Squash** for clean history
 
+## Commit Messages
+
+Use clear and descriptive commit messages like:
+
+- `Add speaker section layout`
+- `Style landing page header`
+- `Include BSides SWFL logo in assets`
+
+Prefer Conventional Commits:
+
+- `feat(home): add hero section`
+- `fix(style): adjust contrast for accessibility`
+
 ## Deployment
 
 The site automatically deploys to Cloudflare Pages on push to `main` or `staging` branches via GitHub Actions.
